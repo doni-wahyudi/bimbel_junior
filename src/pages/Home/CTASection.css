@@ -1,0 +1,198 @@
+/* =============================================
+   CTA SECTION
+   ============================================= */
+
+.cta-section {
+  position: relative;
+  overflow: hidden;
+  padding: var(--space-5xl) 0;
+}
+
+/* Floating background shapes */
+.cta-bg-shapes {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.cta-shape {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.cta-shape--1 {
+  width: 300px;
+  height: 300px;
+  top: -80px;
+  left: -60px;
+  animation: heroFloat2 10s ease-in-out infinite;
+}
+
+.cta-shape--2 {
+  width: 200px;
+  height: 200px;
+  bottom: -50px;
+  right: -40px;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  animation: heroFloat1 8s ease-in-out infinite;
+}
+
+.cta-shape--3 {
+  width: 100px;
+  height: 100px;
+  top: 30%;
+  right: 20%;
+  border-radius: 20%;
+  transform: rotate(45deg);
+  opacity: 0.04;
+  animation: heroFloat3 7s ease-in-out infinite;
+}
+
+/* Content */
+.cta-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.cta-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--color-secondary);
+  margin-bottom: var(--space-xl);
+  animation: float 4s ease-in-out infinite;
+}
+
+.cta-icon svg {
+  width: 36px;
+  height: 36px;
+}
+
+.cta-title {
+  font-size: var(--text-5xl);
+  font-weight: 800;
+  color: var(--color-text-white);
+  margin-bottom: var(--space-md);
+  letter-spacing: -0.02em;
+}
+
+.cta-subtitle {
+  font-size: var(--text-lg);
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.7;
+  margin-bottom: var(--space-2xl);
+}
+
+.cta-buttons {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 1rem 2.25rem;
+  background: linear-gradient(135deg, var(--color-secondary), var(--color-secondary-dark));
+  color: var(--color-text-primary);
+  font-weight: 700;
+  font-size: var(--text-base);
+  border-radius: var(--radius-lg);
+  transition: var(--transition-base);
+  box-shadow: 0 4px 20px rgba(245, 158, 11, 0.35);
+  text-decoration: none;
+}
+
+.cta-btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(245, 158, 11, 0.45);
+  color: var(--color-text-primary);
+}
+
+.cta-btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 1rem 2.25rem;
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  color: white;
+  font-weight: 700;
+  font-size: var(--text-base);
+  border-radius: var(--radius-lg);
+  transition: var(--transition-base);
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+  text-decoration: none;
+}
+
+.cta-btn-whatsapp:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
+  color: white;
+}
+
+/* Trust badges */
+.cta-trust {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xl);
+  margin-top: var(--space-2xl);
+  flex-wrap: wrap;
+}
+
+.cta-trust-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: var(--text-sm);
+  font-weight: 500;
+}
+
+.cta-trust-item svg {
+  width: 18px;
+  height: 18px;
+  color: var(--color-secondary);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .cta-section {
+    padding: var(--space-3xl) 0;
+  }
+
+  .cta-title {
+    font-size: var(--text-4xl);
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta-btn-primary,
+  .cta-btn-whatsapp {
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+  }
+
+  .cta-trust {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+}

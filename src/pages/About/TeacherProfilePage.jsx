@@ -1,0 +1,146 @@
+import { useParams, Link, Navigate } from 'react-router-dom';
+import { ChevronLeft, GraduationCap, Award, BookOpen, MessageCircle, Quote } from 'lucide-react';
+import { teamMembers } from '../../data/team';
+import SEO from '../../components/SEO';
+import AnimateOnScroll from '../../components/AnimateOnScroll';
+import './TeacherProfilePage.css';
+
+export default function TeacherProfilePage() {
+  const { id } = useParams();
+  const teacher = teamMembers.find(t => t.id === parseInt(id, 10));
+
+  if (!teacher) {
+    return <Navigate to="/tentang-kami" replace />;
+  }
+
+  return (
+    <>
+      <SEO 
+        title={`Profil Pengajar - ${teacher.name}`}
+        description={`Mengenal lebih dekat ${teacher.name}, ${teacher.role} di Bimbel Junior.`}
+      />
+
+      <div className="teacher-profile">
+        {/* Header Section */}
+        <section className="teacher-profile-header gradient-hero">
+          <div className="container">
+            <nav className="teacher-profile__breadcrumb">
+              <Link to="/tentang-kami" className="teacher-profile__back-link">
+                <ChevronLeft size={20} />
+                Kembali ke Tentang Kami
+              </Link>
+            </nav>
+            
+            <div className="teacher-profile__hero-content">
+              <div className="teacher-profile__image-wrapper">
+                <div 
+                  className="teacher-profile__image-bg" 
+                  style={{ background: teacher.color }}
+                />
+                <img 
+                  src={teacher.image} 
+                  alt={teacher.name} 
+                  className="teacher-profile__image" 
+                />
+              </div>
+              <div className="teacher-profile__title-wrapper">
+                <h1 className="teacher-profile__name">{teacher.name}</h1>
+                <p className="teacher-profile__role">{teacher.role}</p>
+                <div className="teacher-profile__subject-badge" style={{ backgroundColor: `${teacher.color}20`, color: '#fff', border: `1px solid ${teacher.color}` }}>
+                  <BookOpen size={16} />
+                  {teacher.subjects}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Content Section */}
+        <section className="teacher-profile-content section">
+          <div className="container">
+            <div className="teacher-profile__grid">
+              
+              {/* Left Column - Main Bio */}
+              <div className="teacher-profile__main">
+                <AnimateOnScroll>
+                  <div className="teacher-profile__card">
+                    <h2 className="teacher-profile__section-title">Tentang {teacher.name.split(',')[0]}</h2>
+                    <p className="teacher-profile__bio">{teacher.longBio || teacher.bio}</p>
+                  </div>
+                </AnimateOnScroll>
+
+                <AnimateOnScroll delay={0.1}>
+                  <div className="teacher-profile__quote-card" style={{ borderLeftColor: teacher.color }}>
+                    <Quote size={32} className="teacher-profile__quote-icon" style={{ color: `${teacher.color}40` }} />
+                    <p className="teacher-profile__motto">{teacher.motto}</p>
+                  </div>
+                </AnimateOnScroll>
+              </div>
+
+              {/* Right Column - Sidebar */}
+              <div className="teacher-profile__sidebar">
+                <AnimateOnScroll delay={0.2}>
+                  <div className="teacher-profile__card">
+                    <h3 className="teacher-profile__sidebar-title">
+                      <GraduationCap size={20} style={{ color: teacher.color }} />
+                      Riwayat Pendidikan
+                    </h3>
+                    <ul className="teacher-profile__list">
+                      {teacher.education?.map((edu, idx) => (
+                        <li key={idx} className="teacher-profile__list-item">
+                          <span className="teacher-profile__bullet" style={{ backgroundColor: teacher.color }} />
+                          {edu}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </AnimateOnScroll>
+
+                <AnimateOnScroll delay={0.3}>
+                  <div className="teacher-profile__card">
+                    <h3 className="teacher-profile__sidebar-title">
+                      <Award size={20} style={{ color: teacher.color }} />
+                      Pencapaian
+                    </h3>
+                    <ul className="teacher-profile__list">
+                      {teacher.achievements?.map((ach, idx) => (
+                        <li key={idx} className="teacher-profile__list-item">
+                          <span className="teacher-profile__bullet" style={{ backgroundColor: teacher.color }} />
+                          {ach}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </AnimateOnScroll>
+                
+                <AnimateOnScroll delay={0.4}>
+                  <div className="teacher-profile__cta-card">
+                    <h3>Ingin diajar oleh {teacher.name.split(',')[0]}?</h3>
+                    <p>Daftarkan dirimu sekarang dan rasakan pengalaman belajar yang luar biasa.</p>
+                    <button 
+                      onClick={() => {
+                        window.dispatchEvent(new CustomEvent('open-whatsapp-modal', {
+                          detail: {
+                            title: `Daftar Kelas ${teacher.name.split(',')[0]}`,
+                            defaultMessage: `Saya tertarik untuk mengikuti kelas dengan pengajar *${teacher.name}*.`,
+                            placeholder: 'Contoh: Ingin fokus persiapan UTBK / SNBT'
+                          }
+                        }));
+                      }}
+                      className="btn btn-whatsapp"
+                      style={{ width: '100%', marginTop: '1rem', border: 'none', cursor: 'pointer' }}
+                    >
+                      <MessageCircle size={18} />
+                      Isi Form Pendaftaran
+                    </button>
+                  </div>
+                </AnimateOnScroll>
+              </div>
+
+            </div>
+          </div>
+        </section>
+      </div>
+    </>
+  );
+}

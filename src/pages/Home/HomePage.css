@@ -1,0 +1,17 @@
+/* =============================================
+   HOME PAGE
+   ============================================= */
+
+.home-page {
+  overflow-x: hidden;
+}
+
+/* Smooth section transitions */
+.home-page > section {
+  position: relative;
+}
+
+/* Section dividers using subtle gradients */
+.home-page > section + section {
+  border-top: none;
+}
