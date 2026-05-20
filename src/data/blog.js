@@ -171,5 +171,59 @@ Bimbel Junior selalu mengirimkan laporan perkembangan siswa secara berkala kepad
     category: 'Tips Parenting',
     readTime: '4 menit baca',
     image: `${cleanBaseUrl}images/blog_6.jpg`
+  },
+  {
+    id: 'pentingnya-belajar-kelompok',
+    title: 'Pentingnya Belajar Kelompok (Study Group) untuk Meningkatkan Pemahaman Siswa',
+    slug: 'pentingnya-belajar-kelompok',
+    excerpt: 'Belajar kelompok bukan sekadar ajang mengobrol. Jika dilakukan dengan benar, metode ini sangat efektif untuk menguasai materi sulit.',
+    content: `
+# Pentingnya Belajar Kelompok (Study Group) untuk Siswa
+
+Belajar secara mandiri memang baik, namun belajar kelompok (study group) menawarkan dimensi pembelajaran yang berbeda. Melalui diskusi, siswa dapat saling melengkapi pemahaman dan memecahkan soal-soal sulit bersama-sama.
+
+## 1. Menjelaskan Materi Melatih Pemahaman
+Salah satu cara terbaik untuk memahami suatu konsep adalah dengan menjelaskannya kepada orang lain. Saat seorang siswa menjelaskan materi kepada temannya yang belum paham, otaknya secara aktif menyusun kembali informasi tersebut secara terstruktur, memperkuat ingatannya sendiri.
+
+## 2. Mendapatkan Sudut Pandang Baru
+Setiap orang memiliki cara berpikir dan memecahkan masalah yang unik. Dalam belajar kelompok, Anda bisa melihat bagaimana teman Anda menyelesaikan sebuah soal matematika dengan rumus atau logika yang lebih cepat dan kreatif.
+
+## 3. Meningkatkan Motivasi Belajar
+Belajar sendirian terkadang membosankan dan memicu kantuk. Belajar bersama teman-teman yang memiliki visi prestasi yang sama akan memicu semangat belajar dan meminimalisir kebiasaan menunda-nunda (prokrastinasi).
+
+Di **Bimbel Junior**, kami menerapkan sistem kelas interaktif interdisipliner di mana siswa didorong untuk aktif berdiskusi dan saling membantu di bawah bimbingan langsung tutor berpengalaman.
+    `,
+    date: '25 Agt 2026',
+    author: 'Tim Akademik',
+    category: 'Tips Belajar',
+    readTime: '4 menit baca',
+    image: `${cleanBaseUrl}images/blog_7.png`
+  },
+  {
+    id: 'menghadapi-ujian-tanpa-stres',
+    title: 'Menghadapi Ujian Tanpa Stres: Tips Regulasi Emosi bagi Pelajar',
+    slug: 'menghadapi-ujian-tanpa-stres',
+    excerpt: 'Ujian sering kali memicu kecemasan yang berlebihan pada siswa. Pelajari langkah-langkah praktis untuk tetap tenang dan fokus.',
+    content: `
+# Menghadapi Ujian Tanpa Stres: Tips Regulasi Emosi
+
+Kecemasan saat menghadapi ujian adalah hal yang wajar. Namun, kecemasan yang berlebihan (*exam anxiety*) dapat mengganggu konsentrasi dan memicu fenomena "blank" saat membaca soal. Berikut adalah tips agar Anda bisa menghadapi ujian dengan tenang.
+
+## Persiapan yang Matang Adalah Kunci
+Sebagian besar kecemasan berasal dari rasa tidak siap. Belajar dengan sistem SKS (Sistem Kebut Semalam) hanya akan meningkatkan kadar hormon stres (kortisol) di otak Anda. Mulailah mencicil belajar setidaknya dua minggu sebelum ujian.
+
+## Latihan Relaksasi dan Pernapasan
+Ketika merasa panik di ruang ujian, pejamkan mata sejenak, tarik napas dalam-dalam melalui hidung selama 4 detik, tahan selama 4 detik, lalu hembuskan perlahan melalui mulut selama 4 detik. Latihan ini secara instan menurunkan detak jantung dan mengirimkan sinyal tenang ke sistem saraf pusat Anda.
+
+## Tidur Cukup Sebelum Hari H
+Banyak siswa mengorbankan tidur malam sebelum ujian untuk belajar. Ini adalah kesalahan besar. Kurang tidur menurunkan fungsi kognitif, daya ingat jangka pendek, dan kemampuan fokus. Pastikan Anda tidur minimal 7-8 jam sebelum hari ujian.
+
+Program review intensif dan simulasi tryout berkala di **Bimbel Junior** dirancang agar siswa terbiasa dengan iklim ujian asli, meminimalkan rasa cemas, dan meningkatkan kepercayaan diri akademik.
+    `,
+    date: '18 Agt 2026',
+    author: 'Konselor Pendidikan',
+    category: 'Tips Belajar',
+    readTime: '5 menit baca',
+    image: `${cleanBaseUrl}images/blog_8.png`
   }
 ];

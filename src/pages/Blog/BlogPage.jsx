@@ -8,7 +8,7 @@ import './BlogPage.css';
 
 export default function BlogPage() {
   const [currentPage, setCurrentPage] = useState(1);
-  const postsPerPage = 4;
+  const postsPerPage = 6;
 
   const totalPages = Math.ceil(blogPosts.length / postsPerPage);
 
