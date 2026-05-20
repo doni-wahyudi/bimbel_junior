@@ -329,6 +329,98 @@
   font-size: var(--text-lg);
 }
 
+/* ---- Main Gallery Grid ---- */
+.gallery-grid-section {
+  padding-top: 0;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+}
+
+/* Video styles inside grid card */
+.gallery-item__video-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.gallery-item__play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(27, 58, 92, 0.85);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: var(--transition-base);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.gallery-item__card:hover .gallery-item__play-btn {
+  background: var(--color-primary);
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* Load More button */
+.gallery-load-more {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-2xl);
+  margin-bottom: var(--space-xl);
+}
+
+.gallery-load-more__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: 0.85rem 2.5rem;
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(27, 58, 92, 0.15);
+  transition: var(--transition-base);
+}
+
+.gallery-load-more__btn:hover {
+  background: var(--color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(27, 58, 92, 0.25);
+}
+
+.gallery-load-more__btn:active {
+  transform: translateY(0);
+}
+
+/* Video styles inside lightbox */
+.gallery-lightbox__video {
+  width: 100%;
+  height: auto;
+  max-height: 50vh;
+  object-fit: contain;
+  display: block;
+  background: #000;
+}
+
+@media (max-width: 768px) {
+  .gallery-lightbox__video {
+    max-height: 35vh;
+  }
+}
+
 /* ---- Lightbox ---- */
 .gallery-lightbox {
   position: fixed;
