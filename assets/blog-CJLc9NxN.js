@@ -110,7 +110,7 @@ Setiap orang memiliki cara berpikir dan memecahkan masalah yang unik. Dalam bela
 Belajar sendirian terkadang membosankan dan memicu kantuk. Belajar bersama teman-teman yang memiliki visi prestasi yang sama akan memicu semangat belajar dan meminimalisir kebiasaan menunda-nunda (prokrastinasi).
 
 Di **Bimbel Junior**, kami menerapkan sistem kelas interaktif interdisipliner di mana siswa didorong untuk aktif berdiskusi dan saling membantu di bawah bimbingan langsung tutor berpengalaman.
-    `,date:`25 Agt 2026`,author:`Tim Akademik`,category:`Tips Belajar`,readTime:`4 menit baca`,image:`${e}images/blog_7.png`},{id:`menghadapi-ujian-tanpa-stres`,title:`Menghadapi Ujian Tanpa Stres: Tips Regulasi Emosi bagi Pelajar`,slug:`menghadapi-ujian-tanpa-stres`,excerpt:`Ujian sering kali memicu kecemasan yang berlebihan pada siswa. Pelajari langkah-langkah praktis untuk tetap tenang dan fokus.`,content:`
+    `,date:`25 Agt 2026`,author:`Tim Akademik`,category:`Tips Belajar`,readTime:`4 menit baca`,image:`${e}images/blog_1.jpg`},{id:`menghadapi-ujian-tanpa-stres`,title:`Menghadapi Ujian Tanpa Stres: Tips Regulasi Emosi bagi Pelajar`,slug:`menghadapi-ujian-tanpa-stres`,excerpt:`Ujian sering kali memicu kecemasan yang berlebihan pada siswa. Pelajari langkah-langkah praktis untuk tetap tenang dan fokus.`,content:`
 # Menghadapi Ujian Tanpa Stres: Tips Regulasi Emosi
 
 Kecemasan saat menghadapi ujian adalah hal yang wajar. Namun, kecemasan yang berlebihan (*exam anxiety*) dapat mengganggu konsentrasi dan memicu fenomena "blank" saat membaca soal. Berikut adalah tips agar Anda bisa menghadapi ujian dengan tenang.
@@ -125,4 +125,4 @@ Ketika merasa panik di ruang ujian, pejamkan mata sejenak, tarik napas dalam-dal
 Banyak siswa mengorbankan tidur malam sebelum ujian untuk belajar. Ini adalah kesalahan besar. Kurang tidur menurunkan fungsi kognitif, daya ingat jangka pendek, dan kemampuan fokus. Pastikan Anda tidur minimal 7-8 jam sebelum hari ujian.
 
 Program review intensif dan simulasi tryout berkala di **Bimbel Junior** dirancang agar siswa terbiasa dengan iklim ujian asli, meminimalkan rasa cemas, dan meningkatkan kepercayaan diri akademik.
-    `,date:`18 Agt 2026`,author:`Konselor Pendidikan`,category:`Tips Belajar`,readTime:`5 menit baca`,image:`${e}images/blog_8.png`}];export{t};
+    `,date:`18 Agt 2026`,author:`Konselor Pendidikan`,category:`Tips Belajar`,readTime:`5 menit baca`,image:`${e}images/blog_5.jpg`}];export{t};
