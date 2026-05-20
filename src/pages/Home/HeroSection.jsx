@@ -65,7 +65,7 @@ export default function HeroSection() {
             <div className="hero-image-wrapper">
               <div className="hero-image-glow" />
               <img 
-                src="/images/hero_student.png" 
+                src={`${import.meta.env.BASE_URL}images/hero_student.png`} 
                 alt="Siswa-siswi Bimbel Junior belajar bersama" 
                 className="hero-image"
               />

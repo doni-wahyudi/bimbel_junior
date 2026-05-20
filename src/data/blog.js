@@ -1,3 +1,7 @@
+const cleanBaseUrl = (import.meta.env.BASE_URL || '/').endsWith('/')
+  ? import.meta.env.BASE_URL || '/'
+  : `${import.meta.env.BASE_URL || '/'}/`;
+
 export const blogPosts = [
   {
     id: 'tips-fokus-belajar-anak',
@@ -30,7 +34,7 @@ Di **Bimbel Junior**, kami tidak hanya mengajarkan materi akademik, tetapi juga 
     author: 'Tim Akademik',
     category: 'Tips Belajar',
     readTime: '4 menit baca',
-    image: '/images/blog_1.jpg'
+    image: `${cleanBaseUrl}images/blog_1.jpg`
   },
   {
     id: 'persiapan-snbt-2027',
@@ -61,7 +65,7 @@ Mari persiapkan masa depan Anda bersama program Intensif SNBT Bimbel Junior!
     author: 'Konsultan Pendidikan',
     category: 'Info Kampus',
     readTime: '3 menit baca',
-    image: '/images/blog_2.jpg'
+    image: `${cleanBaseUrl}images/blog_2.jpg`
   },
   {
     id: 'matematika-itu-menyenangkan',
@@ -85,7 +89,7 @@ Di Bimbel Junior, tutor-tutor kami menggunakan metode pembelajaran *Fun Math* ya
     author: 'Tim Matematika',
     category: 'Mata Pelajaran',
     readTime: '5 menit baca',
-    image: '/images/blog_3.jpg'
+    image: `${cleanBaseUrl}images/blog_3.jpg`
   },
   {
     id: 'pentingnya-bahasa-inggris',
@@ -112,7 +116,7 @@ Di program Reguler maupun Privat kami, materi Bahasa Inggris diajarkan dengan po
     author: 'Tutor Bahasa Inggris',
     category: 'Mata Pelajaran',
     readTime: '4 menit baca',
-    image: '/images/blog_4.jpg'
+    image: `${cleanBaseUrl}images/blog_4.jpg`
   },
   {
     id: 'manajemen-waktu-belajar',
@@ -142,7 +146,7 @@ Di Bimbel Junior, jadwal kami sangat fleksibel. Bagi Anda yang super sibuk, kela
     author: 'Psikolog Pendidikan',
     category: 'Tips Belajar',
     readTime: '5 menit baca',
-    image: '/images/blog_5.jpg'
+    image: `${cleanBaseUrl}images/blog_5.jpg`
   },
   {
     id: 'peran-orang-tua',
@@ -166,6 +170,6 @@ Bimbel Junior selalu mengirimkan laporan perkembangan siswa secara berkala kepad
     author: 'Konsultan Pendidikan',
     category: 'Tips Parenting',
     readTime: '4 menit baca',
-    image: '/images/blog_6.jpg'
+    image: `${cleanBaseUrl}images/blog_6.jpg`
   }
 ];

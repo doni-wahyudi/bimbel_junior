@@ -1,3 +1,7 @@
+const cleanBaseUrl = (import.meta.env.BASE_URL || '/').endsWith('/')
+  ? import.meta.env.BASE_URL || '/'
+  : `${import.meta.env.BASE_URL || '/'}/`;
+
 export const teamMembers = [
   {
     id: 1,
@@ -16,7 +20,7 @@ export const teamMembers = [
     ],
     motto: '"Pendidikan adalah kunci untuk membuka pintu emas kebebasan dan kesuksesan masa depan."',
     color: '#2D6CB4',
-    image: '/images/team/founder.png'
+    image: `${cleanBaseUrl}images/team/founder.png`
   },
   {
     id: 2,
@@ -34,7 +38,7 @@ export const teamMembers = [
     ],
     motto: '"Matematika bukan tentang menghafal rumus, tapi tentang memahami pola alam semesta."',
     color: '#10B981',
-    image: '/images/team/teacher1.png'
+    image: `${cleanBaseUrl}images/team/teacher1.png`
   },
   {
     id: 3,
@@ -53,7 +57,7 @@ export const teamMembers = [
     ],
     motto: '"Language is the road map of a culture. It tells you where its people come from and where they are going."',
     color: '#F59E0B',
-    image: '/images/team/teacher2.png'
+    image: `${cleanBaseUrl}images/team/teacher2.png`
   },
   {
     id: 4,
@@ -71,7 +75,7 @@ export const teamMembers = [
     ],
     motto: '"Sains adalah cara kita memahami bahasa penciptaan yang menakjubkan."',
     color: '#8B5CF6',
-    image: '/images/team/teacher3.png'
+    image: `${cleanBaseUrl}images/team/teacher3.png`
   },
   {
     id: 5,
@@ -89,6 +93,6 @@ export const teamMembers = [
     ],
     motto: '"Bahasa adalah cermin bangsa. Cintailah bahasamu, maka kamu mencintai identitasmu."',
     color: '#EC4899',
-    image: '/images/team/teacher4.png'
+    image: `${cleanBaseUrl}images/team/teacher4.png`
   }
 ];
