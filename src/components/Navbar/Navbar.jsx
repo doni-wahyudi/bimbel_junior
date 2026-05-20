@@ -100,7 +100,7 @@ export default function Navbar() {
             ))}
           </ul>
           <Link
-            to="/hubungi-kami"
+            to="/daftar"
             className="navbar__mobile-cta btn btn-primary btn-lg"
             onClick={() => setIsMobileOpen(false)}
           >
