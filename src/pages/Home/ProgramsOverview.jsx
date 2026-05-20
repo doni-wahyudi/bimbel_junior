@@ -33,7 +33,10 @@ export default function ProgramsOverview() {
 
             return (
               <AnimateOnScroll key={program.id} delay={index * 0.15}>
-                <div className="program-card">
+                <Link
+                  to={`/program#${program.id}`}
+                  className="program-card"
+                >
                   {program.isNew && (
                     <span className="program-card-badge">🆕 Baru!</span>
                   )}
@@ -70,16 +73,15 @@ export default function ProgramsOverview() {
                     </div>
                   </div>
 
-                  {/* Link */}
-                  <Link
-                    to={`/program#${program.id}`}
+                  {/* Link (Visual button only) */}
+                  <div
                     className="program-card-link"
                     style={{ color: program.color }}
                   >
                     Lihat Program Lengkap
                     <span className="program-card-link-arrow">→</span>
-                  </Link>
-                </div>
+                  </div>
+                </Link>
               </AnimateOnScroll>
             );
           })}

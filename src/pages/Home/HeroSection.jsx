@@ -37,7 +37,7 @@ export default function HeroSection() {
             </p>
 
             <div className="hero-buttons">
-              <Link to="/hubungi-kami" className="hero-btn-primary">
+              <Link to="/daftar" className="hero-btn-primary">
                 <GraduationCap size={20} />
                 Daftar Sekarang
               </Link>
