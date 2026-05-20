@@ -197,7 +197,7 @@ Di **Bimbel Junior**, kami menerapkan sistem kelas interaktif interdisipliner di
     author: 'Tim Akademik',
     category: 'Tips Belajar',
     readTime: '4 menit baca',
-    image: `${cleanBaseUrl}images/blog_7.png`
+    image: `${cleanBaseUrl}images/blog_1.jpg`
   },
   {
     id: 'menghadapi-ujian-tanpa-stres',
@@ -224,6 +224,6 @@ Program review intensif dan simulasi tryout berkala di **Bimbel Junior** diranca
     author: 'Konselor Pendidikan',
     category: 'Tips Belajar',
     readTime: '5 menit baca',
-    image: `${cleanBaseUrl}images/blog_8.png`
+    image: `${cleanBaseUrl}images/blog_5.jpg`
   }
 ];

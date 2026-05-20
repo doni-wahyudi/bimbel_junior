@@ -1,111 +1,7 @@
-// File ini dihasilkan secara otomatis oleh skrip parse_gallery.js
+// File ini dihasilkan secara otomatis oleh skrip parse_gallery.cjs
 export const galleryItems = [
   {
     "id": 1,
-    "category": "belajar",
-    "title": "Suasana belajar di kelas SD",
-    "gradient": "linear-gradient(135deg, #2D6CB4, #1B3A5C)",
-    "span": false,
-    "photo": "images/gallery/belajar_sd.png",
-    "description": "Kegiatan belajar mengajar untuk tingkat Sekolah Dasar berlangsung sangat interaktif. Pengajar menggunakan alat peraga yang menarik agar siswa lebih mudah memahami materi pelajaran seperti Matematika dan IPA.",
-    "date": "12 Mei 2026",
-    "location": "Kelas Cerdas, Lantai 1",
-    "isFeatured": true,
-    "jenjang": "Fasilitas & Prestasi"
-  },
-  {
-    "id": 2,
-    "category": "belajar",
-    "title": "Diskusi kelompok siswa SMP",
-    "gradient": "linear-gradient(135deg, #10B981, #059669)",
-    "span": true,
-    "photo": "images/gallery/belajar_smp.png",
-    "description": "Siswa SMP sedang melakukan Focus Group Discussion (FGD) untuk memecahkan soal-soal Sains tingkat lanjut. Metode ini terbukti melatih kolaborasi dan kekritisan berpikir siswa di masa pubertas.",
-    "date": "08 Mei 2026",
-    "location": "Kelas Kreatif, Lantai 2",
-    "isFeatured": true,
-    "jenjang": "Fasilitas & Prestasi"
-  },
-  {
-    "id": 3,
-    "category": "fasilitas",
-    "title": "Ruang belajar utama",
-    "gradient": "linear-gradient(135deg, #8B5CF6, #6D28D9)",
-    "span": false,
-    "photo": "images/gallery/fasilitas1.png",
-    "description": "Inilah ruang belajar utama kami yang dilengkapi dengan fasilitas AC, meja ergonomis, dan papan tulis pintar (smartboard) untuk mendukung kenyamanan visual dan fisik siswa selama sesi pembelajaran yang panjang.",
-    "date": "01 Jan 2026",
-    "location": "Bimbel Junior Pusat",
-    "isFeatured": true,
-    "jenjang": "Fasilitas & Prestasi"
-  },
-  {
-    "id": 4,
-    "category": "belajar",
-    "title": "Latihan soal bersama",
-    "gradient": "linear-gradient(135deg, #F59E0B, #D97706)",
-    "span": false,
-    "photo": "images/gallery/tutor.png",
-    "description": "Menjelang ujian tengah semester, siswa dikumpulkan untuk melakukan drilling latihan soal. Guru memberikan tips dan trik cepat agar siswa dapat mengatur waktu pengerjaan ujian dengan sangat efisien.",
-    "date": "20 Apr 2026",
-    "location": "Aula Belajar",
-    "isFeatured": true,
-    "jenjang": "Fasilitas & Prestasi"
-  },
-  {
-    "id": 5,
-    "category": "prestasi",
-    "title": "Siswa berprestasi semester 1",
-    "gradient": "linear-gradient(135deg, #EF4444, #DC2626)",
-    "span": true,
-    "photo": "images/gallery/prestasi1.png",
-    "description": "Pemberian penghargaan kepada para siswa peraih nilai tertinggi dalam Try Out Akbar Bimbel Junior semester pertama. Penghargaan ini bertujuan untuk terus memotivasi seluruh siswa agar rajin belajar dan berani bermimpi besar.",
-    "date": "15 Des 2025",
-    "location": "Auditorium Bimbel Junior",
-    "isFeatured": true,
-    "jenjang": "Fasilitas & Prestasi"
-  },
-  {
-    "id": 6,
-    "category": "fasilitas",
-    "title": "Area belajar nyaman",
-    "gradient": "linear-gradient(135deg, #14B8A6, #0D9488)",
-    "span": false,
-    "photo": "images/gallery/fasilitas1.png",
-    "description": "Selain ruang kelas formal, kami juga menyediakan area belajar bersantai (lounge). Di sini, siswa dapat membaca buku, berdiskusi santai, atau beristirahat menunggu sesi kelas selanjutnya dengan nyaman.",
-    "date": "01 Jan 2026",
-    "location": "Lounge Lantai 1",
-    "isFeatured": true,
-    "jenjang": "Fasilitas & Prestasi"
-  },
-  {
-    "id": 7,
-    "category": "belajar",
-    "title": "Sesi bimbingan privat",
-    "gradient": "linear-gradient(135deg, #6366F1, #4F46E5)",
-    "span": false,
-    "photo": "images/gallery/tutor.png",
-    "description": "Sesi bimbingan belajar privat satu-lawan-satu (1-on-1). Metode ini sangat cocok bagi siswa yang membutuhkan perhatian penuh untuk mengejar ketertinggalan atau fokus intensif pada topik spesifik yang dirasa sulit.",
-    "date": "10 Mei 2026",
-    "location": "Bilik Privat",
-    "isFeatured": true,
-    "jenjang": "Fasilitas & Prestasi"
-  },
-  {
-    "id": 8,
-    "category": "prestasi",
-    "title": "Peraih nilai tertinggi UAS",
-    "gradient": "linear-gradient(135deg, #EC4899, #DB2777)",
-    "span": true,
-    "photo": "images/gallery/prestasi1.png",
-    "description": "Kebanggaan luar biasa saat siswa-siswi kami berhasil memborong peringkat teratas pada Ujian Akhir Sekolah di sekolah masing-masing. Teruslah berprestasi dan banggakan orang tua kalian!",
-    "date": "20 Jun 2025",
-    "location": "Acara Kelulusan",
-    "isFeatured": true,
-    "jenjang": "Fasilitas & Prestasi"
-  },
-  {
-    "id": 31,
     "category": "belajar",
     "title": "Aktivitas Belajar SMP Kelas 8A",
     "photo": "images/gallery/22_5_26 8A.jpg",
@@ -113,10 +9,11 @@ export const galleryItems = [
     "date": "22 Mei 2026",
     "location": "Bimbel Junior (SMP Kelas 8A)",
     "jenjang": "SMP",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": true
   },
   {
-    "id": 32,
+    "id": 2,
     "category": "belajar",
     "title": "Aktivitas Belajar SMP Kelas 9C",
     "photo": "images/gallery/22_5_26 9C.jpg",
@@ -124,10 +21,11 @@ export const galleryItems = [
     "date": "22 Mei 2026",
     "location": "Bimbel Junior (SMP Kelas 9C)",
     "jenjang": "SMP",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": true
   },
   {
-    "id": 28,
+    "id": 3,
     "category": "belajar",
     "title": "Aktivitas Belajar SMP Kelas 9D",
     "photo": "images/gallery/21_5_26 9D.jpg",
@@ -135,10 +33,11 @@ export const galleryItems = [
     "date": "21 Mei 2026",
     "location": "Bimbel Junior (SMP Kelas 9D)",
     "jenjang": "SMP",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": true
   },
   {
-    "id": 19,
+    "id": 4,
     "category": "belajar",
     "title": "Aktivitas Belajar SMP Kelas 8A",
     "photo": "images/gallery/18_5_26 8A.jpg",
@@ -146,10 +45,11 @@ export const galleryItems = [
     "date": "18 Mei 2026",
     "location": "Bimbel Junior (SMP Kelas 8A)",
     "jenjang": "SMP",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": true
   },
   {
-    "id": 20,
+    "id": 5,
     "category": "belajar",
     "title": "Aktivitas Belajar SD Kelas 6",
     "photo": "images/gallery/18_5_26 SD6.jpg",
@@ -157,10 +57,11 @@ export const galleryItems = [
     "date": "18 Mei 2026",
     "location": "Bimbel Junior (SD Kelas 6)",
     "jenjang": "SD",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": true
   },
   {
-    "id": 16,
+    "id": 6,
     "category": "belajar",
     "title": "Klip Belajar SMP Kelas 7C",
     "photo": "images/gallery/12_5_26 7C.mp4",
@@ -168,10 +69,11 @@ export const galleryItems = [
     "date": "12 Mei 2026",
     "location": "Bimbel Junior (SMP Kelas 7C)",
     "jenjang": "SMP",
-    "isVideo": true
+    "isVideo": true,
+    "isFeatured": true
   },
   {
-    "id": 9,
+    "id": 7,
     "category": "belajar",
     "title": "Aktivitas Belajar SMP Kelas 7A",
     "photo": "images/gallery/11_5_26 7A.jpg",
@@ -179,10 +81,11 @@ export const galleryItems = [
     "date": "11 Mei 2026",
     "location": "Bimbel Junior (SMP Kelas 7A)",
     "jenjang": "SMP",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": true
   },
   {
-    "id": 10,
+    "id": 8,
     "category": "belajar",
     "title": "Aktivitas Belajar SMP Kelas 7B",
     "photo": "images/gallery/11_5_26 7B(1).jpg",
@@ -190,10 +93,11 @@ export const galleryItems = [
     "date": "11 Mei 2026",
     "location": "Bimbel Junior (SMP Kelas 7B)",
     "jenjang": "SMP",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": true
   },
   {
-    "id": 11,
+    "id": 9,
     "category": "belajar",
     "title": "Aktivitas Belajar SMP Kelas 7B",
     "photo": "images/gallery/11_5_26 7B(2).jpg",
@@ -201,10 +105,11 @@ export const galleryItems = [
     "date": "11 Mei 2026",
     "location": "Bimbel Junior (SMP Kelas 7B)",
     "jenjang": "SMP",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": false
   },
   {
-    "id": 12,
+    "id": 10,
     "category": "belajar",
     "title": "Aktivitas Belajar SMP Kelas 7B",
     "photo": "images/gallery/11_5_26 7B.jpg",
@@ -212,10 +117,11 @@ export const galleryItems = [
     "date": "11 Mei 2026",
     "location": "Bimbel Junior (SMP Kelas 7B)",
     "jenjang": "SMP",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": false
   },
   {
-    "id": 13,
+    "id": 11,
     "category": "belajar",
     "title": "Aktivitas Belajar SMP Kelas 8",
     "photo": "images/gallery/11_5_26 8.jpg",
@@ -223,10 +129,11 @@ export const galleryItems = [
     "date": "11 Mei 2026",
     "location": "Bimbel Junior (SMP Kelas 8)",
     "jenjang": "SMP",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": false
   },
   {
-    "id": 14,
+    "id": 12,
     "category": "belajar",
     "title": "Aktivitas Belajar SMP Kelas 8A",
     "photo": "images/gallery/11_5_26 8A.jpg",
@@ -234,10 +141,11 @@ export const galleryItems = [
     "date": "11 Mei 2026",
     "location": "Bimbel Junior (SMP Kelas 8A)",
     "jenjang": "SMP",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": false
   },
   {
-    "id": 15,
+    "id": 13,
     "category": "belajar",
     "title": "Aktivitas Belajar SD Kelas 6",
     "photo": "images/gallery/11_5_26 SD6.jpg",
@@ -245,10 +153,11 @@ export const galleryItems = [
     "date": "11 Mei 2026",
     "location": "Bimbel Junior (SD Kelas 6)",
     "jenjang": "SD",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": false
   },
   {
-    "id": 67,
+    "id": 14,
     "category": "belajar",
     "title": "Aktivitas Belajar SMP Kelas 7A",
     "photo": "images/gallery/6_5_26 7A.jpg",
@@ -256,10 +165,11 @@ export const galleryItems = [
     "date": "6 Mei 2026",
     "location": "Bimbel Junior (SMP Kelas 7A)",
     "jenjang": "SMP",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": false
   },
   {
-    "id": 68,
+    "id": 15,
     "category": "belajar",
     "title": "Aktivitas Belajar SMP Kelas 7BC",
     "photo": "images/gallery/6_5_26 7BC.jpg",
@@ -267,10 +177,11 @@ export const galleryItems = [
     "date": "6 Mei 2026",
     "location": "Bimbel Junior (SMP Kelas 7BC)",
     "jenjang": "SMP",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": false
   },
   {
-    "id": 69,
+    "id": 16,
     "category": "belajar",
     "title": "Aktivitas Belajar SMP Kelas 8",
     "photo": "images/gallery/6_5_26 8.jpg",
@@ -278,10 +189,11 @@ export const galleryItems = [
     "date": "6 Mei 2026",
     "location": "Bimbel Junior (SMP Kelas 8)",
     "jenjang": "SMP",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": false
   },
   {
-    "id": 70,
+    "id": 17,
     "category": "belajar",
     "title": "Aktivitas Belajar SMP Kelas 8A",
     "photo": "images/gallery/6_5_26 8A.jpg",
@@ -289,10 +201,11 @@ export const galleryItems = [
     "date": "6 Mei 2026",
     "location": "Bimbel Junior (SMP Kelas 8A)",
     "jenjang": "SMP",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": false
   },
   {
-    "id": 71,
+    "id": 18,
     "category": "belajar",
     "title": "Aktivitas Belajar SD Kelas 6",
     "photo": "images/gallery/6_5_26 SD6.jpg",
@@ -300,10 +213,11 @@ export const galleryItems = [
     "date": "6 Mei 2026",
     "location": "Bimbel Junior (SD Kelas 6)",
     "jenjang": "SD",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": false
   },
   {
-    "id": 60,
+    "id": 19,
     "category": "belajar",
     "title": "Aktivitas Belajar SMP Kelas 7A",
     "photo": "images/gallery/5_5_26 7A.jpg",
@@ -311,10 +225,11 @@ export const galleryItems = [
     "date": "5 Mei 2026",
     "location": "Bimbel Junior (SMP Kelas 7A)",
     "jenjang": "SMP",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": false
   },
   {
-    "id": 61,
+    "id": 20,
     "category": "belajar",
     "title": "Aktivitas Belajar SMP Kelas 7B",
     "photo": "images/gallery/5_5_26 7B.jpg",
@@ -322,10 +237,11 @@ export const galleryItems = [
     "date": "5 Mei 2026",
     "location": "Bimbel Junior (SMP Kelas 7B)",
     "jenjang": "SMP",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": false
   },
   {
-    "id": 62,
+    "id": 21,
     "category": "belajar",
     "title": "Aktivitas Belajar SMP Kelas 8",
     "photo": "images/gallery/5_5_26 8(1).jpg",
@@ -333,10 +249,11 @@ export const galleryItems = [
     "date": "5 Mei 2026",
     "location": "Bimbel Junior (SMP Kelas 8)",
     "jenjang": "SMP",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": false
   },
   {
-    "id": 63,
+    "id": 22,
     "category": "belajar",
     "title": "Aktivitas Belajar SMP Kelas 8",
     "photo": "images/gallery/5_5_26 8.jpg",
@@ -344,10 +261,11 @@ export const galleryItems = [
     "date": "5 Mei 2026",
     "location": "Bimbel Junior (SMP Kelas 8)",
     "jenjang": "SMP",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": false
   },
   {
-    "id": 64,
+    "id": 23,
     "category": "belajar",
     "title": "Aktivitas Belajar SMP Kelas 8A",
     "photo": "images/gallery/5_5_26 8A.jpg",
@@ -355,10 +273,11 @@ export const galleryItems = [
     "date": "5 Mei 2026",
     "location": "Bimbel Junior (SMP Kelas 8A)",
     "jenjang": "SMP",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": false
   },
   {
-    "id": 65,
+    "id": 24,
     "category": "belajar",
     "title": "Aktivitas Belajar SMP Kelas 9",
     "photo": "images/gallery/5_5_26 9.jpg",
@@ -366,10 +285,11 @@ export const galleryItems = [
     "date": "5 Mei 2026",
     "location": "Bimbel Junior (SMP Kelas 9)",
     "jenjang": "SMP",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": false
   },
   {
-    "id": 66,
+    "id": 25,
     "category": "belajar",
     "title": "Aktivitas Belajar SD Kelas 4",
     "photo": "images/gallery/5_5_26 SD4.jpg",
@@ -377,10 +297,11 @@ export const galleryItems = [
     "date": "5 Mei 2026",
     "location": "Bimbel Junior (SD Kelas 4)",
     "jenjang": "SD",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": false
   },
   {
-    "id": 56,
+    "id": 26,
     "category": "belajar",
     "title": "Aktivitas Belajar SMP Kelas 7C",
     "photo": "images/gallery/4_5_26 7C.jpg",
@@ -388,10 +309,11 @@ export const galleryItems = [
     "date": "4 Mei 2026",
     "location": "Bimbel Junior (SMP Kelas 7C)",
     "jenjang": "SMP",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": false
   },
   {
-    "id": 57,
+    "id": 27,
     "category": "belajar",
     "title": "Aktivitas Belajar SMP Kelas 9",
     "photo": "images/gallery/4_5_26 9.jpg",
@@ -399,10 +321,11 @@ export const galleryItems = [
     "date": "4 Mei 2026",
     "location": "Bimbel Junior (SMP Kelas 9)",
     "jenjang": "SMP",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": false
   },
   {
-    "id": 58,
+    "id": 28,
     "category": "belajar",
     "title": "Aktivitas Belajar SMP Kelas 9C",
     "photo": "images/gallery/4_5_26 9C.jpg",
@@ -410,10 +333,11 @@ export const galleryItems = [
     "date": "4 Mei 2026",
     "location": "Bimbel Junior (SMP Kelas 9C)",
     "jenjang": "SMP",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": false
   },
   {
-    "id": 59,
+    "id": 29,
     "category": "belajar",
     "title": "Aktivitas Belajar SD Kelas 6",
     "photo": "images/gallery/4_5_26 SD6.jpg",
@@ -421,10 +345,11 @@ export const galleryItems = [
     "date": "4 Mei 2026",
     "location": "Bimbel Junior (SD Kelas 6)",
     "jenjang": "SD",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": false
   },
   {
-    "id": 53,
+    "id": 30,
     "category": "belajar",
     "title": "Aktivitas Belajar SMP Kelas 9AB",
     "photo": "images/gallery/3_5_26 9AB.jpg",
@@ -432,10 +357,11 @@ export const galleryItems = [
     "date": "3 Mei 2026",
     "location": "Bimbel Junior (SMP Kelas 9AB)",
     "jenjang": "SMP",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": false
   },
   {
-    "id": 54,
+    "id": 31,
     "category": "belajar",
     "title": "Aktivitas Belajar SMP Kelas 9CD",
     "photo": "images/gallery/3_5_26 9CD.jpg",
@@ -443,10 +369,11 @@ export const galleryItems = [
     "date": "3 Mei 2026",
     "location": "Bimbel Junior (SMP Kelas 9CD)",
     "jenjang": "SMP",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": false
   },
   {
-    "id": 55,
+    "id": 32,
     "category": "belajar",
     "title": "Aktivitas Belajar SD Kelas 4",
     "photo": "images/gallery/3_5_26 SD4.jpg",
@@ -454,10 +381,11 @@ export const galleryItems = [
     "date": "3 Mei 2026",
     "location": "Bimbel Junior (SD Kelas 4)",
     "jenjang": "SD",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": false
   },
   {
-    "id": 51,
+    "id": 33,
     "category": "belajar",
     "title": "Aktivitas Belajar SMP Kelas 7A",
     "photo": "images/gallery/30_4_26 7A.jpg",
@@ -465,10 +393,11 @@ export const galleryItems = [
     "date": "30 Apr 2026",
     "location": "Bimbel Junior (SMP Kelas 7A)",
     "jenjang": "SMP",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": false
   },
   {
-    "id": 52,
+    "id": 34,
     "category": "belajar",
     "title": "Aktivitas Belajar SMP Kelas 7BC",
     "photo": "images/gallery/30_4_26 7BC.jpg",
@@ -476,10 +405,11 @@ export const galleryItems = [
     "date": "30 Apr 2026",
     "location": "Bimbel Junior (SMP Kelas 7BC)",
     "jenjang": "SMP",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": false
   },
   {
-    "id": 48,
+    "id": 35,
     "category": "belajar",
     "title": "Aktivitas Belajar SMP Kelas 8",
     "photo": "images/gallery/29_4_26 8.jpg",
@@ -487,10 +417,11 @@ export const galleryItems = [
     "date": "29 Apr 2026",
     "location": "Bimbel Junior (SMP Kelas 8)",
     "jenjang": "SMP",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": false
   },
   {
-    "id": 49,
+    "id": 36,
     "category": "belajar",
     "title": "Aktivitas Belajar SMP Kelas 8A",
     "photo": "images/gallery/29_4_26 8A.jpg",
@@ -498,10 +429,11 @@ export const galleryItems = [
     "date": "29 Apr 2026",
     "location": "Bimbel Junior (SMP Kelas 8A)",
     "jenjang": "SMP",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": false
   },
   {
-    "id": 50,
+    "id": 37,
     "category": "belajar",
     "title": "Aktivitas Belajar SD Kelas 6",
     "photo": "images/gallery/29_4_26 SD6.jpg",
@@ -509,10 +441,11 @@ export const galleryItems = [
     "date": "29 Apr 2026",
     "location": "Bimbel Junior (SD Kelas 6)",
     "jenjang": "SD",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": false
   },
   {
-    "id": 43,
+    "id": 38,
     "category": "belajar",
     "title": "Aktivitas Belajar SMP Kelas 7A",
     "photo": "images/gallery/28_4_26 7A(1).jpg",
@@ -520,10 +453,11 @@ export const galleryItems = [
     "date": "28 Apr 2026",
     "location": "Bimbel Junior (SMP Kelas 7A)",
     "jenjang": "SMP",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": false
   },
   {
-    "id": 44,
+    "id": 39,
     "category": "belajar",
     "title": "Aktivitas Belajar SMP Kelas 7A",
     "photo": "images/gallery/28_4_26 7A.jpg",
@@ -531,10 +465,11 @@ export const galleryItems = [
     "date": "28 Apr 2026",
     "location": "Bimbel Junior (SMP Kelas 7A)",
     "jenjang": "SMP",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": false
   },
   {
-    "id": 45,
+    "id": 40,
     "category": "belajar",
     "title": "Aktivitas Belajar SMP Kelas 7C",
     "photo": "images/gallery/28_4_26 7C(1).jpg",
@@ -542,10 +477,11 @@ export const galleryItems = [
     "date": "28 Apr 2026",
     "location": "Bimbel Junior (SMP Kelas 7C)",
     "jenjang": "SMP",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": false
   },
   {
-    "id": 46,
+    "id": 41,
     "category": "belajar",
     "title": "Aktivitas Belajar SMP Kelas 7C",
     "photo": "images/gallery/28_4_26 7C.jpg",
@@ -553,10 +489,11 @@ export const galleryItems = [
     "date": "28 Apr 2026",
     "location": "Bimbel Junior (SMP Kelas 7C)",
     "jenjang": "SMP",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": false
   },
   {
-    "id": 47,
+    "id": 42,
     "category": "belajar",
     "title": "Aktivitas Belajar SD Kelas 4",
     "photo": "images/gallery/28_4_26 SD4.jpg",
@@ -564,10 +501,11 @@ export const galleryItems = [
     "date": "28 Apr 2026",
     "location": "Bimbel Junior (SD Kelas 4)",
     "jenjang": "SD",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": false
   },
   {
-    "id": 38,
+    "id": 43,
     "category": "belajar",
     "title": "Aktivitas Belajar SMP Kelas 7B",
     "photo": "images/gallery/27_4_26 7B.jpg",
@@ -575,10 +513,11 @@ export const galleryItems = [
     "date": "27 Apr 2026",
     "location": "Bimbel Junior (SMP Kelas 7B)",
     "jenjang": "SMP",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": false
   },
   {
-    "id": 39,
+    "id": 44,
     "category": "belajar",
     "title": "Aktivitas Belajar SMP Kelas 8A",
     "photo": "images/gallery/27_4_26 8A.jpg",
@@ -586,10 +525,11 @@ export const galleryItems = [
     "date": "27 Apr 2026",
     "location": "Bimbel Junior (SMP Kelas 8A)",
     "jenjang": "SMP",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": false
   },
   {
-    "id": 40,
+    "id": 45,
     "category": "belajar",
     "title": "Aktivitas Belajar SMP Kelas 9AB",
     "photo": "images/gallery/27_4_26 9AB.jpg",
@@ -597,10 +537,11 @@ export const galleryItems = [
     "date": "27 Apr 2026",
     "location": "Bimbel Junior (SMP Kelas 9AB)",
     "jenjang": "SMP",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": false
   },
   {
-    "id": 41,
+    "id": 46,
     "category": "belajar",
     "title": "Aktivitas Belajar SMP Kelas 9C",
     "photo": "images/gallery/27_4_26 9C.jpg",
@@ -608,10 +549,11 @@ export const galleryItems = [
     "date": "27 Apr 2026",
     "location": "Bimbel Junior (SMP Kelas 9C)",
     "jenjang": "SMP",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": false
   },
   {
-    "id": 42,
+    "id": 47,
     "category": "belajar",
     "title": "Aktivitas Belajar SD Kelas 6",
     "photo": "images/gallery/27_4_26 SD6.jpg",
@@ -619,10 +561,11 @@ export const galleryItems = [
     "date": "27 Apr 2026",
     "location": "Bimbel Junior (SD Kelas 6)",
     "jenjang": "SD",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": false
   },
   {
-    "id": 36,
+    "id": 48,
     "category": "belajar",
     "title": "Aktivitas Belajar SMP Kelas 8",
     "photo": "images/gallery/24_4_26 8.jpg",
@@ -630,10 +573,11 @@ export const galleryItems = [
     "date": "24 Apr 2026",
     "location": "Bimbel Junior (SMP Kelas 8)",
     "jenjang": "SMP",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": false
   },
   {
-    "id": 37,
+    "id": 49,
     "category": "belajar",
     "title": "Aktivitas Belajar SMP Kelas 9AB",
     "photo": "images/gallery/24_4_26 9AB.jpg",
@@ -641,10 +585,11 @@ export const galleryItems = [
     "date": "24 Apr 2026",
     "location": "Bimbel Junior (SMP Kelas 9AB)",
     "jenjang": "SMP",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": false
   },
   {
-    "id": 33,
+    "id": 50,
     "category": "belajar",
     "title": "Aktivitas Belajar SMP Kelas 7B",
     "photo": "images/gallery/23_4_26 7B.jpg",
@@ -652,10 +597,11 @@ export const galleryItems = [
     "date": "23 Apr 2026",
     "location": "Bimbel Junior (SMP Kelas 7B)",
     "jenjang": "SMP",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": false
   },
   {
-    "id": 34,
+    "id": 51,
     "category": "belajar",
     "title": "Aktivitas Belajar SMP Kelas 7C",
     "photo": "images/gallery/23_4_26 7C.jpg",
@@ -663,10 +609,11 @@ export const galleryItems = [
     "date": "23 Apr 2026",
     "location": "Bimbel Junior (SMP Kelas 7C)",
     "jenjang": "SMP",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": false
   },
   {
-    "id": 35,
+    "id": 52,
     "category": "belajar",
     "title": "Aktivitas Belajar SMP Kelas 9D",
     "photo": "images/gallery/23_4_26 9D.jpg",
@@ -674,10 +621,11 @@ export const galleryItems = [
     "date": "23 Apr 2026",
     "location": "Bimbel Junior (SMP Kelas 9D)",
     "jenjang": "SMP",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": false
   },
   {
-    "id": 29,
+    "id": 53,
     "category": "belajar",
     "title": "Aktivitas Belajar SMP Kelas 8",
     "photo": "images/gallery/22_4_26 8.jpg",
@@ -685,10 +633,11 @@ export const galleryItems = [
     "date": "22 Apr 2026",
     "location": "Bimbel Junior (SMP Kelas 8)",
     "jenjang": "SMP",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": false
   },
   {
-    "id": 30,
+    "id": 54,
     "category": "belajar",
     "title": "Aktivitas Belajar SD Kelas 6",
     "photo": "images/gallery/22_4_26 SD6.jpg",
@@ -696,10 +645,11 @@ export const galleryItems = [
     "date": "22 Apr 2026",
     "location": "Bimbel Junior (SD Kelas 6)",
     "jenjang": "SD",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": false
   },
   {
-    "id": 25,
+    "id": 55,
     "category": "belajar",
     "title": "Aktivitas Belajar SMP Kelas 7A",
     "photo": "images/gallery/21_4_26 7A.jpg",
@@ -707,10 +657,11 @@ export const galleryItems = [
     "date": "21 Apr 2026",
     "location": "Bimbel Junior (SMP Kelas 7A)",
     "jenjang": "SMP",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": false
   },
   {
-    "id": 26,
+    "id": 56,
     "category": "belajar",
     "title": "Aktivitas Belajar SMP Kelas 7C",
     "photo": "images/gallery/21_4_26 7C.jpg",
@@ -718,10 +669,11 @@ export const galleryItems = [
     "date": "21 Apr 2026",
     "location": "Bimbel Junior (SMP Kelas 7C)",
     "jenjang": "SMP",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": false
   },
   {
-    "id": 27,
+    "id": 57,
     "category": "belajar",
     "title": "Aktivitas Belajar SD Kelas 4",
     "photo": "images/gallery/21_4_26 SD4.jpg",
@@ -729,10 +681,11 @@ export const galleryItems = [
     "date": "21 Apr 2026",
     "location": "Bimbel Junior (SD Kelas 4)",
     "jenjang": "SD",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": false
   },
   {
-    "id": 21,
+    "id": 58,
     "category": "belajar",
     "title": "Aktivitas Belajar SMP Kelas 7B",
     "photo": "images/gallery/20_4_26 7B.jpg",
@@ -740,10 +693,11 @@ export const galleryItems = [
     "date": "20 Apr 2026",
     "location": "Bimbel Junior (SMP Kelas 7B)",
     "jenjang": "SMP",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": false
   },
   {
-    "id": 22,
+    "id": 59,
     "category": "belajar",
     "title": "Aktivitas Belajar SMP Kelas 9AB",
     "photo": "images/gallery/20_4_26 9AB(1).jpg",
@@ -751,10 +705,11 @@ export const galleryItems = [
     "date": "20 Apr 2026",
     "location": "Bimbel Junior (SMP Kelas 9AB)",
     "jenjang": "SMP",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": false
   },
   {
-    "id": 23,
+    "id": 60,
     "category": "belajar",
     "title": "Aktivitas Belajar SMP Kelas 9AB",
     "photo": "images/gallery/20_4_26 9AB.jpg",
@@ -762,10 +717,11 @@ export const galleryItems = [
     "date": "20 Apr 2026",
     "location": "Bimbel Junior (SMP Kelas 9AB)",
     "jenjang": "SMP",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": false
   },
   {
-    "id": 24,
+    "id": 61,
     "category": "belajar",
     "title": "Aktivitas Belajar SMP Kelas 9C-WA0008",
     "photo": "images/gallery/20_4_26 9C-WA0008.jpg",
@@ -773,10 +729,11 @@ export const galleryItems = [
     "date": "20 Apr 2026",
     "location": "Bimbel Junior (SMP Kelas 9C-WA0008)",
     "jenjang": "SMP",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": false
   },
   {
-    "id": 17,
+    "id": 62,
     "category": "belajar",
     "title": "Aktivitas Belajar SMP Kelas 7BC",
     "photo": "images/gallery/16_4_26 7BC.jpg",
@@ -784,10 +741,11 @@ export const galleryItems = [
     "date": "16 Apr 2026",
     "location": "Bimbel Junior (SMP Kelas 7BC)",
     "jenjang": "SMP",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": false
   },
   {
-    "id": 18,
+    "id": 63,
     "category": "belajar",
     "title": "Aktivitas Belajar SMP Kelas 9D",
     "photo": "images/gallery/16_4_26 9D.jpg",
@@ -795,6 +753,7 @@ export const galleryItems = [
     "date": "16 Apr 2026",
     "location": "Bimbel Junior (SMP Kelas 9D)",
     "jenjang": "SMP",
-    "isVideo": false
+    "isVideo": false,
+    "isFeatured": false
   }
 ];

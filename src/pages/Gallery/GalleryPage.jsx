@@ -26,7 +26,7 @@ const gridCategories = [
   { key: 'semua', label: 'Semua Aktivitas' },
   { key: 'SD', label: 'Tingkat SD' },
   { key: 'SMP', label: 'Tingkat SMP' },
-  { key: 'highlight', label: 'Fasilitas & Prestasi' }
+  { key: 'highlight', label: 'Sorotan Utama' }
 ];
 
 const categoryLabels = {
