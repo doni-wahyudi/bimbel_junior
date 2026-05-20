@@ -602,29 +602,69 @@
   }
 
   .gallery-lightbox__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    max-height: 100vh;
     padding: var(--space-md);
+    box-sizing: border-box;
   }
 
   .gallery-lightbox__card {
-    /* Allow natural height on mobile */
+    max-height: 60vh;
+    overflow-y: auto;
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 80px; /* Space for bottom navigation */
+  }
+
+  .gallery-lightbox__img {
+    max-height: 35vh;
+    width: 100%;
+    object-fit: contain;
+  }
+
+  .gallery-lightbox__card-caption {
+    padding: var(--space-md);
+    gap: var(--space-xs);
+  }
+
+  .gallery-lightbox__fallback {
+    min-height: 250px;
+    padding: var(--space-lg);
   }
 
   .gallery-lightbox__close {
-    top: -48px;
+    position: absolute;
+    top: var(--space-md);
     right: var(--space-md);
+    z-index: 10;
   }
 
   .gallery-lightbox__nav {
-    width: 40px;
-    height: 40px;
+    position: absolute;
+    top: auto;
+    bottom: var(--space-lg);
+    transform: none;
+    width: 44px;
+    height: 44px;
+    z-index: 10;
   }
 
   .gallery-lightbox__nav--prev {
-    left: var(--space-xs);
+    left: calc(50% - 85px);
   }
 
   .gallery-lightbox__nav--next {
-    right: var(--space-xs);
+    right: calc(50% - 85px);
+  }
+
+  .gallery-lightbox__counter {
+    bottom: calc(var(--space-lg) + 12px);
+    z-index: 10;
   }
 }
 
