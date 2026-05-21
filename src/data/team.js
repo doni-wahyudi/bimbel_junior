@@ -85,21 +85,7 @@ export const teamMembers = [
     image: null,
     certified: true
   },
-  {
-    id: 5,
-    name: 'Fithriya Wahidah, S.Pd.',
-    role: 'Guru Matematika SMP',
-    subjects: 'Matematika',
-    bio: 'Guru Matematika SMP dengan gelar S1 Matematika. Mengajar dengan pendekatan yang membuat konsep matematika mudah dipahami.',
-    longBio: 'Ibu Fithriya Wahidah adalah pengajar Matematika khusus jenjang SMP di Bimbel Junior. Dengan latar belakang S1 Matematika, beliau fokus membantu siswa memahami konsep aljabar, geometri, dan statistika secara mendalam agar melampaui KKM di sekolah mereka.',
-    education: [
-      'S1 Matematika'
-    ],
-    achievements: [],
-    color: '#8B5CF6',
-    image: null,
-    certified: false
-  },
+
   {
     id: 6,
     name: 'Ratih Pratiwi Asri, S.Pd.',
@@ -135,21 +121,7 @@ export const teamMembers = [
     image: null,
     certified: false
   },
-  {
-    id: 8,
-    name: 'Ria Agustina, S.Pd.',
-    role: 'Guru Bahasa Indonesia',
-    subjects: 'Bahasa Indonesia',
-    bio: 'Guru Bahasa Indonesia dengan gelar S1 Bahasa Indonesia. Berpengalaman membimbing siswa dalam literasi dan penulisan.',
-    longBio: 'Ibu Ria Agustina mengajar Bahasa Indonesia di Bimbel Junior. Dengan latar belakang S1 Bahasa Indonesia, beliau membantu siswa memahami ejaan, tata bahasa, pemahaman bacaan, dan kemampuan menulis secara komprehensif.',
-    education: [
-      'S1 Bahasa Indonesia'
-    ],
-    achievements: [],
-    color: '#EF4444',
-    image: null,
-    certified: false
-  },
+
   {
     id: 9,
     name: 'Faizah Zahratun Nissa',
@@ -227,12 +199,17 @@ export const teamMembers = [
     name: 'Muhammad Fathur Rahman, S.Pd.',
     role: 'Guru Kelas / Tutor Matematika & Sains',
     subjects: 'Matematika & IPA',
-    bio: 'Tutor Matematika dan IPA di Bimbel Junior dengan pendekatan pembelajaran interaktif dan aplikatif.',
-    longBio: 'Pak Muhammad Fathur Rahman adalah pengajar Matematika dan IPA untuk jenjang SD dan SMP di Bimbel Junior. Beliau memiliki dedikasi tinggi dalam menyederhanakan konsep sains dan matematika agar mudah dipahami, menyenangkan, dan relevan dengan kurikulum sekolah terbaru.',
+    bio: 'Tutor Matematika dan IPA berpengalaman lulusan S1 Pendidikan Matematika UHAMKA. Mengajar dengan metode interaktif untuk jenjang SD, SMP, dan SMA.',
+    longBio: 'Pak Muhammad Fathur Rahman adalah tutor Matematika dan IPA untuk jenjang SD dan SMP di Bimbel Junior. Lulusan S1 Pendidikan Matematika dari UHAMKA, beliau memiliki pengalaman mengajar yang luas di berbagai institusi seperti SMA Nurul Falah, SMK Dharma Putra 1, SMP Tunas, SMAN 18 Jakarta, dan Primagama. Dengan keahliannya di bidang matematika dan sains, beliau mampu menyederhanakan materi agar mudah dipahami, menyenangkan, dan relevan dengan kebutuhan siswa.',
     education: [
-      'S1 Pendidikan'
+      'S1 Pendidikan Matematika – UHAMKA (2015–2019)'
     ],
-    achievements: [],
+    achievements: [
+      'Guru Matematika di SMA Nurul Falah Jakarta (2023–sekarang)',
+      'Guru Matematika, Fisika, & Kimia di SMK Dharma Putra 1 Jakarta (2018–2022)',
+      'Guru Matematika di SMP Tunas (2017–2018)',
+      'Tutor Matematika di Primagama (2016)'
+    ],
     color: '#3B82F6',
     image: cleanBaseUrl + 'images/teacher/Muhammad Fathur Rahman.png',
     certified: false
