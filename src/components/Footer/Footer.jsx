@@ -27,7 +27,7 @@ export default function Footer() {
                   height="50"
                 />
                 <span className="footer__logo-text">
-                  Junior <strong>BIMBEL</strong>
+                  <strong>JUNIOR</strong> BIMBEL
                 </span>
               </Link>
               <div className="footer__tagline">Cerdaskan Generasi Bangsa</div>

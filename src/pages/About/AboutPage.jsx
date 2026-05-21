@@ -98,13 +98,13 @@ export default function AboutPage() {
       id: 'matematika',
       title: 'Tutor Matematika & Guru Kelas',
       desc: 'Tutor ahli matematika, konsep berhitung cepat, dan kurikulum tematik SD',
-      members: teamMembers.filter(m => m.id === 5 || m.id === 7 || m.id === 9)
+      members: teamMembers.filter(m => m.id === 5 || m.id === 7 || m.id === 9 || m.id === 13)
     },
     {
       id: 'ipa',
       title: 'Tutor Sains / IPA',
       desc: 'Tutor IPA Terpadu dan Sains Eksperimental jenjang SD-SMP',
-      members: teamMembers.filter(m => m.id === 2 || m.id === 3)
+      members: teamMembers.filter(m => m.id === 2 || m.id === 3 || m.id === 13)
     },
     {
       id: 'inggris',

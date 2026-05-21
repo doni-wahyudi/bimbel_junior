@@ -755,5 +755,89 @@ export const galleryItems = [
     "jenjang": "SMP",
     "isVideo": false,
     "isFeatured": false
+  },
+  {
+    "id": 64,
+    "category": "outing",
+    "title": "Kebersamaan Outing Bimbel Junior",
+    "photo": "images/gallery/outing/WhatsApp Image 2026-05-21 at 7.25.49 PM.jpeg",
+    "description": "Keceriaan dan kebersamaan seluruh siswa serta staf pengajar Bimbel Junior dalam acara outing dan rekreasi bersama.",
+    "date": "21 Mei 2026",
+    "location": "Outing Area",
+    "jenjang": "Semua Jenjang",
+    "isVideo": false,
+    "isFeatured": false
+  },
+  {
+    "id": 65,
+    "category": "outing",
+    "title": "Bermain Wahana Air Seru",
+    "photo": "images/gallery/outing/WhatsApp Image 2026-05-21 at 7.25.49 PM (1).jpeg",
+    "description": "Siswa-siswi sangat menikmati bermain air di kolam renang yang seru selama rekreasi outing tahunan.",
+    "date": "21 Mei 2026",
+    "location": "Area Kolam Renang",
+    "jenjang": "Semua Jenjang",
+    "isVideo": false,
+    "isFeatured": false
+  },
+  {
+    "id": 66,
+    "category": "outing",
+    "title": "Momen Kebersamaan Siswa",
+    "photo": "images/gallery/outing/WhatsApp Image 2026-05-21 at 7.25.49 PM (2).jpeg",
+    "description": "Membangun tali silaturahmi dan keakraban antar siswa dari berbagai kelas dan jenjang bimbingan.",
+    "date": "21 Mei 2026",
+    "location": "Outing Area",
+    "jenjang": "Semua Jenjang",
+    "isVideo": false,
+    "isFeatured": false
+  },
+  {
+    "id": 67,
+    "category": "outing",
+    "title": "Foto Bersama Outing Cerita Indah",
+    "photo": "images/gallery/outing/WhatsApp Image 2026-05-21 at 7.25.50 PM.jpeg",
+    "description": "Foto bersama mengabadikan kenangan manis perjalanan rekreasi dan edukasi luar ruangan Bimbel Junior.",
+    "date": "21 Mei 2026",
+    "location": "Outing Area",
+    "jenjang": "Semua Jenjang",
+    "isVideo": false,
+    "isFeatured": false
+  },
+  {
+    "id": 68,
+    "category": "outing",
+    "title": "Aktivitas Outdoor Penuh Semangat",
+    "photo": "images/gallery/outing/WhatsApp Image 2026-05-21 at 7.25.50 PM (1).jpeg",
+    "description": "Berbagai aktivitas luar ruangan yang melatih kerja sama tim dan kemandirian siswa secara menyenangkan.",
+    "date": "21 Mei 2026",
+    "location": "Outing Area",
+    "jenjang": "Semua Jenjang",
+    "isVideo": false,
+    "isFeatured": false
+  },
+  {
+    "id": 69,
+    "category": "outing",
+    "title": "Canda Tawa Siswa Rekreasi",
+    "photo": "images/gallery/outing/WhatsApp Image 2026-05-21 at 7.25.50 PM (2).jpeg",
+    "description": "Ekspresi gembira dan tawa lepas para siswa saat menikmati santap bersama di gazebo rekreasi.",
+    "date": "21 Mei 2026",
+    "location": "Outing Area Gazebo",
+    "jenjang": "Semua Jenjang",
+    "isVideo": false,
+    "isFeatured": false
+  },
+  {
+    "id": 70,
+    "category": "outing",
+    "title": "Kenangan Manis Outing Tahunan",
+    "photo": "images/gallery/outing/WhatsApp Image 2026-05-21 at 7.25.51 PM.jpeg",
+    "description": "Kebersamaan yang tak terlupakan untuk memulihkan energi dan motivasi belajar sebelum kembali ke rutinitas akademik kelas.",
+    "date": "21 Mei 2026",
+    "location": "Outing Area",
+    "jenjang": "Semua Jenjang",
+    "isVideo": false,
+    "isFeatured": false
   }
 ];

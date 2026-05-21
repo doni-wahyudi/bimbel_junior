@@ -66,18 +66,19 @@ The following modules and pages have been completely deleted from the active cod
 * **Bigger Logo Layout**: Increased header logo image container size from `40px` to `54px` in `Navbar.css` and set HTML dimensions to `54` inside `Navbar.jsx` to make it prominent and beautiful. Increased footer logo image to `50px`.
 * **Favicon Integration**: Updated `index.html`'s `<link rel="icon">` reference to `/images/Logo Junior Bimbel.png` so the browser tab matches the new brand identity.
 
-### E. Compact Hero Slider System (`src/pages/Home/HeroSection.jsx`, `src/pages/Home/HeroSection.css`)
+### E. Spacious & Enlarged Hero Slider System (`src/pages/Home/HeroSection.jsx`, `src/pages/Home/HeroSection.css`)
 * **Automatic Slider Without Nav**: Built a clean, zero-navigation React slider that loops through `13.jpg.jpeg`, `14.jpg.jpeg`, and `15.jpg.jpeg` images in the `public/images/hero/` folder every 4 seconds.
-* **Overlapping Cross-fade**: Used absolute positioning within the `.hero-image-wrapper` (along with `aspect-ratio: 4 / 3` and `max-width: 380px` boundaries) and styled `opacity: 0; transition: opacity 0.8s ease-in-out` on `.hero-image` so slides overlap and cross-fade dynamically without nav buttons or layout shifts.
-* **Compact Single-Viewport Hero Layout**: Shrank vertical margins/paddings across elements to ensure the **Value Stats Bar** (`hero-stats`) fits entirely within one desktop viewport height without requiring vertical scrolling:
-  - Shrank `.hero` padding-top to `calc(var(--navbar-height) + 0.5rem)` and padding-bottom to `0.5rem`.
-  - Reduced `.hero-content` vertical padding to `var(--space-xs) 0` (extremely compact).
-  - Shrank `.hero-image-wrapper` max-width to `380px` (which scales height down to `285px` because of the `4/3` aspect ratio).
-  - Decreased `.hero-title` font-size to a super clean responsive `clamp(2rem, 3.8vw, 2.75rem)` and margin-bottom to `var(--space-xs)`.
-  - Shrank `.hero-subtitle` to `var(--text-sm)` and margin-bottom to `var(--space-sm)`.
-  - Shrank hero button padding to `0.75rem 1.5rem` and font-size to `var(--text-sm)`.
-  - Shrank `.hero-stats` margin-top to `var(--space-sm)` and padding-bottom to `0`.
-  - Shrank `.hero-stats-bar` padding to `0.75rem 1.25rem` and reduced individual stats card icons to `38px` and labels to clean base fonts, making the bar extremely low-profile and beautifully cohesive.
+* **Overlapping Cross-fade**: Used absolute positioning within the `.hero-image-wrapper` (along with `aspect-ratio: 4 / 3` and `max-width: 520px` boundaries) and styled `opacity: 0; transition: opacity 0.8s ease-in-out` on `.hero-image` so slides overlap and cross-fade dynamically without nav buttons or layout shifts.
+* **Generous Grand Hero Layout**: Enlarged all vertical margins, padding, typography, and element spacing to give the homepage a bold, premium, and professional first impression:
+  - Set `.hero` min-height to `80vh` and padding to `calc(var(--navbar-height) + var(--space-3xl))` top, `var(--space-3xl)` bottom for deep breathing room.
+  - Set `.hero-content` to a wider `1.15fr 0.85fr` layout with `padding: var(--space-xl) 0` and `gap: var(--space-3xl)`.
+  - Scaled `.hero-badge` to `font-size: var(--text-sm)` and `padding: 0.5rem 1.15rem`.
+  - Enlarged `.hero-title` to a grand responsive `clamp(2.5rem, 5.2vw, 4.25rem)` with `margin-bottom: var(--space-md)`.
+  - Scaled `.hero-subtitle` to `font-size: var(--text-lg)`, `line-height: 1.6`, and `margin-bottom: var(--space-xl)`.
+  - Enlarged primary and secondary buttons to `padding: 1.1rem 2.2rem`, `font-size: var(--text-base)`, and `border-radius: var(--radius-xl)`.
+  - Scaled `.hero-stats` margin-top to `var(--space-2xl)`.
+  - Expanded `.hero-stats-bar` with `padding: 1.5rem 2rem` and `gap: var(--space-xl)`.
+  - Scaled up stat icons to `50px` (with `22px` SVG inside) and set value numbers to a bold `var(--text-2xl)` for outstanding visibility and visual weight.
 
 ### F. Teacher Profile Details Layout Refinement (`src/pages/About/TeacherProfilePage.jsx`, `src/pages/About/TeacherProfilePage.css`)
 * **Quotation Card Removal**: Completely removed the quotation/motto card (`.teacher-profile__quote-card`) from the bottom of the left bio column (`teacher-profile__main`).

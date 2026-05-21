@@ -24,6 +24,7 @@ import './GalleryPage.css';
 
 const gridCategories = [
   { key: 'semua', label: 'Semua Aktivitas' },
+  { key: 'outing', label: 'Outing & Rekreasi' },
   { key: 'SD', label: 'Tingkat SD' },
   { key: 'SMP', label: 'Tingkat SMP' },
   { key: 'highlight', label: 'Sorotan Utama' }
@@ -32,13 +33,14 @@ const gridCategories = [
 const categoryLabels = {
   belajar: 'Kegiatan Belajar',
   fasilitas: 'Fasilitas',
-  prestasi: 'Prestasi'
+  prestasi: 'Prestasi',
+  outing: 'Outing & Rekreasi'
 };
 
 export default function GalleryPage() {
   const [activeFilter, setActiveFilter] = useState('semua');
   const [selectedIndex, setSelectedIndex] = useState(null);
-  const [lightboxSource, setLightboxSource] = useState('grid'); // 'featured' or 'grid'
+  const [lightboxSource, setLightboxSource] = useState('grid'); // 'featured', 'outing', or 'grid'
   const [visibleCount, setVisibleCount] = useState(12);
 
   const scrollRef1 = useRef(null);
@@ -51,9 +53,15 @@ export default function GalleryPage() {
     return galleryItems.filter((item) => item.isFeatured);
   }, []);
 
+  // Outing items for the bottom scrolling filmstrip
+  const outingItems = useMemo(() => {
+    return galleryItems.filter((item) => item.category === 'outing');
+  }, []);
+
   // Filtered items for the main grid
   const filteredGridItems = useMemo(() => {
     if (activeFilter === 'semua') return galleryItems;
+    if (activeFilter === 'outing') return galleryItems.filter((item) => item.category === 'outing');
     if (activeFilter === 'SD') return galleryItems.filter((item) => item.jenjang === 'SD');
     if (activeFilter === 'SMP') return galleryItems.filter((item) => item.jenjang === 'SMP');
     if (activeFilter === 'highlight') return galleryItems.filter((item) => item.isFeatured);
@@ -101,7 +109,7 @@ export default function GalleryPage() {
       animationFrameId = requestAnimationFrame(scroll);
     };
 
-    if (featuredItems.length > 0) {
+    if (featuredItems.length > 0 || outingItems.length > 0) {
       if (scrollContainer2 && scrollContainer2.scrollLeft === 0) {
         scrollContainer2.scrollLeft = scrollContainer2.scrollWidth;
         scrollPos2 = scrollContainer2.scrollWidth;
@@ -110,10 +118,15 @@ export default function GalleryPage() {
     }
 
     return () => cancelAnimationFrame(animationFrameId);
-  }, [isHovered1, isHovered2, featuredItems]);
+  }, [isHovered1, isHovered2, featuredItems, outingItems]);
 
   const openLightboxFromFeatured = (index) => {
     setLightboxSource('featured');
+    setSelectedIndex(index);
+  };
+
+  const openLightboxFromOuting = (index) => {
+    setLightboxSource('outing');
     setSelectedIndex(index);
   };
 
@@ -125,8 +138,10 @@ export default function GalleryPage() {
   const closeLightbox = () => setSelectedIndex(null);
 
   const activeItemsList = useMemo(() => {
-    return lightboxSource === 'featured' ? featuredItems : filteredGridItems;
-  }, [lightboxSource, featuredItems, filteredGridItems]);
+    if (lightboxSource === 'featured') return featuredItems;
+    if (lightboxSource === 'outing') return outingItems;
+    return filteredGridItems;
+  }, [lightboxSource, featuredItems, outingItems, filteredGridItems]);
 
   const goNext = useCallback(() => {
     if (selectedIndex === null) return;
@@ -272,7 +287,7 @@ export default function GalleryPage() {
           </div>
 
           {/* Row 2: Reverse Scroll */}
-          {featuredItems.length > 0 && (
+          {outingItems.length > 0 && (
             <div
               className="gallery-filmstrip gallery-filmstrip--bottom"
               ref={scrollRef2}
@@ -281,21 +296,21 @@ export default function GalleryPage() {
               onTouchStart={() => setIsHovered2(true)}
               onTouchEnd={() => setIsHovered2(false)}
             >
-              {[...featuredItems]
+              {[...outingItems]
                 .reverse()
                 .concat(
-                  [...featuredItems].reverse(),
-                  [...featuredItems].reverse(),
-                  [...featuredItems].reverse()
+                  [...outingItems].reverse(),
+                  [...outingItems].reverse(),
+                  [...outingItems].reverse()
                 )
                 .map((item, index) => {
-                  const originalIndex = featuredItems.findIndex((orig) => orig.id === item.id);
+                  const originalIndex = outingItems.findIndex((orig) => orig.id === item.id);
                   const Icon = item.icon || BookOpen;
                   return (
                     <div key={`row2-${item.id}-${index}`} className="gallery-item">
                       <button
                         className="gallery-item__card"
-                        onClick={() => openLightboxFromFeatured(originalIndex)}
+                        onClick={() => openLightboxFromOuting(originalIndex)}
                         aria-label={`Lihat foto: ${item.title}`}
                       >
                         {item.photo ? (

@@ -19,7 +19,7 @@ export const teamMembers = [
       'Izin Operasional Lembaga Kursus dan Pelatihan'
     ],
     color: '#2D6CB4',
-    image: null,
+    image: cleanBaseUrl + 'images/teacher/Ona Rahmawati.png',
     certified: true
   },
   {
@@ -40,7 +40,7 @@ export const teamMembers = [
       'Mengajar di SMPN 289 Jakarta (2014–sekarang)'
     ],
     color: '#10B981',
-    image: null,
+    image: cleanBaseUrl + 'images/teacher/Ratna Sari Irsyad.png',
     certified: true
   },
   {
@@ -60,7 +60,7 @@ export const teamMembers = [
       'Juara 1 Lomba Menyanyi Tingkat Jurusan'
     ],
     color: '#06B6D4',
-    image: null,
+    image: cleanBaseUrl + 'images/teacher/Zahratul Jannah.png',
     certified: false
   },
   {
@@ -117,7 +117,7 @@ export const teamMembers = [
       'Pelatihan TOEFL di UNJ dan Scholars Institutions'
     ],
     color: '#EC4899',
-    image: null,
+    image: cleanBaseUrl + 'images/teacher/Ratih Pratiwi Asri.png',
     certified: false
   },
   {
@@ -167,7 +167,7 @@ export const teamMembers = [
       'Mengajar Matematika kelas 1 SD – 7 SMP'
     ],
     color: '#F97316',
-    image: null,
+    image: cleanBaseUrl + 'images/teacher/Faizah Zahratun Nissa.png',
     certified: false
   },
   {
@@ -204,7 +204,7 @@ export const teamMembers = [
       'Modul Ajar B. Inggris Berdiferensiasi Kls 7 Kurikulum Merdeka (2023)'
     ],
     color: '#0891B2',
-    image: null,
+    image: cleanBaseUrl + 'images/teacher/sonny smith.jpeg',
     certified: false
   },
   {
@@ -219,7 +219,22 @@ export const teamMembers = [
     ],
     achievements: [],
     color: '#A855F7',
-    image: null,
+    image: cleanBaseUrl + 'images/teacher/naifah.jpeg',
+    certified: false
+  },
+  {
+    id: 13,
+    name: 'Muhammad Fathur Rahman, S.Pd.',
+    role: 'Guru Kelas / Tutor Matematika & Sains',
+    subjects: 'Matematika & IPA',
+    bio: 'Tutor Matematika dan IPA di Bimbel Junior dengan pendekatan pembelajaran interaktif dan aplikatif.',
+    longBio: 'Pak Muhammad Fathur Rahman adalah pengajar Matematika dan IPA untuk jenjang SD dan SMP di Bimbel Junior. Beliau memiliki dedikasi tinggi dalam menyederhanakan konsep sains dan matematika agar mudah dipahami, menyenangkan, dan relevan dengan kurikulum sekolah terbaru.',
+    education: [
+      'S1 Pendidikan'
+    ],
+    achievements: [],
+    color: '#3B82F6',
+    image: cleanBaseUrl + 'images/teacher/Muhammad Fathur Rahman.png',
     certified: false
   }
 ];

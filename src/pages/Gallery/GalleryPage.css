@@ -284,6 +284,12 @@
   color: #ffffff;
 }
 
+.gallery-item__card-category--outing,
+.gallery-lightbox__card-category--outing {
+  background: linear-gradient(135deg, #06b6d4, #0891b2);
+  color: #ffffff;
+}
+
 .gallery-item__card-title {
   font-family: var(--font-heading);
   font-size: var(--text-base);
