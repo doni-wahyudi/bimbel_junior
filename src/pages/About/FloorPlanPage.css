@@ -739,3 +739,15 @@
     font-size: 8px;
   }
 }
+
+@media (max-width: 576px) {
+  .floor-graphic-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .floor-blueprint {
+    min-width: 480px;
+  }
+}
+
