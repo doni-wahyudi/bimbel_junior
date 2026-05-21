@@ -4,6 +4,25 @@ const cleanBaseUrl = (import.meta.env.BASE_URL || '/').endsWith('/')
 
 export const teamMembers = [
   {
+    id: 1,
+    name: 'Ona Rahmawati, M.Pd.',
+    role: 'Pimpinan',
+    subjects: 'Manajemen & Pengembangan Kurikulum',
+    bio: 'Pendiri dan pimpinan Bimbel Junior dengan gelar S2 Manajemen Pendidikan. Bersertifikat pendidik dan berpengalaman luas di bidang pendidikan.',
+    longBio: 'Ibu Ona Rahmawati adalah pendiri sekaligus pimpinan Bimbel Junior. Dengan latar belakang S2 Manajemen Pendidikan, beliau mendirikan lembaga ini dengan visi "Cerdaskan Generasi Bangsa". Beliau bertanggung jawab atas penyusunan kurikulum, SOP pembelajaran, evaluasi pendidik, dan pengembangan program tahunan di semua jenjang. Bimbel Junior telah resmi berizin operasional dari Unit Pengelola Penanaman Modal dan Pelayanan Terpadu Satu Pintu Kecamatan Tanjung Priok.',
+    education: [
+      'S2 Manajemen Pendidikan'
+    ],
+    achievements: [
+      'Bersertifikat Pendidik',
+      'Pendiri & Pimpinan Bimbel Junior',
+      'Izin Operasional Lembaga Kursus dan Pelatihan'
+    ],
+    color: '#2D6CB4',
+    image: null,
+    certified: true
+  },
+  {
     id: 2,
     name: 'Ratna Sari Irsyad, S.Pd., M.Pd.',
     role: 'Guru IPA SMP',
