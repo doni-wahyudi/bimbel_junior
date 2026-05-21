@@ -44,7 +44,8 @@ The following modules and pages have been completely deleted from the active cod
 ## 4. Key Configurations & Restorations
 
 ### A. Team Database & Divisions (`src/data/team.js`, `src/pages/About/AboutPage.jsx`)
-* **Ona Rahmawati, M.Pd. (Pimpinan)**: Restored as `id: 1` at the beginning of the `teamMembers` array. Her details are integrated back into the about narrative and SEO descriptions. Note: Card is kept clean and standard (no special founder badge or overlay).
+* **Ona Rahmawati, M.Pd. (Pimpinan)**: Restored as `id: 1` at the beginning of the `teamMembers` array. Her details are integrated back into the about narrative and SEO descriptions.
+  - **No Founder Reference**: Removed all references to "pendiri" (founder) and "mendirikan" (founded) in her card profile bio, longBio description, and achievements list. She is referred to purely as **Pimpinan Bimbel Junior** to preserve standard, clean title profiles.
 * **Zahratul Jannah, S.Pd. (Bendahara & Tutor)**: Promoted to **Bendahara & Guru IPA SMP/SD** (`id: 3`). She resides in both:
   - **Pimpinan, Bendahara & Administrasi** group
   - **Tutor Sains / IPA** group (she displays in both sections seamlessly).
@@ -59,6 +60,31 @@ The following modules and pages have been completely deleted from the active cod
 * High-contrast `.trust-title` set to pure white (`#ffffff`) for perfect visibility against the dark backdrop.
 * Green and blue highlight coloring applied to key icons.
 * Native slow-pulse and slow-bounce animations added directly in pure CSS to keep the layout interactive and engaging.
+
+### D. Brand Logo & Favicon Integration (`src/components/Navbar/`, `src/components/Footer/`, `index.html`)
+* **Logo Update**: Replaced `images/logo.webp` with `images/Logo Junior Bimbel.png` in the header (`Navbar.jsx`) and footer (`Footer.jsx`) layouts.
+* **Bigger Logo Layout**: Increased header logo image container size from `40px` to `54px` in `Navbar.css` and set HTML dimensions to `54` inside `Navbar.jsx` to make it prominent and beautiful. Increased footer logo image to `50px`.
+* **Favicon Integration**: Updated `index.html`'s `<link rel="icon">` reference to `/images/Logo Junior Bimbel.png` so the browser tab matches the new brand identity.
+
+### E. Compact Hero Slider System (`src/pages/Home/HeroSection.jsx`, `src/pages/Home/HeroSection.css`)
+* **Automatic Slider Without Nav**: Built a clean, zero-navigation React slider that loops through `13.jpg.jpeg`, `14.jpg.jpeg`, and `15.jpg.jpeg` images in the `public/images/hero/` folder every 4 seconds.
+* **Overlapping Cross-fade**: Used absolute positioning within the `.hero-image-wrapper` (along with `aspect-ratio: 4 / 3` and `max-width: 380px` boundaries) and styled `opacity: 0; transition: opacity 0.8s ease-in-out` on `.hero-image` so slides overlap and cross-fade dynamically without nav buttons or layout shifts.
+* **Compact Single-Viewport Hero Layout**: Shrank vertical margins/paddings across elements to ensure the **Value Stats Bar** (`hero-stats`) fits entirely within one desktop viewport height without requiring vertical scrolling:
+  - Shrank `.hero` padding-top to `calc(var(--navbar-height) + 0.5rem)` and padding-bottom to `0.5rem`.
+  - Reduced `.hero-content` vertical padding to `var(--space-xs) 0` (extremely compact).
+  - Shrank `.hero-image-wrapper` max-width to `380px` (which scales height down to `285px` because of the `4/3` aspect ratio).
+  - Decreased `.hero-title` font-size to a super clean responsive `clamp(2rem, 3.8vw, 2.75rem)` and margin-bottom to `var(--space-xs)`.
+  - Shrank `.hero-subtitle` to `var(--text-sm)` and margin-bottom to `var(--space-sm)`.
+  - Shrank hero button padding to `0.75rem 1.5rem` and font-size to `var(--text-sm)`.
+  - Shrank `.hero-stats` margin-top to `var(--space-sm)` and padding-bottom to `0`.
+  - Shrank `.hero-stats-bar` padding to `0.75rem 1.25rem` and reduced individual stats card icons to `38px` and labels to clean base fonts, making the bar extremely low-profile and beautifully cohesive.
+
+### F. Teacher Profile Details Layout Refinement (`src/pages/About/TeacherProfilePage.jsx`, `src/pages/About/TeacherProfilePage.css`)
+* **Quotation Card Removal**: Completely removed the quotation/motto card (`.teacher-profile__quote-card`) from the bottom of the left bio column (`teacher-profile__main`).
+* **CTA Card Removal**: Completely removed the enrollment/consultation CTA card (`.teacher-profile__cta-card`) from the bottom of the right sidebar column (`teacher-profile__sidebar`).
+* **Unused Code Cleanup**: Removed unused icon imports (`Quote` and `MessageCircle` from `lucide-react`) to keep code compilation ultra lean.
+* **Layout Margin Alignment**: Set `style={{ marginBottom: 0 }}` on the final cards of both columns so there are no dangling margins.
+* **Column Height Matching**: Configured `.teacher-profile__grid` with `align-items: stretch` and styled `.teacher-profile__main` and `.animate-on-scroll` to use flex column layouts (`display: flex; flex-direction: column; flex: 1`). This allows the main "Tentang" card to stretch and match the combined height of "Riwayat Pendidikan" and "Pencapaian" in the sidebar, producing an aligned, cohesive, and premium grid layout.
 
 ---
 

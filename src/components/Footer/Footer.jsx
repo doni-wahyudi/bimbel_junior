@@ -20,11 +20,11 @@ export default function Footer() {
             <div className="footer__brand">
               <Link to="/" className="footer__logo">
                 <img
-                  src={`${import.meta.env.BASE_URL}images/logo.webp`}
+                  src={`${import.meta.env.BASE_URL}images/Logo Junior Bimbel.png`}
                   alt="Junior Bimbel Logo"
                   className="footer__logo-img"
-                  width="40"
-                  height="40"
+                  width="50"
+                  height="50"
                 />
                 <span className="footer__logo-text">
                   Junior <strong>BIMBEL</strong>

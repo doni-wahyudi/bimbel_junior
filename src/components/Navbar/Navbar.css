@@ -61,8 +61,8 @@
 }
 
 .navbar__logo-img {
-  width: 40px;
-  height: 40px;
+  width: 54px;
+  height: 54px;
   border-radius: var(--radius-md);
   object-fit: cover;
   flex-shrink: 0;

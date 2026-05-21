@@ -60,14 +60,14 @@ export default function Navbar() {
       <nav className="navbar__container container">
         <Link to="/" className="navbar__logo" aria-label="Junior Bimbel Home">
           <img
-            src={`${import.meta.env.BASE_URL}images/logo.webp`}
+            src={`${import.meta.env.BASE_URL}images/Logo Junior Bimbel.png`}
             alt="Junior Bimbel Logo"
             className="navbar__logo-img"
-            width="40"
-            height="40"
+            width="54"
+            height="54"
           />
           <span className="navbar__logo-text">
-            Junior <strong>BIMBEL</strong>
+            <strong>JUNIOR </strong>BIMBEL
           </span>
         </Link>
 
@@ -80,9 +80,8 @@ export default function Navbar() {
               {link.submenu ? (
                 <>
                   <button
-                    className={`navbar__link navbar__link--dropdown-trigger ${
-                      isSubmenuActive(link.submenu) ? 'navbar__link--active' : ''
-                    }`}
+                    className={`navbar__link navbar__link--dropdown-trigger ${isSubmenuActive(link.submenu) ? 'navbar__link--active' : ''
+                      }`}
                     onClick={(e) => e.preventDefault()}
                   >
                     {link.label}
@@ -142,9 +141,8 @@ export default function Navbar() {
                 {link.submenu ? (
                   <div className="navbar__mobile-submenu-container">
                     <button
-                      className={`navbar__mobile-link navbar__mobile-link--trigger ${
-                        isSubmenuActive(link.submenu) ? 'navbar__mobile-link--active' : ''
-                      }`}
+                      className={`navbar__mobile-link navbar__mobile-link--trigger ${isSubmenuActive(link.submenu) ? 'navbar__mobile-link--active' : ''
+                        }`}
                       onClick={() => setActiveMobileSubmenu(activeMobileSubmenu === link.label ? null : link.label)}
                     >
                       {link.label}

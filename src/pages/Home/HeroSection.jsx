@@ -1,9 +1,25 @@
+import { useState, useEffect } from 'react';
 import { GraduationCap, Star, Users, Award, MessageCircle, BookOpen } from 'lucide-react';
 import './HeroSection.css';
 
 const WHATSAPP_URL = 'https://wa.me/6281211663711?text=Halo%20Bimbel%20Junior%2C%20saya%20ingin%20bertanya%20tentang%20program%20bimbingan%20belajar.';
 
 export default function HeroSection() {
+  const HERO_IMAGES = [
+    `${import.meta.env.BASE_URL}images/hero/13.jpg.jpeg`,
+    `${import.meta.env.BASE_URL}images/hero/14.jpg.jpeg`,
+    `${import.meta.env.BASE_URL}images/hero/15.jpg.jpeg`
+  ];
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % HERO_IMAGES.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section className="hero gradient-hero">
       {/* Floating geometric shapes */}
@@ -59,15 +75,18 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Right - Hero Image */}
+          {/* Right - Hero Image Slider */}
           <div className="hero-illustration">
             <div className="hero-image-wrapper">
               <div className="hero-image-glow" />
-              <img 
-                src={`${import.meta.env.BASE_URL}images/hero_student.webp`} 
-                alt="Siswa-siswi Junior Bimbel belajar bersama" 
-                className="hero-image"
-              />
+              {HERO_IMAGES.map((imgSrc, index) => (
+                <img 
+                  key={imgSrc}
+                  src={imgSrc} 
+                  alt={`Siswa-siswi Junior Bimbel belajar bersama ${index + 1}`} 
+                  className={`hero-image ${index === currentImageIndex ? 'active' : ''}`}
+                />
+              ))}
             </div>
           </div>
         </div>

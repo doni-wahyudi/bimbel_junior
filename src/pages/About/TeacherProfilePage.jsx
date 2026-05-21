@@ -1,5 +1,5 @@
 import { useParams, Link, Navigate } from 'react-router-dom';
-import { ChevronLeft, GraduationCap, Award, BookOpen, MessageCircle, Quote } from 'lucide-react';
+import { ChevronLeft, GraduationCap, Award, BookOpen } from 'lucide-react';
 import { teamMembers } from '../../data/team';
 import SEO from '../../components/SEO';
 import AnimateOnScroll from '../../components/AnimateOnScroll';
@@ -88,16 +88,9 @@ export default function TeacherProfilePage() {
               {/* Left Column - Main Bio */}
               <div className="teacher-profile__main">
                 <AnimateOnScroll>
-                  <div className="teacher-profile__card">
+                  <div className="teacher-profile__card" style={{ marginBottom: 0 }}>
                     <h2 className="teacher-profile__section-title">Tentang {teacher.name.split(',')[0]}</h2>
                     <p className="teacher-profile__bio">{teacher.longBio || teacher.bio}</p>
-                  </div>
-                </AnimateOnScroll>
-
-                <AnimateOnScroll delay={0.1}>
-                  <div className="teacher-profile__quote-card" style={{ borderLeftColor: teacher.color }}>
-                    <Quote size={32} className="teacher-profile__quote-icon" style={{ color: `${teacher.color}40` }} />
-                    <p className="teacher-profile__motto">{teacher.motto}</p>
                   </div>
                 </AnimateOnScroll>
               </div>
@@ -122,7 +115,7 @@ export default function TeacherProfilePage() {
                 </AnimateOnScroll>
 
                 <AnimateOnScroll delay={0.3}>
-                  <div className="teacher-profile__card">
+                  <div className="teacher-profile__card" style={{ marginBottom: 0 }}>
                     <h3 className="teacher-profile__sidebar-title">
                       <Award size={20} style={{ color: teacher.color }} />
                       Pencapaian
@@ -135,29 +128,6 @@ export default function TeacherProfilePage() {
                         </li>
                       ))}
                     </ul>
-                  </div>
-                </AnimateOnScroll>
-                
-                <AnimateOnScroll delay={0.4}>
-                  <div className="teacher-profile__cta-card">
-                    <h3>Ingin diajar oleh {teacher.name.split(',')[0]}?</h3>
-                    <p>Daftarkan dirimu sekarang dan rasakan pengalaman belajar yang luar biasa.</p>
-                    <button 
-                      onClick={() => {
-                        window.dispatchEvent(new CustomEvent('open-whatsapp-modal', {
-                          detail: {
-                            title: `Daftar Kelas ${teacher.name.split(',')[0]}`,
-                            defaultMessage: `Saya tertarik untuk mengikuti kelas dengan pengajar *${teacher.name}*.`,
-                            placeholder: 'Contoh: Ingin fokus persiapan UTBK / SNBT'
-                          }
-                        }));
-                      }}
-                      className="btn btn-whatsapp"
-                      style={{ width: '100%', marginTop: '1rem', border: 'none', cursor: 'pointer' }}
-                    >
-                      <MessageCircle size={18} />
-                      Isi Form Pendaftaran
-                    </button>
                   </div>
                 </AnimateOnScroll>
               </div>
