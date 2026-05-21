@@ -80,7 +80,7 @@ export default function AboutPage() {
   
   const categories = [
     { id: 'semua', label: 'Semua' },
-    { id: 'manajemen', label: 'Pimpinan & Administrasi' },
+    { id: 'manajemen', label: 'Pimpinan, Bendahara & Administrasi' },
     { id: 'matematika', label: 'Matematika' },
     { id: 'ipa', label: 'IPA' },
     { id: 'inggris', label: 'Bahasa Inggris' },
@@ -90,31 +90,31 @@ export default function AboutPage() {
   const divisions = [
     {
       id: 'manajemen',
-      title: 'Pimpinan & Administrasi',
-      desc: 'Pengelola operasional dan penanggung jawab kurikulum Junior Bimbel',
-      members: teamMembers.filter(m => m.id === 1 || m.id === 10)
+      title: 'Pimpinan, Bendahara & Administrasi',
+      desc: 'Pengelola operasional, keuangan, dan administrasi Junior Bimbel',
+      members: teamMembers.filter(m => m.id === 1 || m.id === 3 || m.id === 10)
     },
     {
       id: 'matematika',
-      title: 'Divisi Matematika & Guru Kelas',
+      title: 'Tutor Matematika & Guru Kelas',
       desc: 'Tutor ahli matematika, konsep berhitung cepat, dan kurikulum tematik SD',
       members: teamMembers.filter(m => m.id === 5 || m.id === 7 || m.id === 9)
     },
     {
       id: 'ipa',
-      title: 'Divisi Sains / IPA',
+      title: 'Tutor Sains / IPA',
       desc: 'Tutor IPA Terpadu dan Sains Eksperimental jenjang SD-SMP',
       members: teamMembers.filter(m => m.id === 2 || m.id === 3)
     },
     {
       id: 'inggris',
-      title: 'Divisi Bahasa Inggris',
+      title: 'Tutor Bahasa Inggris',
       desc: 'Tutor Bahasa Inggris komunikatif dan penguasaan tata bahasa',
       members: teamMembers.filter(m => m.id === 4 || m.id === 6 || m.id === 11)
     },
     {
       id: 'indonesia',
-      title: 'Divisi Bahasa Indonesia & Literasi',
+      title: 'Tutor Bahasa Indonesia & Literasi',
       desc: 'Tutor pendalaman teks, tata bahasa, dan pengembangan minat baca',
       members: teamMembers.filter(m => m.id === 8 || m.id === 12)
     }
@@ -279,12 +279,7 @@ export default function AboutPage() {
                 <div className="about-team__grid">
                   {division.members.map((member) => (
                     <AnimateOnScroll key={member.id}>
-                      <Link to={`/tentang-kami/pengajar/${member.id}`} className={`about-team__card${member.id === 1 ? ' about-team__card--founder' : ''}`}>
-                        {member.id === 1 && (
-                          <span className="about-team__founder-badge">
-                            <Star size={10} /> Founder
-                          </span>
-                        )}
+                      <Link to={`/tentang-kami/pengajar/${member.id}`} className="about-team__card">
                         {member.certified && (
                           <span className="about-team__certified-badge" title="Sertifikasi Pendidik">
                             <Award size={12} />

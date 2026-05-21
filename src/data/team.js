@@ -46,14 +46,15 @@ export const teamMembers = [
   {
     id: 3,
     name: 'Zahratul Jannah, S.Pd.',
-    role: 'Guru IPA SMP / SD Kelas 6',
-    subjects: 'IPA',
-    bio: 'Guru IPA untuk jenjang SMP dan kelas 6 SD. Lulusan Pendidikan Biologi dari IAIN Syekh Nurjati Cirebon, saat ini juga mengajar di SMP Nurul Iman Arhanud.',
-    longBio: 'Ibu Zahratul Jannah mengajar IPA untuk jenjang SMP sekaligus kelas 6 SD di Bimbel Junior. Beliau meraih S1 Pendidikan Biologi dari IAIN Syekh Nurjati Cirebon (2019–2023). Pengalaman mengajar beliau mencakup Mts Bina Cendikia Cirebon, asisten dosen Kewirausahaan, dan saat ini guru IPA di SMP Nurul Iman Arhanud untuk kelas VIII dan IX. Beliau dikenal ceria, inovatif dalam media pembelajaran, dan mampu membuat sains menyenangkan bagi siswa.',
+    role: 'Bendahara & Guru IPA SMP/SD',
+    subjects: 'IPA & Administrasi Keuangan',
+    bio: 'Bendahara Bimbel Junior dan Guru IPA untuk jenjang SMP dan kelas 6 SD. Lulusan Pendidikan Biologi dari IAIN Syekh Nurjati Cirebon, saat ini juga mengajar di SMP Nurul Iman Arhanud.',
+    longBio: 'Ibu Zahratul Jannah adalah Bendahara sekaligus pengajar IPA untuk jenjang SMP sekaligus kelas 6 SD di Bimbel Junior. Beliau meraih S1 Pendidikan Biologi dari IAIN Syekh Nurjati Cirebon (2019–2023). Pengalaman mengajar beliau mencakup Mts Bina Cendikia Cirebon, asisten dosen Kewirausahaan, dan saat ini guru IPA di SMP Nurul Iman Arhanud untuk kelas VIII dan IX. Beliau dikenal ceria, inovatif dalam media pembelajaran, dan mampu membuat sains menyenangkan bagi siswa.',
     education: [
       'S1 Pendidikan Biologi – IAIN Syekh Nurjati Cirebon (2019–2023)'
     ],
     achievements: [
+      'Bendahara Bimbel Junior',
       'Guru IPA SMP Nurul Iman Arhanud (2024–sekarang)',
       'Asisten Dosen Kewirausahaan di IAIN Cirebon (2023)',
       'Juara 1 Lomba Menyanyi Tingkat Jurusan'
