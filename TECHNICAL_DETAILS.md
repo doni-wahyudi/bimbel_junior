@@ -87,6 +87,10 @@ The following modules and pages have been completely deleted from the active cod
 * **Layout Margin Alignment**: Set `style={{ marginBottom: 0 }}` on the final cards of both columns so there are no dangling margins.
 * **Column Height Matching**: Configured `.teacher-profile__grid` with `align-items: stretch` and styled `.teacher-profile__main` and `.animate-on-scroll` to use flex column layouts (`display: flex; flex-direction: column; flex: 1`). This allows the main "Tentang" card to stretch and match the combined height of "Riwayat Pendidikan" and "Pencapaian" in the sidebar, producing an aligned, cohesive, and premium grid layout.
 
+### G. Gallery Filter & Teacher Avatars Polishing (`src/pages/Gallery/GalleryPage.css`, `src/pages/About/AboutPage.css`)
+* **Gallery Filter Bar**: Expanded the `.gallery-filter__bar` desktop `max-width` to `820px` with `flex-wrap: nowrap` to prevent desktop wrapping. Integrated a premium horizontal scroll overflow system for viewports under `850px` with a sticky funnel icon on the left, keeping filter pills on a single clean line across mobile and tablet viewports.
+* **Centered Teacher Avatars**: Configured `.about-team__avatar-img` with absolute positioning (`position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center;`) to eliminate baseline spacing offsets or browser rendering shifts, rendering all teacher photos beautifully centered inside their circular outlines.
+
 ---
 
 ## 5. Guidelines for Future Chats & Agents
