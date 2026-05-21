@@ -53,15 +53,24 @@
   z-index: 1;
 }
 
+.teacher-profile__image-container {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid rgba(255, 255, 255, 0.2);
+  box-shadow: var(--shadow-xl);
+  z-index: 2;
+}
+
 .teacher-profile__image {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 50%;
-  z-index: 2;
-  border: 4px solid rgba(255, 255, 255, 0.2);
-  box-shadow: var(--shadow-xl);
+  transform: scale(1.1) translate(-2%, -2%);
 }
 
 .teacher-profile__image-placeholder {

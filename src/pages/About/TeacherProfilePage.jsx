@@ -46,11 +46,13 @@ export default function TeacherProfilePage() {
                   style={{ background: teacher.color }}
                 />
                 {teacher.image ? (
-                  <img 
-                    src={teacher.image} 
-                    alt={teacher.name} 
-                    className="teacher-profile__image" 
-                  />
+                  <div className="teacher-profile__image-container">
+                    <img 
+                      src={teacher.image} 
+                      alt={teacher.name} 
+                      className="teacher-profile__image" 
+                    />
+                  </div>
                 ) : (
                   <div 
                     className="teacher-profile__image-placeholder"
