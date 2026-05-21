@@ -154,7 +154,7 @@ export const teamMembers = [
     ],
     achievements: [],
     color: '#64748B',
-    image: null,
+    image: cleanBaseUrl + 'images/teacher/syakira.jpeg',
     certified: false
   },
   {
