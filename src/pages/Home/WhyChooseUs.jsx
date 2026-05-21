@@ -6,7 +6,7 @@ const features = [
   {
     icon: GraduationCap,
     title: 'Pengajar Berpengalaman',
-    desc: 'Dipimpin oleh Ona Rahmawati, M.Pd. dengan tim pengajar berpengalaman dan bersertifikat.',
+    desc: 'Didukung oleh tim pengajar berpengalaman, bersertifikat pendidik, dan lulusan universitas terkemuka.',
   },
   {
     icon: Users,

@@ -80,7 +80,7 @@ export default function AboutPage() {
   
   const categories = [
     { id: 'semua', label: 'Semua' },
-    { id: 'manajemen', label: 'Manajemen' },
+    { id: 'manajemen', label: 'Administrasi' },
     { id: 'matematika', label: 'Matematika' },
     { id: 'ipa', label: 'IPA' },
     { id: 'inggris', label: 'Bahasa Inggris' },
@@ -90,9 +90,9 @@ export default function AboutPage() {
   const divisions = [
     {
       id: 'manajemen',
-      title: 'Pimpinan & Administrasi',
-      desc: 'Pengelola operasional dan penanggung jawab kurikulum Junior Bimbel',
-      members: teamMembers.filter(m => m.id === 1 || m.id === 10)
+      title: 'Administrasi',
+      desc: 'Staf administrasi dan pelayanan informasi Junior Bimbel',
+      members: teamMembers.filter(m => m.id === 10)
     },
     {
       id: 'matematika',
@@ -128,7 +128,7 @@ export default function AboutPage() {
     <>
       <SEO
         title="Tentang Kami"
-        description="Tentang Junior Bimbel — lembaga bimbingan belajar terpercaya di Tanjung Priok, Jakarta Utara. Didirikan oleh Ona Rahmawati, M.Pd. dengan rating 4.9 di Google."
+        description="Tentang Junior Bimbel — lembaga bimbingan belajar terpercaya di Tanjung Priok, Jakarta Utara dengan rating 4.9 di Google."
         keywords="tentang junior bimbel, profil bimbel, les privat tanjung priok, bimbel terpercaya jakarta utara"
       />
 
@@ -163,8 +163,7 @@ export default function AboutPage() {
                 Sejarah &amp; Profil
               </h2>
               <p>
-                Junior Bimbel didirikan oleh <strong>Ona Rahmawati, M.Pd.</strong> dengan
-                visi menciptakan lingkungan belajar yang menyenangkan dan efektif bagi
+                Junior Bimbel didirikan dengan visi menciptakan lingkungan belajar yang menyenangkan dan efektif bagi
                 siswa di Tanjung Priok, Jakarta Utara.
               </p>
               <p>
@@ -280,12 +279,7 @@ export default function AboutPage() {
                 <div className="about-team__grid">
                   {division.members.map((member) => (
                     <AnimateOnScroll key={member.id}>
-                      <Link to={`/tentang-kami/pengajar/${member.id}`} className={`about-team__card${member.id === 1 ? ' about-team__card--founder' : ''}`}>
-                        {member.id === 1 && (
-                          <span className="about-team__founder-badge">
-                            <Star size={10} /> Founder
-                          </span>
-                        )}
+                      <Link to={`/tentang-kami/pengajar/${member.id}`} className="about-team__card">
                         {member.certified && (
                           <span className="about-team__certified-badge" title="Sertifikasi Pendidik">
                             <Award size={12} />

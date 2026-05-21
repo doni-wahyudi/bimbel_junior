@@ -485,8 +485,8 @@ export default function SopRulesPage() {
             <CheckCircle size={32} className="signature-icon text-success animate-pulse-slow" />
             <p className="signature-date">Ditetapkan di: Jakarta, 10 Juli 2025</p>
             <p className="signature-authority">Mengetahui &amp; Mengesahkan,</p>
-            <h3 className="signature-name">Ona Rahmawati, M.Pd</h3>
-            <p className="signature-role">Pimpinan LKP Bimbel Junior</p>
+            <h3 className="signature-name">Manajemen Bimbel Junior</h3>
+            <p className="signature-role">Lembaga Kursus &amp; Pelatihan</p>
             <div className="certified-stamp-badge">DOKUMEN RESMI DISAHKAN</div>
           </div>
         </div>

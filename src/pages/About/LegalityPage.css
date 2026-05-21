@@ -398,6 +398,7 @@
   padding: var(--space-3xl) 0;
   background: linear-gradient(135deg, #0f172a, #1e293b);
   overflow: hidden;
+  text-align: center;
 }
 
 .legality-trust__overlay {
@@ -407,14 +408,25 @@
   pointer-events: none;
 }
 
+.legality-trust .container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .trust-icon {
   margin-bottom: var(--space-lg);
+  color: var(--color-primary-light);
 }
 
 .trust-title {
   font-size: var(--text-3xl);
   font-weight: 800;
+  color: var(--color-text-white);
   margin-bottom: var(--space-md);
+  text-align: center;
 }
 
 .trust-desc {
@@ -423,6 +435,7 @@
   max-width: 800px;
   margin: 0 auto var(--space-xl);
   line-height: 1.7;
+  text-align: center;
 }
 
 .trust-meta {
@@ -443,6 +456,39 @@
   font-size: var(--text-sm);
   color: rgba(255, 255, 255, 0.9);
   font-weight: 500;
+}
+
+.trust-meta-item svg {
+  color: var(--color-success);
+}
+
+/* ---- Animations ---- */
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.03);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 3s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
 }
 
 /* =============================================

@@ -14,8 +14,8 @@ export default function LegalityPage() {
         { label: 'Nomor Keputusan', value: '2/A.5a/31.72.02.1007.14.R-1/3/TM.08.18/e/2025' },
         { label: 'Jenis Perizinan', value: 'Izin Operasional LKP' },
         { label: 'Nama Lembaga', value: 'BIMBEL JUNIOR' },
-        { label: 'Penyelenggara / Pemilik', value: 'ONA RAHMAWATI' },
-        { label: 'Penanggung Jawab Edukatif', value: 'ONA RAHMAWATI, M.Pd' },
+        { label: 'Penyelenggara / Pemilik', value: 'LKP BIMBEL JUNIOR' },
+        { label: 'Penanggung Jawab Edukatif', value: 'Tim Akademik Bimbel Junior' },
         { label: 'Jenis Pendidikan', value: 'Bimbingan Belajar' },
         { label: 'Rumpun Pendidikan', value: 'Pendidikan Dasar & Menengah (SD dan SMP)' },
         { label: 'Pejabat Penandatangan', value: 'MOHAMAD RIZKY WIRAWAN (Kepala Unit Pengelola PM-PTSP Kec. Tanjung Priok)' },
@@ -34,7 +34,7 @@ export default function LegalityPage() {
       badgeColor: '#2563EB',
       details: [
         { label: 'Nomor Induk Berusaha', value: '2106250057343' },
-        { label: 'Nama Pelaku Usaha', value: 'ONA RAHMAWATI' },
+        { label: 'Nama Pelaku Usaha', value: 'LKP BIMBEL JUNIOR' },
         { label: 'Kode KBLI Utama', value: '85495' },
         { label: 'Judul KBLI', value: 'Pendidikan Bimbingan Belajar dan Konseling Swasta' },
         { label: 'Skala Usaha', value: 'Usaha Mikro' },
@@ -201,7 +201,7 @@ export default function LegalityPage() {
           </p>
           <div className="trust-meta">
             <span className="trust-meta-item">
-              <MapPin size={14} className="text-success" /> Alamat Kampus: Jl. Warakas 8 Gg. 10 No.34, Tanjung Priok, Jakarta Utara
+              <MapPin size={14} className="text-success" /> Alamat Lembaga: Jl. Warakas 8 Gg. 10 No.34, Tanjung Priok, Jakarta Utara
             </span>
           </div>
         </div>

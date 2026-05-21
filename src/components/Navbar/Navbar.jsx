@@ -35,24 +35,14 @@ export default function Navbar() {
 
   const navLinks = [
     { path: '/', label: 'Beranda' },
-    {
-      label: 'Program',
-      path: '/program',
-      submenu: [
-        { path: '/program', label: 'Program Belajar & Biaya' },
-        { path: '/program-tahunan', label: 'Program Tahunan' },
-      ]
-    },
+    { path: '/program', label: 'Program' },
     {
       label: 'Tentang Kami',
       path: '/tentang-kami',
       submenu: [
         { path: '/tentang-kami', label: 'Profil & Guru' },
-        { path: '/tentang-kami/struktur', label: 'Struktur Organisasi' },
         { path: '/tentang-kami/legalitas', label: 'Legalitas & Perizinan' },
         { path: '/tentang-kami/sop-tata-tertib', label: 'SOP & Tata Tertib' },
-        { path: '/tentang-kami/denah', label: 'Denah Ruang' },
-        { path: '/tentang-kami/peserta-didik', label: 'Daftar Peserta Didik' },
       ]
     },
     { path: '/alumni', label: 'Alumni' },
