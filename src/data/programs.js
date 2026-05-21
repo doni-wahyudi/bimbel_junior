@@ -1,22 +1,35 @@
+export const registrationFee = {
+  amount: '250.000',
+  includes: ['4 Buku LKS', 'Voucher Gratis Jalan-Jalan Akhir Semester']
+};
+
+export const scheduleSlots = [
+  { label: 'Pagi', time: '09:00 – 10:30 WIB', days: 'Senin – Jumat' },
+  { label: 'Sore', time: '16:00 – 17:30 WIB', days: 'Senin – Jumat' },
+  { label: 'Malam', time: '18:30 – 20:00 WIB', days: 'Senin – Jumat' },
+];
+
+export const sessionDuration = '90 menit per sesi';
+
 export const programs = {
   sd: {
     id: 'sd',
     name: 'Program SD',
-    fullName: 'Sekolah Dasar',
+    fullName: 'Sekolah Dasar (Kelas 4, 5, 6)',
     shortDesc: 'Membangun fondasi akademik yang kuat untuk anak Anda sejak dini',
-    longDesc: 'Program bimbingan belajar SD dirancang untuk membantu siswa memahami konsep dasar dengan metode belajar yang menyenangkan dan interaktif. Dengan pendekatan personal, setiap siswa mendapat perhatian khusus sesuai kemampuannya.',
+    longDesc: 'Program bimbingan belajar SD dirancang untuk siswa kelas 4, 5, dan 6. Dengan metode belajar interaktif dan menyenangkan, setiap siswa mendapat perhatian khusus sesuai kemampuannya. Sesi belajar 90 menit, bebas pilih hari Senin–Jumat.',
     icon: 'BookOpen',
     color: '#2D6CB4',
     colorLight: '#E8F0FE',
-    target: 'Siswa Kelas 1-6 SD',
-    classSize: 'Maks. 10 siswa per kelas',
-    schedule: 'Senin - Kamis, 15:00 - 17:00',
+    target: 'Siswa Kelas 4–6 SD',
+    classSize: '5–10 siswa (Reguler) / 1–2 siswa (Privat)',
+    schedule: 'Senin – Jumat, bebas pilih waktu (Pagi / Sore / Malam)',
     method: 'Interaktif & Menyenangkan',
     subjects: [
       {
-        name: 'Matematika',
-        icon: 'Calculator',
-        description: 'Operasi hitung, geometri, pecahan, dan pemecahan masalah'
+        name: 'IPAS',
+        icon: 'FlaskConical',
+        description: 'Ilmu Pengetahuan Alam dan Sosial sesuai kurikulum Merdeka'
       },
       {
         name: 'Bahasa Indonesia',
@@ -24,42 +37,58 @@ export const programs = {
         description: 'Membaca, menulis, tata bahasa, dan pemahaman teks'
       },
       {
-        name: 'IPA',
-        icon: 'FlaskConical',
-        description: 'Sains dasar, eksperimen sederhana, dan lingkungan hidup'
-      },
-      {
         name: 'Bahasa Inggris',
         icon: 'Globe',
         description: 'Vocabulary, grammar dasar, reading, dan speaking'
+      },
+      {
+        name: 'Matematika',
+        icon: 'Calculator',
+        description: 'Operasi hitung, geometri, pecahan, dan pemecahan masalah'
+      },
+      {
+        name: 'TKA (Literasi & Numerasi)',
+        icon: 'FileText',
+        description: 'Persiapan Tes Kemampuan Akademik literasi dan numerasi'
       }
     ],
-    scheduleTable: [
-      { day: 'Senin', time: '15:00 - 17:00', subject: 'Matematika & IPA' },
-      { day: 'Selasa', time: '15:00 - 17:00', subject: 'Bahasa Indonesia & Inggris' },
-      { day: 'Rabu', time: '15:00 - 17:00', subject: 'Latihan Soal & Review' },
-      { day: 'Kamis', time: '15:00 - 17:00', subject: 'Matematika & IPA' }
-    ],
+    scheduleInfo: {
+      duration: '90 menit per sesi',
+      frequency: 'Seminggu 2x (Paket Smart) atau 3x (Paket Genius)',
+      days: 'Senin – Jumat (bebas pilih hari)',
+      slots: [
+        { label: 'Pagi', time: '09:00 – 10:30 WIB' },
+        { label: 'Sore', time: '16:00 – 17:30 WIB' },
+        { label: 'Malam', time: '18:30 – 20:00 WIB' },
+      ]
+    },
     pricing: [
       {
-        tier: 'Reguler',
-        price: '350.000',
+        tier: 'Reguler Paket SMART',
+        price: '250.000',
         period: '/bulan',
-        features: ['4x pertemuan/minggu', 'Kelas grup (maks 10 siswa)', 'Modul belajar lengkap', 'Latihan soal harian'],
+        features: ['2x pertemuan/minggu', '90 menit per sesi', 'Kelas grup (5–10 siswa)', '4 mata pelajaran', 'Bebas pilih hari & waktu'],
         popular: false
       },
       {
-        tier: 'Intensif',
-        price: '500.000',
+        tier: 'Reguler Paket GENIUS',
+        price: '350.000',
         period: '/bulan',
-        features: ['4x pertemuan/minggu', 'Kelas grup (maks 10 siswa)', 'Modul belajar lengkap', 'Sesi latihan tambahan', 'Tryout bulanan'],
+        features: ['3x pertemuan/minggu', '90 menit per sesi', 'Kelas grup (5–10 siswa)', '4 mata pelajaran', 'Bebas pilih hari & waktu', 'Latihan soal lebih intensif'],
         popular: true
       },
       {
-        tier: 'Privat',
-        price: '750.000',
+        tier: 'Privat Paket SMART',
+        price: '500.000',
         period: '/bulan',
-        features: ['2x pertemuan/minggu', 'Bimbingan 1-on-1', 'Modul khusus personal', 'Jadwal fleksibel', 'Laporan progress mingguan'],
+        features: ['2x pertemuan/minggu', '90 menit per sesi', 'Bimbingan 1–2 siswa', 'Jadwal fleksibel', 'Perhatian ekstra personal'],
+        popular: false
+      },
+      {
+        tier: 'Privat Paket GENIUS',
+        price: '600.000',
+        period: '/bulan',
+        features: ['3x pertemuan/minggu', '90 menit per sesi', 'Bimbingan 1–2 siswa', 'Jadwal fleksibel', 'Perhatian ekstra personal', 'Latihan soal lebih intensif'],
         popular: false
       }
     ]
@@ -67,31 +96,26 @@ export const programs = {
   smp: {
     id: 'smp',
     name: 'Program SMP',
-    fullName: 'Sekolah Menengah Pertama',
-    shortDesc: 'Persiapan ujian dan pendalaman materi untuk meraih SMA favorit',
-    longDesc: 'Program SMP kami memfokuskan pada pendalaman materi dan persiapan ujian. Siswa dibimbing untuk memahami konsep secara mendalam, bukan hanya menghafal, sehingga siap menghadapi berbagai jenis soal ujian.',
+    fullName: 'Sekolah Menengah Pertama (Kelas 7, 8, 9)',
+    shortDesc: 'Pendalaman materi dan persiapan ujian untuk meraih SMA favorit',
+    longDesc: 'Program SMP memfokuskan pada pendalaman materi dan persiapan ujian. Siswa dibimbing untuk memahami konsep secara mendalam dengan 4 mata pelajaran utama. Sesi belajar 90 menit, bebas pilih hari Senin–Jumat.',
     icon: 'GraduationCap',
     color: '#10B981',
     colorLight: '#D1FAE5',
-    target: 'Siswa Kelas 7-9 SMP',
-    classSize: 'Maks. 10 siswa per kelas',
-    schedule: 'Senin - Kamis, 17:00 - 19:00',
+    target: 'Siswa Kelas 7–9 SMP',
+    classSize: '5–10 siswa (Reguler) / 1–2 siswa (Privat)',
+    schedule: 'Senin – Jumat, bebas pilih waktu (Pagi / Sore / Malam)',
     method: 'Konseptual & Problem-Solving',
     subjects: [
+      {
+        name: 'IPA',
+        icon: 'FlaskConical',
+        description: 'Fisika dan Biologi sesuai kurikulum SMP'
+      },
       {
         name: 'Matematika',
         icon: 'Calculator',
         description: 'Aljabar, geometri, statistika, dan penalaran matematis'
-      },
-      {
-        name: 'IPA (Fisika & Biologi)',
-        icon: 'FlaskConical',
-        description: 'Fisika dasar, biologi, dan praktikum laboratorium'
-      },
-      {
-        name: 'Bahasa Inggris',
-        icon: 'Globe',
-        description: 'Grammar, reading comprehension, writing, dan speaking'
       },
       {
         name: 'Bahasa Indonesia',
@@ -99,37 +123,48 @@ export const programs = {
         description: 'Tata bahasa, sastra, menulis esai, dan pemahaman bacaan'
       },
       {
-        name: 'IPS',
-        icon: 'Map',
-        description: 'Geografi, sejarah, ekonomi, dan sosiologi'
+        name: 'Bahasa Inggris',
+        icon: 'Globe',
+        description: 'Grammar, reading comprehension, writing, dan speaking'
       }
     ],
-    scheduleTable: [
-      { day: 'Senin', time: '17:00 - 19:00', subject: 'Matematika & IPA' },
-      { day: 'Selasa', time: '17:00 - 19:00', subject: 'Bahasa Indonesia & Inggris' },
-      { day: 'Rabu', time: '17:00 - 19:00', subject: 'IPS & Latihan Soal' },
-      { day: 'Kamis', time: '17:00 - 19:00', subject: 'Matematika & Review' }
-    ],
+    scheduleInfo: {
+      duration: '90 menit per sesi',
+      frequency: 'Seminggu 2x (Paket Smart) atau 3x (Paket Genius)',
+      days: 'Senin – Jumat (bebas pilih hari)',
+      slots: [
+        { label: 'Pagi', time: '09:00 – 10:30 WIB' },
+        { label: 'Sore', time: '16:00 – 17:30 WIB' },
+        { label: 'Malam', time: '18:30 – 20:00 WIB' },
+      ]
+    },
     pricing: [
       {
-        tier: 'Reguler',
-        price: '400.000',
+        tier: 'Reguler Paket SMART',
+        price: '300.000',
         period: '/bulan',
-        features: ['4x pertemuan/minggu', 'Kelas grup (maks 10 siswa)', 'Modul belajar lengkap', 'Latihan soal harian'],
+        features: ['2x pertemuan/minggu', '90 menit per sesi', 'Kelas grup (5–10 siswa)', '4 mata pelajaran', 'Bebas pilih hari & waktu'],
         popular: false
       },
       {
-        tier: 'Intensif',
-        price: '600.000',
+        tier: 'Reguler Paket GENIUS',
+        price: '400.000',
         period: '/bulan',
-        features: ['4x pertemuan/minggu', 'Kelas grup (maks 10 siswa)', 'Modul belajar lengkap', 'Sesi latihan tambahan', 'Tryout bulanan', 'Persiapan ujian masuk SMA'],
+        features: ['3x pertemuan/minggu', '90 menit per sesi', 'Kelas grup (5–10 siswa)', '4 mata pelajaran', 'Bebas pilih hari & waktu', 'Latihan soal lebih intensif'],
         popular: true
       },
       {
-        tier: 'Privat',
-        price: '850.000',
+        tier: 'Privat Paket SMART',
+        price: '600.000',
         period: '/bulan',
-        features: ['2x pertemuan/minggu', 'Bimbingan 1-on-1', 'Modul khusus personal', 'Jadwal fleksibel', 'Laporan progress mingguan'],
+        features: ['2x pertemuan/minggu', '90 menit per sesi', 'Bimbingan 1–2 siswa', 'Jadwal fleksibel', 'Perhatian ekstra personal'],
+        popular: false
+      },
+      {
+        tier: 'Privat Paket GENIUS',
+        price: '700.000',
+        period: '/bulan',
+        features: ['3x pertemuan/minggu', '90 menit per sesi', 'Bimbingan 1–2 siswa', 'Jadwal fleksibel', 'Perhatian ekstra personal', 'Latihan soal lebih intensif'],
         popular: false
       }
     ]
@@ -138,16 +173,15 @@ export const programs = {
     id: 'sma',
     name: 'Program SMA',
     fullName: 'Sekolah Menengah Atas',
-    shortDesc: 'Persiapan UTBK/SNBT dan pendalaman materi menuju PTN impian',
-    longDesc: 'Program SMA kami dirancang khusus untuk mempersiapkan siswa menghadapi UTBK/SNBT dan ujian masuk perguruan tinggi negeri. Dengan materi yang komprehensif dan latihan intensif, siswa siap meraih PTN impian.',
+    shortDesc: 'Pendalaman materi dan persiapan UTBK/SNBT menuju PTN impian',
+    longDesc: 'Program SMA dirancang untuk mempersiapkan siswa menghadapi ujian sekolah dan UTBK/SNBT. Materi mencakup mata pelajaran inti dengan opsi TKA sesuai pilihan siswa. Sesi belajar 90 menit, bebas pilih hari Senin–Jumat.',
     icon: 'Award',
     color: '#8B5CF6',
     colorLight: '#EDE9FE',
-    target: 'Siswa Kelas 10-12 SMA',
-    classSize: 'Maks. 10 siswa per kelas',
-    schedule: 'Senin - Kamis, 19:00 - 21:00',
+    target: 'Siswa SMA',
+    classSize: '5–10 siswa (Reguler) / 1–2 siswa (Privat)',
+    schedule: 'Senin – Jumat, bebas pilih waktu (Pagi / Sore / Malam)',
     method: 'Intensif & Strategis',
-    isNew: true,
     subjects: [
       {
         name: 'Matematika',
@@ -155,57 +189,68 @@ export const programs = {
         description: 'Kalkulus, trigonometri, matriks, dan penalaran kuantitatif'
       },
       {
-        name: 'Fisika',
-        icon: 'Zap',
-        description: 'Mekanika, listrik, gelombang, dan termodinamika'
-      },
-      {
         name: 'Kimia',
         icon: 'FlaskConical',
         description: 'Kimia organik, anorganik, dan stoikiometri'
       },
       {
-        name: 'Biologi',
-        icon: 'Leaf',
-        description: 'Genetika, sel, ekosistem, dan bioteknologi'
+        name: 'Fisika',
+        icon: 'Zap',
+        description: 'Mekanika, listrik, gelombang, dan termodinamika'
       },
       {
         name: 'Bahasa Inggris',
         icon: 'Globe',
-        description: 'Advanced grammar, TOEFL prep, academic writing'
+        description: 'Advanced grammar, reading, writing, dan speaking'
       },
       {
-        name: 'Ekonomi',
-        icon: 'TrendingUp',
-        description: 'Mikro-makro ekonomi, akuntansi, dan manajemen'
+        name: 'Bahasa Indonesia',
+        icon: 'BookText',
+        description: 'Tata bahasa lanjutan, sastra, dan literasi'
+      },
+      {
+        name: 'TKA (Pilihan)',
+        icon: 'FileText',
+        description: 'Tes Kemampuan Akademik sesuai jurusan pilihan'
       }
     ],
-    scheduleTable: [
-      { day: 'Senin', time: '19:00 - 21:00', subject: 'Matematika & Fisika' },
-      { day: 'Selasa', time: '19:00 - 21:00', subject: 'Kimia & Biologi' },
-      { day: 'Rabu', time: '19:00 - 21:00', subject: 'Bahasa Inggris & Ekonomi' },
-      { day: 'Kamis', time: '19:00 - 21:00', subject: 'Latihan UTBK & Review' }
-    ],
+    scheduleInfo: {
+      duration: '90 menit per sesi',
+      frequency: 'Seminggu 2x (Paket Smart) atau 3x (Paket Genius)',
+      days: 'Senin – Jumat (bebas pilih hari)',
+      slots: [
+        { label: 'Pagi', time: '09:00 – 10:30 WIB' },
+        { label: 'Sore', time: '16:00 – 17:30 WIB' },
+        { label: 'Malam', time: '18:30 – 20:00 WIB' },
+      ]
+    },
     pricing: [
       {
-        tier: 'Reguler',
-        price: '500.000',
+        tier: 'Reguler Paket SMART',
+        price: '400.000',
         period: '/bulan',
-        features: ['4x pertemuan/minggu', 'Kelas grup (maks 10 siswa)', 'Modul belajar lengkap', 'Latihan soal harian'],
+        features: ['2x pertemuan/minggu', '90 menit per sesi', 'Kelas grup (5–10 siswa)', 'Mata pelajaran inti + TKA pilihan', 'Bebas pilih hari & waktu'],
         popular: false
       },
       {
-        tier: 'Intensif',
-        price: '700.000',
+        tier: 'Reguler Paket GENIUS',
+        price: '500.000',
         period: '/bulan',
-        features: ['4x pertemuan/minggu', 'Kelas grup (maks 10 siswa)', 'Modul belajar lengkap', 'Sesi latihan tambahan', 'Tryout UTBK bulanan', 'Persiapan SNBT'],
+        features: ['3x pertemuan/minggu', '90 menit per sesi', 'Kelas grup (5–10 siswa)', 'Mata pelajaran inti + TKA pilihan', 'Bebas pilih hari & waktu', 'Latihan soal lebih intensif'],
         popular: true
       },
       {
-        tier: 'Privat',
-        price: '1.000.000',
+        tier: 'Privat Paket SMART',
+        price: '800.000',
         period: '/bulan',
-        features: ['2x pertemuan/minggu', 'Bimbingan 1-on-1', 'Modul khusus personal', 'Jadwal fleksibel', 'Laporan progress mingguan', 'Konsultasi PTN'],
+        features: ['2x pertemuan/minggu', '90 menit per sesi', 'Bimbingan 1–2 siswa', 'Jadwal fleksibel', 'Perhatian ekstra personal'],
+        popular: false
+      },
+      {
+        tier: 'Privat Paket GENIUS',
+        price: '900.000',
+        period: '/bulan',
+        features: ['3x pertemuan/minggu', '90 menit per sesi', 'Bimbingan 1–2 siswa', 'Jadwal fleksibel', 'Perhatian ekstra personal', 'Latihan soal lebih intensif'],
         popular: false
       }
     ]

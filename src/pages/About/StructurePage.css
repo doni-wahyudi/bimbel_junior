@@ -1,0 +1,319 @@
+/* =============================================
+   STRUCTURE PAGE — Struktur Organisasi
+   ============================================= */
+
+/* ---- Hero ---- */
+.structure-hero {
+  position: relative;
+  min-height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: calc(var(--navbar-height) + var(--space-3xl)) 0 var(--space-3xl);
+  overflow: hidden;
+}
+
+.structure-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 80%, rgba(139, 92, 246, 0.2) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(16, 185, 129, 0.12) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.structure-hero__inner {
+  position: relative;
+  z-index: 1;
+}
+
+.structure-hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: 0.35rem 1rem;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-primary-light);
+  background: var(--color-primary-lighter);
+  border: 1px solid rgba(45, 108, 180, 0.25);
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-lg);
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.structure-hero__title {
+  font-size: var(--text-5xl);
+  font-weight: 800;
+  color: var(--color-text-white);
+  margin-bottom: var(--space-md);
+  animation: fadeInUp 0.6s ease-out 0.1s both;
+}
+
+.structure-hero__subtitle {
+  font-size: var(--text-lg);
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 600px;
+  margin: 0 auto;
+  animation: fadeInUp 0.6s ease-out 0.2s both;
+}
+
+/* ---- Organization flowchart ---- */
+.structure-chart {
+  background: var(--color-background);
+  padding-bottom: var(--space-2xl);
+}
+
+.structure-chart__flow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: var(--space-2xl);
+}
+
+.structure-node-wrapper {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  justify-content: center;
+}
+
+.structure-node {
+  background: var(--color-surface);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-lg);
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.structure-node:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+}
+
+.structure-node__badge {
+  color: white;
+  padding: 0.5rem 1.25rem;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-align: center;
+}
+
+.structure-node__content {
+  padding: var(--space-xl);
+  text-align: center;
+}
+
+.structure-node__name {
+  font-size: var(--text-xl);
+  font-weight: 800;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.structure-node__role {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-primary-light);
+  margin-bottom: var(--space-md);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.structure-node__desc {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.structure-chart__arrow {
+  margin: var(--space-md) 0;
+  color: var(--color-primary-light);
+  opacity: 0.6;
+  display: flex;
+  justify-content: center;
+}
+
+.animate-bounce-slow {
+  animation: bounceSlow 2s infinite;
+}
+
+@keyframes bounceSlow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+/* ---- Subject Tutors Divisions ---- */
+.structure-divisions {
+  background: var(--color-surface);
+}
+
+.structure-divisions__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-2xl);
+  margin-top: var(--space-xl);
+}
+
+.division-card {
+  background: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.division-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-xl);
+  border-color: rgba(45, 108, 180, 0.15);
+}
+
+.division-card__header {
+  padding: var(--space-xl);
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  border-bottom: 2px solid var(--color-border);
+}
+
+.division-card__icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.division-card__title {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 2px;
+}
+
+.division-card__count {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+
+.division-card__body {
+  padding: var(--space-xl);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.division-card__desc {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin-bottom: var(--space-lg);
+}
+
+.division-card__section-title {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-sm);
+}
+
+.division-card__member-list ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.division-card__member-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: 0.5rem 0;
+  border-bottom: 1px dashed var(--color-border);
+}
+
+.division-card__member-item:last-child {
+  border-bottom: none;
+}
+
+.division-card__member-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.division-card__member-name {
+  display: block;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.division-card__member-role {
+  display: block;
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  margin-top: 1px;
+}
+
+.division-card__certified {
+  margin-left: auto;
+  font-size: var(--text-xxs);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #d97706;
+  background: #fef3c7;
+  padding: 0.15rem 0.45rem;
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.02em;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 992px) {
+  .structure-divisions__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+}
+
+@media (max-width: 768px) {
+  .structure-hero__title {
+    font-size: var(--text-4xl);
+  }
+
+  .structure-hero__subtitle {
+    font-size: var(--text-base);
+  }
+
+  .structure-node {
+    border-radius: var(--radius-xl);
+  }
+
+  .structure-node__content {
+    padding: var(--space-lg);
+  }
+}

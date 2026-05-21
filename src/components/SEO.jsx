@@ -1,9 +1,9 @@
 import { Helmet } from 'react-helmet-async';
 
 export default function SEO({ title, description, keywords, canonical, schema }) {
-  const siteTitle = 'Bimbel Junior';
+  const siteTitle = 'Junior Bimbel';
   const fullTitle = title ? `${title} — ${siteTitle}` : `${siteTitle} — Bimbingan Belajar SD, SMP, SMA di Tanjung Priok Jakarta Utara`;
-  const defaultDescription = 'Bimbel Junior adalah tempat les terpercaya di Tanjung Priok, Jakarta Utara untuk SD, SMP, dan SMA. Rating 4.9⭐, pengajar M.Pd., kelas kecil. Hubungi: 0812-1166-3711';
+  const defaultDescription = 'Junior Bimbel adalah lembaga bimbingan belajar terpercaya di Tanjung Priok, Jakarta Utara untuk SD, SMP, dan SMA. Cerdaskan Generasi Bangsa. Rating 4.9⭐, pengajar bersertifikat. Hubungi: 0812-1166-3711';
 
   return (
     <Helmet>
@@ -31,7 +31,8 @@ export default function SEO({ title, description, keywords, canonical, schema })
         {JSON.stringify({
           "@context": "https://schema.org",
           "@type": ["LocalBusiness", "EducationalOrganization"],
-          "name": "Bimbel Junior",
+          "name": "Junior Bimbel",
+          "alternateName": "Bimbel Junior",
           "description": defaultDescription,
           "address": {
             "@type": "PostalAddress",
@@ -42,7 +43,7 @@ export default function SEO({ title, description, keywords, canonical, schema })
             "addressCountry": "ID"
           },
           "telephone": "+62-812-1166-3711",
-          "openingHours": "Mo-Th 15:00-21:00",
+          "openingHours": ["Mo-Fr 09:00-10:30", "Mo-Fr 16:00-17:30", "Mo-Fr 18:30-20:00"],
           "geo": {
             "@type": "GeoCoordinates",
             "latitude": -6.1210449,

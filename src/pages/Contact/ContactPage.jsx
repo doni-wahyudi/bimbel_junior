@@ -35,8 +35,8 @@ const contactInfo = [
   {
     icon: Clock,
     label: 'Jam Operasional',
-    value: 'Senin - Kamis: 15:00 - 21:00',
-    subvalue: 'Jumat - Minggu: Tutup',
+    value: 'Senin - Jumat: 09:00 - 20:00',
+    subvalue: 'Sabtu - Minggu: Tutup',
     color: 'secondary',
     link: null
   },
@@ -96,7 +96,7 @@ export default function ContactPage() {
     setIsSubmitting(true);
 
     const pesanText = formData.pesan.trim() ? ` ${formData.pesan.trim()}` : '';
-    const message = `Halo Bimbel Junior, saya ${formData.nama.trim()} ingin mendaftar/bertanya tentang program ${formData.jenjang}. No. WA saya: ${formData.whatsapp.trim()}.${pesanText}`;
+    const message = `Halo Junior Bimbel, saya ${formData.nama.trim()} ingin mendaftar/bertanya tentang program ${formData.jenjang}. No. WA saya: ${formData.whatsapp.trim()}.${pesanText}`;
     const encodedMessage = encodeURIComponent(message);
     const waUrl = `https://wa.me/6281211663711?text=${encodedMessage}`;
 
@@ -109,8 +109,8 @@ export default function ContactPage() {
     <>
       <SEO
         title="Hubungi Kami"
-        description="Hubungi Bimbel Junior untuk konsultasi gratis. Alamat: Jl. Warakas 8 Gg. 10 No.34, Tanjung Priok, Jakarta Utara. WhatsApp: 0812-1166-3711."
-        keywords="kontak bimbel junior, hubungi bimbel, les tanjung priok, bimbel jakarta utara, konsultasi gratis"
+        description="Hubungi Junior Bimbel untuk konsultasi gratis. Alamat: Jl. Warakas 8 Gg. 10 No.34, Tanjung Priok, Jakarta Utara. WhatsApp: 0812-1166-3711."
+        keywords="kontak junior bimbel, hubungi bimbel, les tanjung priok, bimbel jakarta utara, konsultasi gratis"
       />
 
       {/* ===== HERO ===== */}
@@ -290,7 +290,7 @@ export default function ContactPage() {
               <div className="contact-map-wrapper">
                 <div className="contact-map-container">
                   <iframe
-                    title="Lokasi Bimbel Junior"
+                    title="Lokasi Junior Bimbel"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.521260322283!2d106.8769387!3d-6.1210449!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6a1f7b2c7e7c1f%3A0x1234567890abcdef!2sBimbel%20Junior!5e0!3m2!1sid!2sid!4v1234567890"
                     width="100%"
                     height="100%"
@@ -323,10 +323,10 @@ export default function ContactPage() {
               <div className="contact-directions-card__icon">
                 <Navigation size={28} />
               </div>
-              <h2 className="contact-directions-card__title">Cara Menuju Bimbel Junior</h2>
+              <h2 className="contact-directions-card__title">Cara Menuju Junior Bimbel</h2>
               <p className="contact-directions-card__text">
                 Dari Stasiun Tanjung Priok, ambil arah selatan menuju Jl. Warakas. Belok ke Gg. 10,
-                Bimbel Junior berada di No. 34 sisi kanan jalan.
+                Junior Bimbel berada di No. 34 sisi kanan jalan.
               </p>
 
               <div className="contact-directions-landmarks">

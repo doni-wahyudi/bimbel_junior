@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { GraduationCap, Star, Users, Award, MessageCircle, BookOpen } from 'lucide-react';
 import './HeroSection.css';
 
@@ -29,7 +28,7 @@ export default function HeroSection() {
             <h1 className="hero-title">
               Raih{' '}
               <span className="hero-title-highlight">Prestasi Terbaikmu</span>{' '}
-              Bersama Bimbel Junior
+              Bersama Junior Bimbel
             </h1>
 
             <p className="hero-subtitle">
@@ -37,16 +36,16 @@ export default function HeroSection() {
             </p>
 
             <div className="hero-buttons">
-              <Link to="/daftar" className="hero-btn-primary">
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSdO_nrN-Xz7HyRVaJ2gLOzIwoa2X-g3cIDrvKqKwMQ3Hpn_tQ/viewform" target="_blank" rel="noopener noreferrer" className="hero-btn-primary">
                 <GraduationCap size={20} />
                 Daftar Sekarang
-              </Link>
+              </a>
               <button
                 onClick={() => {
                   window.dispatchEvent(new CustomEvent('open-whatsapp-modal', {
                     detail: {
                       title: 'Konsultasi Gratis',
-                      defaultMessage: 'Halo Bimbel Junior, saya ingin berkonsultasi mengenai bimbingan belajar.',
+                      defaultMessage: 'Halo Junior Bimbel, saya ingin berkonsultasi mengenai bimbingan belajar.',
                       placeholder: 'Contoh: Jadwal kelas baru, harga paket, atau tryout terdekat.'
                     }
                   }));
@@ -66,7 +65,7 @@ export default function HeroSection() {
               <div className="hero-image-glow" />
               <img 
                 src={`${import.meta.env.BASE_URL}images/hero_student.png`} 
-                alt="Siswa-siswi Bimbel Junior belajar bersama" 
+                alt="Siswa-siswi Junior Bimbel belajar bersama" 
                 className="hero-image"
               />
             </div>
@@ -99,7 +98,7 @@ export default function HeroSection() {
                 <Users />
               </div>
               <div className="hero-stat-info">
-                <strong>Maks 10</strong>
+                <strong>5–10</strong>
                 <span>Siswa/Kelas</span>
               </div>
             </div>

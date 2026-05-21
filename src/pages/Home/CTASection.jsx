@@ -1,9 +1,8 @@
-import { Link } from 'react-router-dom';
 import { GraduationCap, MessageCircle, Star, Users, ShieldCheck } from 'lucide-react';
 import AnimateOnScroll from '../../components/AnimateOnScroll';
 import './CTASection.css';
 
-const WHATSAPP_URL = 'https://wa.me/6281211663711?text=Halo%20Bimbel%20Junior%2C%20saya%20ingin%20bertanya%20tentang%20program%20bimbingan%20belajar.';
+const WHATSAPP_URL = 'https://wa.me/6281211663711?text=Halo%20Junior%20Bimbel%2C%20saya%20ingin%20bertanya%20tentang%20program%20bimbingan%20belajar.';
 
 export default function CTASection() {
   return (
@@ -25,21 +24,21 @@ export default function CTASection() {
             <h2 className="cta-title">Siap Meraih Prestasi Terbaikmu?</h2>
 
             <p className="cta-subtitle">
-              Bergabung dengan ratusan siswa yang telah berhasil bersama Bimbel Junior.
+              Bergabung dengan ratusan siswa yang telah berhasil bersama Junior Bimbel.
               Konsultasi gratis, tanpa komitmen.
             </p>
 
             <div className="cta-buttons">
-              <Link to="/hubungi-kami" className="cta-btn-primary">
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSdO_nrN-Xz7HyRVaJ2gLOzIwoa2X-g3cIDrvKqKwMQ3Hpn_tQ/viewform" target="_blank" rel="noopener noreferrer" className="cta-btn-primary">
                 <GraduationCap size={20} />
                 Daftar Sekarang
-              </Link>
+              </a>
               <button
                 onClick={() => {
                   window.dispatchEvent(new CustomEvent('open-whatsapp-modal', {
                     detail: {
-                      title: 'Hubungi Bimbel Junior',
-                      defaultMessage: 'Halo Bimbel Junior, saya tertarik untuk bertanya tentang program bimbingan belajar.',
+                      title: 'Hubungi Junior Bimbel',
+                      defaultMessage: 'Halo Junior Bimbel, saya tertarik untuk bertanya tentang program bimbingan belajar.',
                       placeholder: 'Tulis pertanyaan atau minat paket bimbel Anda di sini...'
                     }
                   }));

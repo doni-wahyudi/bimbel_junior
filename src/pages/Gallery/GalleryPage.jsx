@@ -71,25 +71,31 @@ export default function GalleryPage() {
     const scrollContainer1 = scrollRef1.current;
     const scrollContainer2 = scrollRef2.current;
 
+    // Use floating-point trackers to avoid integer truncation in browser scrollLeft
+    let scrollPos1 = scrollContainer1 ? scrollContainer1.scrollLeft : 0;
+    let scrollPos2 = scrollContainer2 ? scrollContainer2.scrollLeft : 0;
+
     const scroll = () => {
       // Forward scroll
       if (scrollContainer1 && !isHovered1) {
-        scrollContainer1.scrollLeft += 1.2;
+        scrollPos1 += 0.45;
         if (
-          scrollContainer1.scrollLeft >=
+          scrollPos1 >=
           scrollContainer1.scrollWidth - scrollContainer1.clientWidth - 1
         ) {
-          scrollContainer1.scrollLeft = 0;
+          scrollPos1 = 0;
         }
+        scrollContainer1.scrollLeft = Math.round(scrollPos1);
       }
 
       // Reverse scroll
       if (scrollContainer2 && !isHovered2) {
-        scrollContainer2.scrollLeft -= 1.2;
-        if (scrollContainer2.scrollLeft <= 1) {
-          scrollContainer2.scrollLeft =
+        scrollPos2 -= 0.45;
+        if (scrollPos2 <= 1) {
+          scrollPos2 =
             scrollContainer2.scrollWidth - scrollContainer2.clientWidth;
         }
+        scrollContainer2.scrollLeft = Math.round(scrollPos2);
       }
 
       animationFrameId = requestAnimationFrame(scroll);
@@ -98,6 +104,7 @@ export default function GalleryPage() {
     if (featuredItems.length > 0) {
       if (scrollContainer2 && scrollContainer2.scrollLeft === 0) {
         scrollContainer2.scrollLeft = scrollContainer2.scrollWidth;
+        scrollPos2 = scrollContainer2.scrollWidth;
       }
       animationFrameId = requestAnimationFrame(scroll);
     }
@@ -217,11 +224,26 @@ export default function GalleryPage() {
                       aria-label={`Lihat foto: ${item.title}`}
                     >
                       {item.photo ? (
-                        <img
-                          src={item.photo.startsWith('http') ? item.photo : `${import.meta.env.BASE_URL || '/'}${item.photo}`}
-                          alt={item.title}
-                          className="gallery-item__card-img"
-                        />
+                        item.isVideo ? (
+                          <div className="gallery-item__video-wrapper">
+                            <video
+                              src={item.photo.startsWith('http') ? `${item.photo}#t=0.1` : `${import.meta.env.BASE_URL || '/'}${item.photo}#t=0.1`}
+                              className="gallery-item__card-img"
+                              preload="metadata"
+                              muted
+                              playsInline
+                            />
+                            <div className="gallery-item__play-btn">
+                              <Play size={24} fill="currentColor" />
+                            </div>
+                          </div>
+                        ) : (
+                          <img
+                            src={item.photo.startsWith('http') ? item.photo : `${import.meta.env.BASE_URL || '/'}${item.photo}`}
+                            alt={item.title}
+                            className="gallery-item__card-img"
+                          />
+                        )
                       ) : (
                         <div
                           className="gallery-item__card-fallback"
@@ -277,11 +299,26 @@ export default function GalleryPage() {
                         aria-label={`Lihat foto: ${item.title}`}
                       >
                         {item.photo ? (
-                          <img
-                            src={item.photo.startsWith('http') ? item.photo : `${import.meta.env.BASE_URL || '/'}${item.photo}`}
-                            alt={item.title}
-                            className="gallery-item__card-img"
-                          />
+                          item.isVideo ? (
+                            <div className="gallery-item__video-wrapper">
+                              <video
+                                src={item.photo.startsWith('http') ? `${item.photo}#t=0.1` : `${import.meta.env.BASE_URL || '/'}${item.photo}#t=0.1`}
+                                className="gallery-item__card-img"
+                                preload="metadata"
+                                muted
+                                playsInline
+                              />
+                              <div className="gallery-item__play-btn">
+                                <Play size={24} fill="currentColor" />
+                              </div>
+                            </div>
+                          ) : (
+                            <img
+                              src={item.photo.startsWith('http') ? item.photo : `${import.meta.env.BASE_URL || '/'}${item.photo}`}
+                              alt={item.title}
+                              className="gallery-item__card-img"
+                            />
+                          )
                         ) : (
                           <div
                             className="gallery-item__card-fallback"
@@ -354,9 +391,11 @@ export default function GalleryPage() {
                         item.isVideo ? (
                           <div className="gallery-item__video-wrapper">
                             <video
-                              src={item.photo.startsWith('http') ? item.photo : `${import.meta.env.BASE_URL || '/'}${item.photo}`}
+                              src={item.photo.startsWith('http') ? `${item.photo}#t=0.1` : `${import.meta.env.BASE_URL || '/'}${item.photo}#t=0.1`}
                               className="gallery-item__card-img"
                               preload="metadata"
+                              muted
+                              playsInline
                             />
                             <div className="gallery-item__play-btn">
                               <Play size={24} fill="currentColor" />
@@ -463,30 +502,6 @@ export default function GalleryPage() {
                       className="gallery-lightbox__img"
                     />
                   )}
-                  <div className="gallery-lightbox__card-caption">
-                    <div className="gallery-lightbox__card-header">
-                      <span
-                        className={`gallery-lightbox__card-category gallery-lightbox__card-category--${currentItem.category}`}
-                      >
-                        {currentItem.jenjang && currentItem.jenjang !== 'Fasilitas & Prestasi'
-                          ? currentItem.jenjang
-                          : categoryLabels[currentItem.category] || 'Kegiatan'}
-                      </span>
-                      {currentItem.date && (
-                        <span className="gallery-lightbox__card-date">{currentItem.date}</span>
-                      )}
-                    </div>
-                    <h3 className="gallery-lightbox__card-title">{currentItem.title}</h3>
-                    {currentItem.description && (
-                      <p className="gallery-lightbox__card-desc">{currentItem.description}</p>
-                    )}
-                    {currentItem.location && (
-                      <div className="gallery-lightbox__card-location">
-                        <MapPin size={16} />
-                        {currentItem.location}
-                      </div>
-                    )}
-                  </div>
                 </div>
               ) : (
                 <div

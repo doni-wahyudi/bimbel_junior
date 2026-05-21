@@ -1,14 +1,15 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import {
   BookOpen, GraduationCap, Award, Calculator, BookText,
   FlaskConical, Globe, Map, Zap, Leaf, TrendingUp,
   Clock, Users, Calendar, Check, Star, Sparkles,
-  ChevronRight, MessageCircle, ArrowRight
+  ChevronLeft, ChevronRight, MessageCircle, ArrowRight,
+  Ticket, Gift
 } from 'lucide-react';
 import SEO from '../../components/SEO';
 import AnimateOnScroll from '../../components/AnimateOnScroll';
-import { programs } from '../../data/programs';
+import { programs, registrationFee } from '../../data/programs';
 import './ProgramPage.css';
 
 const IconMap = {
@@ -25,16 +26,50 @@ const ProgramIcon = {
 export default function ProgramPage() {
   const location = useLocation();
   const [activeTab, setActiveTab] = useState('sd');
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [slidesPerView, setSlidesPerView] = useState(3);
 
+  // Determine slides per view based on viewport
   useEffect(() => {
-    const hash = location.hash.replace('#', '');
-    if (['sd', 'smp', 'sma'].includes(hash)) {
-      setActiveTab(hash);
-    }
-  }, [location.hash]);
+    const updateSlidesPerView = () => {
+      if (window.innerWidth <= 640) {
+        setSlidesPerView(1);
+      } else if (window.innerWidth <= 1024) {
+        setSlidesPerView(2);
+      } else {
+        setSlidesPerView(3);
+      }
+    };
+
+    updateSlidesPerView();
+    window.addEventListener('resize', updateSlidesPerView);
+    return () => window.removeEventListener('resize', updateSlidesPerView);
+  }, []);
 
   const program = programs[activeTab];
   const TabIcon = ProgramIcon[activeTab];
+
+  const maxIndex = Math.max(0, program.pricing.length - slidesPerView);
+
+  // Auto-rotation
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [maxIndex, activeTab]);
+
+  // Reset index when tab changes
+  useEffect(() => {
+    setCurrentIndex(0);
+  }, [activeTab]);
+
+  const goTo = useCallback((index) => {
+    setCurrentIndex(Math.max(0, Math.min(index, maxIndex)));
+  }, [maxIndex]);
+
+  const goPrev = () => goTo(currentIndex - 1);
+  const goNext = () => goTo(currentIndex + 1);
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
@@ -45,7 +80,7 @@ export default function ProgramPage() {
     <>
       <SEO
         title="Program Bimbingan Belajar"
-        description="Program bimbingan belajar SD, SMP, dan SMA di Bimbel Junior Tanjung Priok. Kurikulum lengkap, jadwal fleksibel, dan biaya terjangkau."
+        description="Program bimbingan belajar SD, SMP, dan SMA di Junior Bimbel Tanjung Priok. Kurikulum lengkap, jadwal fleksibel, dan biaya terjangkau."
         keywords="program bimbel, les SD, les SMP, les SMA, bimbel Tanjung Priok, les privat Jakarta Utara"
       />
 
@@ -175,27 +210,35 @@ export default function ProgramPage() {
                 <Calendar size={24} style={{ color: program.color }} />
                 Jadwal Belajar
               </h2>
-              <div className="program-schedule">
-                <table className="program-schedule__table">
-                  <thead>
-                    <tr>
-                      <th>Hari</th>
-                      <th>Waktu</th>
-                      <th>Mata Pelajaran</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {program.scheduleTable.map((row, index) => (
-                      <tr key={index}>
-                        <td>{row.day}</td>
-                        <td>
-                          <span className="program-schedule__time">{row.time}</span>
-                        </td>
-                        <td>{row.subject}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+              <div className="program-schedule-new" style={{ '--accent-color': program.color }}>
+                <div className="program-schedule-new__grid">
+                  <div className="program-schedule-new__info-card">
+                    <h4>Informasi Jadwal</h4>
+                    <ul>
+                      <li>
+                        <strong>Hari Belajar:</strong> {program.scheduleInfo.days}
+                      </li>
+                      <li>
+                        <strong>Frekuensi:</strong> {program.scheduleInfo.frequency}
+                      </li>
+                      <li>
+                        <strong>Durasi Sesi:</strong> {program.scheduleInfo.duration}
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="program-schedule-new__slots-card">
+                    <h4>Pilihan Slot Waktu</h4>
+                    <p className="program-schedule-new__note">Siswa bebas memilih slot waktu berikut untuk setiap pertemuan:</p>
+                    <div className="program-schedule-new__slots-list">
+                      {program.scheduleInfo.slots.map((slot, index) => (
+                        <div key={index} className="program-schedule-new__slot-item">
+                          <span className="program-schedule-new__slot-label">{slot.label}</span>
+                          <span className="program-schedule-new__slot-time">{slot.time}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </AnimateOnScroll>
@@ -207,50 +250,153 @@ export default function ProgramPage() {
                 <Star size={24} style={{ color: program.color }} />
                 Biaya Bimbingan
               </h2>
-              <div className="program-pricing">
-                {program.pricing.map((tier, index) => (
-                  <AnimateOnScroll key={tier.tier} delay={index * 0.15}>
-                    <div className={`program-pricing-card ${tier.popular ? 'program-pricing-card--popular' : ''}`}
-                         style={{ '--accent': program.color, '--accent-light': program.colorLight }}>
-                      {tier.popular && (
-                        <div className="program-pricing-card__badge">
-                          <Star size={14} /> Paling Populer
-                        </div>
-                      )}
-                      <h3 className="program-pricing-card__tier">{tier.tier}</h3>
-                      <div className="program-pricing-card__price">
-                        <span className="program-pricing-card__currency">Rp</span>
-                        <span className="program-pricing-card__amount">{tier.price}</span>
-                        <span className="program-pricing-card__period">{tier.period}</span>
+              
+              {/* Premium Registration Info & Highlights */}
+              <div className="program-registration-container" style={{ '--accent-color': program.color, '--accent-light': program.colorLight }}>
+                <div className="registration-price-box">
+                  <div className="registration-price-badge">
+                    <Sparkles size={14} className="sparkle-icon" /> Biaya Pendaftaran
+                  </div>
+                  <div className="registration-price-value">
+                    <span className="registration-price-currency">Rp</span>
+                    <span className="registration-price-number">{registrationFee.amount}</span>
+                  </div>
+                  <p className="registration-price-subtitle">Sekali bayar saat mendaftar awal</p>
+                </div>
+                
+                <div className="registration-benefits-divider"></div>
+                
+                <div className="registration-benefits-box">
+                  <h4 className="registration-benefits-title">Dapatkan Benefit Eksklusif Pendaftaran:</h4>
+                  <div className="registration-benefits-grid">
+                    <div className="benefit-highlight-card">
+                      <div className="benefit-icon-wrapper" style={{ background: `${program.color}15`, color: program.color }}>
+                        <BookText size={24} />
+                        <span className="benefit-qty-badge">4x</span>
                       </div>
-                      <ul className="program-pricing-card__features">
-                        {tier.features.map((feature, i) => (
-                          <li key={i}>
-                            <Check size={16} className="program-pricing-card__check" />
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                       <button
-                        onClick={() => {
-                          window.dispatchEvent(new CustomEvent('open-whatsapp-modal', {
-                            detail: {
-                              title: `Daftar Paket ${tier.tier} - ${program.name}`,
-                              defaultMessage: `Saya tertarik mendaftar Paket *${tier.tier}* untuk program *${program.name}*.`,
-                              placeholder: 'Contoh: Tanya jadwal mulai bimbingan, sistem pembayaran, dll.',
-                              defaultGrade: activeTab.toUpperCase()
-                            }
-                          }));
-                        }}
-                        className={`program-pricing-card__cta btn ${tier.popular ? 'btn-primary' : 'btn-secondary'}`}
-                        style={{ border: 'none', cursor: 'pointer', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '8px' }}
-                      >
-                        <MessageCircle size={18} />
-                        Daftar Sekarang
-                      </button>
+                      <div className="benefit-details">
+                        <h5 className="benefit-name">4 Buku Lembar Kerja Siswa (LKS)</h5>
+                        <p className="benefit-desc">Buku latihan soal lengkap untuk seluruh mata pelajaran utama sesuai kurikulum sekolah.</p>
+                      </div>
                     </div>
-                  </AnimateOnScroll>
-                ))}
+
+                    <div className="benefit-highlight-card special-highlight">
+                      <div className="benefit-icon-wrapper outing-voucher" style={{ background: '#F59E0B15', color: '#F59E0B' }}>
+                        <Ticket size={24} />
+                        <span className="benefit-free-badge">Gratis</span>
+                      </div>
+                      <div className="benefit-details">
+                        <h5 className="benefit-name">Voucher Outing Akhir Semester</h5>
+                        <p className="benefit-desc">Akses gratis ke acara jalan-jalan/outing seru bersama teman-teman Junior Bimbel di akhir semester!</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Pricing Cards Carousel */}
+              <div className="program-pricing-wrapper">
+                <div className="program-pricing-carousel">
+                  <div
+                    className="program-pricing-track"
+                    style={{
+                      transform: `translateX(-${currentIndex * (100 / slidesPerView)}%)`,
+                    }}
+                  >
+                    {program.pricing.map((tier, index) => {
+                      const isPrivat = tier.tier.toLowerCase().includes('privat');
+                      const cleanTier = tier.tier.replace(/^(Reguler|Privat)\s+/, '');
+                      return (
+                        <div key={tier.tier} className="program-pricing-slide">
+                          <div className={`program-pricing-card ${tier.popular ? 'program-pricing-card--popular' : ''} ${isPrivat ? 'program-pricing-card--privat' : 'program-pricing-card--reguler'}`}
+                               style={{
+                                 '--accent': isPrivat ? '#D97706' : program.color,
+                                 '--accent-light': isPrivat ? '#FEF3C7' : program.colorLight
+                               }}>
+                            
+                            {/* Category Badge */}
+                            <div className={`program-pricing-card__category-badge ${isPrivat ? 'category-badge--privat' : 'category-badge--reguler'}`}>
+                              {isPrivat ? (
+                                <>
+                                  <Sparkles size={12} /> Kelas Privat (1–2 Anak)
+                                </>
+                              ) : (
+                                <>
+                                  <Users size={12} /> Kelas Reguler (5–10 Anak)
+                                </>
+                              )}
+                            </div>
+
+                            {tier.popular && (
+                              <div className="program-pricing-card__badge">
+                                <Star size={14} /> Paling Populer
+                              </div>
+                            )}
+                            <h3 className="program-pricing-card__tier">{cleanTier}</h3>
+                            <div className="program-pricing-card__price">
+                              <span className="program-pricing-card__currency">Rp</span>
+                              <span className="program-pricing-card__amount">{tier.price}</span>
+                              <span className="program-pricing-card__period">{tier.period}</span>
+                            </div>
+                            <ul className="program-pricing-card__features">
+                              {tier.features.map((feature, i) => (
+                                <li key={i}>
+                                  <Check size={16} className="program-pricing-card__check" />
+                                  {feature}
+                                </li>
+                              ))}
+                            </ul>
+                            <a
+                              href="https://docs.google.com/forms/d/e/1FAIpQLSdO_nrN-Xz7HyRVaJ2gLOzIwoa2X-g3cIDrvKqKwMQ3Hpn_tQ/viewform"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className={`program-pricing-card__cta btn ${tier.popular ? 'btn-primary' : 'btn-secondary'}`}
+                              style={{ textDecoration: 'none', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '8px' }}
+                            >
+                              <GraduationCap size={18} />
+                              Daftar Sekarang
+                            </a>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                {/* Carousel Navigation */}
+                <div className="program-pricing-nav">
+                  <button
+                    className="program-pricing-arrow"
+                    onClick={goPrev}
+                    disabled={currentIndex === 0}
+                    aria-label="Paket sebelumnya"
+                    style={{ '--nav-accent': program.color }}
+                  >
+                    <ChevronLeft />
+                  </button>
+
+                  <div className="program-pricing-dots">
+                    {Array.from({ length: maxIndex + 1 }, (_, i) => (
+                      <button
+                        key={i}
+                        className={`program-pricing-dot ${i === currentIndex ? 'active' : ''}`}
+                        onClick={() => goTo(i)}
+                        aria-label={`Ke paket ${i + 1}`}
+                        style={{ '--nav-accent': program.color }}
+                      />
+                    ))}
+                  </div>
+
+                  <button
+                    className="program-pricing-arrow"
+                    onClick={goNext}
+                    disabled={currentIndex >= maxIndex}
+                    aria-label="Paket berikutnya"
+                    style={{ '--nav-accent': program.color }}
+                  >
+                    <ChevronRight />
+                  </button>
+                </div>
               </div>
             </div>
           </AnimateOnScroll>

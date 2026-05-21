@@ -28,7 +28,7 @@ export default function RegistrationPage() {
     e.preventDefault();
     
     // Format message for WhatsApp
-    const message = `Halo Bimbel Junior! Saya ingin mendaftar dengan rincian berikut:
+    const message = `Halo Junior Bimbel! Saya ingin mendaftar dengan rincian berikut:
     
 *DATA SISWA*
 Nama Lengkap: ${formData.name}
@@ -50,7 +50,7 @@ Mohon informasi mengenai ketersediaan jadwal dan metode pembayaran. Terima kasih
     <div className="registration-page">
       <SEO 
         title="Pendaftaran Online"
-        description="Daftar bimbingan belajar di Bimbel Junior Tanjung Priok sekarang. Tersedia paket untuk SD, SMP, dan SMA dengan kelas intensif, reguler, maupun privat."
+        description="Daftar bimbingan belajar di Junior Bimbel Tanjung Priok sekarang. Tersedia paket untuk SD, SMP, dan SMA dengan kelas reguler maupun privat."
       />
 
       <section className="registration-hero gradient-hero">
@@ -85,7 +85,7 @@ Mohon informasi mengenai ketersediaan jadwal dan metode pembayaran. Terima kasih
                       <div className="benefit-icon"><User size={20} /></div>
                       <div>
                         <strong>Kelas Eksklusif</strong>
-                        <p>Maksimal 10 siswa per kelas agar lebih fokus.</p>
+                        <p>5–10 siswa per kelas agar lebih fokus.</p>
                       </div>
                     </li>
                     <li>
@@ -106,7 +106,7 @@ Mohon informasi mengenai ketersediaan jadwal dan metode pembayaran. Terima kasih
                     </a>
                     <div className="contact-address">
                       <MapPin size={18} />
-                      <span>Jl. Cipeucang II No.2, Koja, Tanjung Priok, Jakarta Utara</span>
+                      <span>Jl. Warakas 8 Gg. 10 No.34, RT.13/RW.5, Warakas, Tanjung Priok, Jakarta Utara 14370</span>
                     </div>
                   </div>
                 </div>
@@ -168,7 +168,7 @@ Mohon informasi mengenai ketersediaan jadwal dan metode pembayaran. Terima kasih
                         onChange={handleChange}
                         required
                       >
-                        <option value="SD">SD (Sekolah Dasar)</option>
+                        <option value="SD">SD (Sekolah Dasar Kelas 4,5,6)</option>
                         <option value="SMP">SMP (Sekolah Menengah Pertama)</option>
                         <option value="SMA">SMA (Sekolah Menengah Atas)</option>
                         <option value="Alumni/Gap Year">Alumni / Gap Year</option>
@@ -198,10 +198,10 @@ Mohon informasi mengenai ketersediaan jadwal dan metode pembayaran. Terima kasih
                       onChange={handleChange}
                       required
                     >
-                      <option value="Reguler">Paket Reguler</option>
-                      <option value="Intensif UN/Ujian Sekolah">Paket Intensif Ujian Sekolah</option>
-                      <option value="Intensif SNBT (SMA)">Paket Intensif SNBT (Khusus SMA)</option>
-                      <option value="Privat (1 on 1)">Kelas Privat (1 on 1)</option>
+                      <option value="Reguler Paket SMART">Reguler Paket SMART (2x/minggu)</option>
+                      <option value="Reguler Paket GENIUS">Reguler Paket GENIUS (3x/minggu)</option>
+                      <option value="Privat Paket SMART">Privat Paket SMART (2x/minggu)</option>
+                      <option value="Privat Paket GENIUS">Privat Paket GENIUS (3x/minggu)</option>
                     </select>
                   </div>
 

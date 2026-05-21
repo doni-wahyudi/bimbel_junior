@@ -19,15 +19,20 @@ export default function Footer() {
             {/* Brand Column */}
             <div className="footer__brand">
               <Link to="/" className="footer__logo">
-                <div className="footer__logo-icon">
-                  <GraduationCap size={22} />
-                </div>
+                <img
+                  src={`${import.meta.env.BASE_URL}images/logo.jpg`}
+                  alt="Junior Bimbel Logo"
+                  className="footer__logo-img"
+                  width="40"
+                  height="40"
+                />
                 <span className="footer__logo-text">
-                  Bimbel <strong>JUNIOR</strong>
+                  Junior <strong>BIMBEL</strong>
                 </span>
               </Link>
+              <div className="footer__tagline">Cerdaskan Generasi Bangsa</div>
               <p className="footer__brand-desc">
-                Bimbingan belajar terpercaya untuk SD, SMP, dan SMA di Tanjung Priok, Jakarta Utara. Membangun generasi berprestasi sejak dini.
+                Lembaga bimbingan belajar terpercaya untuk SD, SMP, dan SMA di Tanjung Priok, Jakarta Utara. Cerdaskan Generasi Bangsa.
               </p>
               <div className="footer__social">
                 <a
@@ -35,7 +40,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="footer__social-link"
-                  aria-label="Instagram Bimbel Junior"
+                  aria-label="Instagram Junior Bimbel"
                 >
                   <Camera size={20} />
                 </a>
@@ -78,7 +83,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <Clock size={16} />
-                  <span>Sen–Kam: 15:00–21:00</span>
+                  <span>Sen–Jum: 09:00–10:30, 16:00–17:30, 18:30–20:00 (Bebas Pilih)</span>
                 </li>
                 <li>
                   <Camera size={16} />
@@ -93,7 +98,7 @@ export default function Footer() {
       <div className="footer__bottom">
         <div className="container">
           <p className="footer__copyright">
-            © {currentYear} Bimbel Junior. All rights reserved. Made with <Heart size={14} className="footer__heart" /> in Jakarta.
+            © {currentYear} Junior Bimbel. All rights reserved. Made with <Heart size={14} className="footer__heart" /> in Jakarta.
           </p>
         </div>
       </div>

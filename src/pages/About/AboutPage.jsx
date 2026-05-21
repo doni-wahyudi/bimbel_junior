@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   GraduationCap,
@@ -75,12 +76,60 @@ const legalItems = [
 ];
 
 export default function AboutPage() {
+  const [activeCategory, setActiveCategory] = useState('semua');
+  
+  const categories = [
+    { id: 'semua', label: 'Semua' },
+    { id: 'manajemen', label: 'Manajemen' },
+    { id: 'matematika', label: 'Matematika' },
+    { id: 'ipa', label: 'IPA' },
+    { id: 'inggris', label: 'Bahasa Inggris' },
+    { id: 'indonesia', label: 'Bahasa Indonesia' }
+  ];
+
+  const divisions = [
+    {
+      id: 'manajemen',
+      title: 'Pimpinan & Administrasi',
+      desc: 'Pengelola operasional dan penanggung jawab kurikulum Junior Bimbel',
+      members: teamMembers.filter(m => m.id === 1 || m.id === 10)
+    },
+    {
+      id: 'matematika',
+      title: 'Divisi Matematika & Guru Kelas',
+      desc: 'Tutor ahli matematika, konsep berhitung cepat, dan kurikulum tematik SD',
+      members: teamMembers.filter(m => m.id === 5 || m.id === 7 || m.id === 9)
+    },
+    {
+      id: 'ipa',
+      title: 'Divisi Sains / IPA',
+      desc: 'Tutor IPA Terpadu dan Sains Eksperimental jenjang SD-SMP',
+      members: teamMembers.filter(m => m.id === 2 || m.id === 3)
+    },
+    {
+      id: 'inggris',
+      title: 'Divisi Bahasa Inggris',
+      desc: 'Tutor Bahasa Inggris komunikatif dan penguasaan tata bahasa',
+      members: teamMembers.filter(m => m.id === 4 || m.id === 6 || m.id === 11)
+    },
+    {
+      id: 'indonesia',
+      title: 'Divisi Bahasa Indonesia & Literasi',
+      desc: 'Tutor pendalaman teks, tata bahasa, dan pengembangan minat baca',
+      members: teamMembers.filter(m => m.id === 8 || m.id === 12)
+    }
+  ];
+
+  const activeDivisions = activeCategory === 'semua'
+    ? divisions
+    : divisions.filter(d => d.id === activeCategory);
+
   return (
     <>
       <SEO
         title="Tentang Kami"
-        description="Tentang Bimbel Junior — lembaga bimbingan belajar terpercaya di Tanjung Priok, Jakarta Utara. Didirikan oleh Ona Rahmawati, M.Pd. dengan rating 4.9 di Google."
-        keywords="tentang bimbel junior, profil bimbel, les privat tanjung priok, bimbel terpercaya jakarta utara"
+        description="Tentang Junior Bimbel — lembaga bimbingan belajar terpercaya di Tanjung Priok, Jakarta Utara. Didirikan oleh Ona Rahmawati, M.Pd. dengan rating 4.9 di Google."
+        keywords="tentang junior bimbel, profil bimbel, les privat tanjung priok, bimbel terpercaya jakarta utara"
       />
 
       {/* ===== Hero ===== */}
@@ -90,7 +139,7 @@ export default function AboutPage() {
           <span className="about-hero__badge">
             <Heart size={14} /> Tentang Kami
           </span>
-          <h1 className="about-hero__title">Tentang Bimbel Junior</h1>
+          <h1 className="about-hero__title">Tentang Junior Bimbel</h1>
           <p className="about-hero__subtitle">
             Lebih dari sekadar tempat les — kami adalah partner belajar anak Anda
           </p>
@@ -114,13 +163,13 @@ export default function AboutPage() {
                 Sejarah &amp; Profil
               </h2>
               <p>
-                Bimbel Junior didirikan oleh <strong>Ona Rahmawati, M.Pd.</strong> dengan
+                Junior Bimbel didirikan oleh <strong>Ona Rahmawati, M.Pd.</strong> dengan
                 visi menciptakan lingkungan belajar yang menyenangkan dan efektif bagi
                 siswa di Tanjung Priok, Jakarta Utara.
               </p>
               <p>
                 Berawal dari keinginan untuk membantu anak-anak di lingkungan sekitar
-                yang kesulitan dalam pelajaran sekolah, Bimbel Junior kini telah
+                yang kesulitan dalam pelajaran sekolah, Junior Bimbel kini telah
                 berkembang menjadi lembaga bimbingan belajar terpercaya yang melayani
                 jenjang SD, SMP, dan SMA.
               </p>
@@ -207,43 +256,73 @@ export default function AboutPage() {
             </div>
           </AnimateOnScroll>
 
-          <div className="about-team__grid stagger-children">
-            {teamMembers.map((member) => (
-              <AnimateOnScroll key={member.id}>
-                <Link to={`/tentang-kami/pengajar/${member.id}`} className={`about-team__card${member.id === 1 ? ' about-team__card--founder' : ''}`}>
-                  {member.id === 1 && (
-                    <span className="about-team__founder-badge">
-                      <Star size={12} /> Founder
-                    </span>
-                  )}
-                  <div className="about-team__avatar-container">
-                    {member.image ? (
-                      <img
-                        src={member.image}
-                        alt={member.name}
-                        className="about-team__avatar-img"
-                      />
-                    ) : (
-                      <div
-                        className="about-team__avatar"
-                        style={{ background: member.color }}
-                      >
-                        {getInitials(member.name)}
-                      </div>
-                    )}
-                  </div>
-                  <div className="about-team__details">
-                    <h4 className="about-team__name">{member.name}</h4>
-                    <p className="about-team__role">{member.role}</p>
-                    <span className="about-team__subjects">{member.subjects}</span>
-                    <p className="about-team__bio">{member.bio}</p>
-                  </div>
-                  
-                  <div className="about-team__hover-cta">
-                    Lihat Profil
-                  </div>
-                </Link>
-              </AnimateOnScroll>
+          {/* Category Filter Pills */}
+          <div className="about-team__filters">
+            {categories.map((category) => (
+              <button
+                key={category.id}
+                className={`about-team__filter-btn ${activeCategory === category.id ? 'about-team__filter-btn--active' : ''}`}
+                onClick={() => setActiveCategory(category.id)}
+              >
+                {category.label}
+              </button>
+            ))}
+          </div>
+
+          <div className="about-team__divisions stagger-children">
+            {activeDivisions.map((division) => (
+              <div key={division.id} className="about-team__division-section">
+                <div className="about-team__division-header">
+                  <h3 className="about-team__division-title">{division.title}</h3>
+                  <p className="about-team__division-desc">{division.desc}</p>
+                </div>
+                
+                <div className="about-team__grid">
+                  {division.members.map((member) => (
+                    <AnimateOnScroll key={member.id}>
+                      <Link to={`/tentang-kami/pengajar/${member.id}`} className={`about-team__card${member.id === 1 ? ' about-team__card--founder' : ''}`}>
+                        {member.id === 1 && (
+                          <span className="about-team__founder-badge">
+                            <Star size={10} /> Founder
+                          </span>
+                        )}
+                        {member.certified && (
+                          <span className="about-team__certified-badge" title="Sertifikasi Pendidik">
+                            <Award size={12} />
+                          </span>
+                        )}
+                        <div className="about-team__avatar-container">
+                          {member.image ? (
+                            <img
+                              src={member.image}
+                              alt={member.name}
+                              className="about-team__avatar-img"
+                            />
+                          ) : (
+                            <div
+                              className="about-team__avatar"
+                              style={{ background: member.color }}
+                            >
+                              {getInitials(member.name)}
+                            </div>
+                          )}
+                        </div>
+                        <div className="about-team__details">
+                          <h4 className="about-team__name">{member.name}</h4>
+                          <p className="about-team__role">{member.role}</p>
+                          <div className="about-team__subjects-container">
+                            <span className="about-team__subjects">{member.subjects}</span>
+                          </div>
+                        </div>
+                        
+                        <div className="about-team__hover-cta">
+                          Lihat Profil <ArrowRight size={14} />
+                        </div>
+                      </Link>
+                    </AnimateOnScroll>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
         </div>

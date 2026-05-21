@@ -1,3 +1,7 @@
+/* =============================================
+   ALUMNI PAGE STYLES
+   ============================================= */
+
 .alumni-page {
   background: var(--color-background);
   min-height: 100vh;
@@ -7,6 +11,8 @@
   padding-top: calc(var(--navbar-height) + var(--space-4xl));
   padding-bottom: var(--space-4xl);
   text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .alumni-hero__title {
@@ -15,13 +21,15 @@
   font-weight: 800;
   color: var(--color-text-white);
   margin-bottom: var(--space-md);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .alumni-hero__subtitle {
   font-size: var(--text-lg);
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.95);
   max-width: 600px;
   margin: 0 auto;
+  line-height: 1.6;
 }
 
 .alumni-list-section {
@@ -34,48 +42,115 @@
   z-index: 10;
 }
 
-.alumni-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: var(--space-2xl);
+/* =============================================
+   CAROUSEL LAYOUT
+   ============================================= */
+
+.alumni-carousel-wrapper {
+  position: relative;
   margin-bottom: var(--space-4xl);
 }
+
+.alumni-carousel {
+  overflow: hidden;
+  padding: 1.5rem 0.5rem; /* Allow card scale and hover shadows to render without clipping */
+}
+
+.alumni-track {
+  display: flex;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.alumni-slide {
+  flex: 0 0 33.333%;
+  min-width: 33.333%;
+  padding: 0 0.75rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* =============================================
+   PREMIUM ALUMNI CARD
+   ============================================= */
 
 .alumni-card {
   background: var(--color-surface);
   border-radius: var(--radius-2xl);
   padding: var(--space-2xl);
-  box-shadow: var(--shadow-lg);
-  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-md);
+  border: 1.5px solid var(--color-border);
   height: 100%;
   display: flex;
   flex-direction: column;
   position: relative;
-  overflow: hidden;
-  transition: var(--transition-base);
+  overflow: visible; /* To allow floating badge/cap overflow if needed */
+  transition: var(--transition-slow);
 }
 
 .alumni-card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-xl);
+  transform: translateY(-10px) scale(1.02);
+  border-color: var(--alumni-accent);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 
+              0 0 20px rgba(37, 99, 235, 0.05);
 }
 
-/* Card Header */
-.alumni-card__header {
+/* Floating Badge Ribbon */
+.alumni-card__badge-ribbon {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
   display: flex;
   align-items: center;
-  gap: var(--space-lg);
+  gap: var(--space-xs);
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: var(--alumni-accent-light);
+  color: var(--alumni-accent);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-base);
+  z-index: 2;
+}
+
+.alumni-card:hover .alumni-card__badge-ribbon {
+  transform: scale(1.05);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Card Header (Vertical Centered Stack) */
+.alumni-card__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-md);
   margin-bottom: var(--space-xl);
+  position: relative;
+  min-height: 195px; /* Ensures the header area is perfectly uniform! */
+}
+
+/* Avatar Container with Caps */
+.alumni-card__avatar-container {
+  position: relative;
+  margin: 0 auto;
 }
 
 .alumni-card__avatar {
-  width: 70px;
-  height: 70px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   overflow: hidden;
   background: var(--color-background);
-  flex-shrink: 0;
-  border: 3px solid var(--color-primary-light);
+  border: 3px solid var(--color-surface);
+  box-shadow: 0 0 0 3px var(--alumni-accent-light), 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: var(--transition-base);
+}
+
+.alumni-card:hover .alumni-card__avatar {
+  box-shadow: 0 0 0 3px var(--alumni-accent), 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
 .alumni-card__avatar img {
@@ -87,117 +162,307 @@
 .alumni-card__avatar-fallback {
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary));
+  background: linear-gradient(135deg, var(--alumni-accent), var(--alumni-accent-light));
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: var(--color-surface);
 }
 
+/* Graduation Cap Overlay */
+.alumni-card__avatar-cap {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: #F59E0B; /* Warm orange graduation cap background */
+  color: white;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+  border: 2px solid white;
+  transform: rotate(15deg);
+  transition: var(--transition-base);
+  z-index: 2;
+}
+
+.alumni-card:hover .alumni-card__avatar-cap {
+  transform: rotate(0deg) scale(1.15);
+  background: #EA580C;
+}
+
+/* Profile Details */
 .alumni-card__profile {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
   gap: var(--space-xs);
+  min-width: 0;
+  width: 100%;
 }
 
 .alumni-card__name {
   font-family: var(--font-heading);
   font-size: var(--text-xl);
-  font-weight: 700;
+  font-weight: 800;
   color: var(--color-text-primary);
+  line-height: 1.3;
+}
+
+.alumni-card__badge-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-top: var(--space-sm);
 }
 
 .alumni-card__year {
-  font-size: var(--text-sm);
-  color: var(--color-primary);
-  font-weight: 600;
-  background: rgba(37, 99, 235, 0.1);
-  padding: 0.25rem 0.75rem;
-  border-radius: var(--radius-full);
-  display: inline-block;
-  align-self: flex-start;
-}
-
-/* Schools flow */
-.alumni-card__schools {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
-  margin-bottom: var(--space-xl);
-  padding: var(--space-lg);
-  background: rgba(0, 0, 0, 0.02);
-  border-radius: var(--radius-lg);
-}
-
-.alumni-card__school-item {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--space-md);
-}
-
-.alumni-card__school-item svg {
-  color: var(--color-text-secondary);
-  margin-top: 4px;
-}
-
-.alumni-card__school-item--current svg {
-  color: var(--color-primary);
-}
-
-.alumni-card__school-info {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.alumni-card__school-label {
   font-size: var(--text-xs);
   color: var(--color-text-secondary);
+  font-weight: 600;
+  background: var(--color-background);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+}
+
+.alumni-card__success-badge {
+  font-size: var(--text-xs);
+  color: var(--alumni-accent);
+  font-weight: 700;
+  background: var(--alumni-accent-light);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-md);
+}
+
+/* =============================================
+   VERTICAL TIMELINE TRANSITION FLOW
+   ============================================= */
+
+.alumni-card__pathway {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  background: var(--color-background);
+  padding: var(--space-md) var(--space-lg) var(--space-md) 2.5rem; /* Indent for timeline on the left */
+  border-radius: var(--radius-xl);
+  margin-bottom: var(--space-xl);
+  border: 1px dashed var(--color-border);
+  transition: var(--transition-base);
+  position: relative;
+  gap: var(--space-md);
+  height: 160px; /* Fixed height for absolute visual consistency across all cards! */
+  flex-shrink: 0;
+}
+
+.alumni-card:hover .alumni-card__pathway {
+  border-color: var(--alumni-accent-light);
+  background: rgba(var(--color-primary-rgb), 0.02);
+}
+
+.pathway-step {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  text-align: left;
+}
+
+.pathway-label {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  font-weight: 600;
+  font-weight: 700;
+  margin-bottom: 2px;
 }
 
-.alumni-card__school-name {
+.pathway-value {
   font-size: var(--text-sm);
-  font-weight: 600;
+  font-weight: 700;
   color: var(--color-text-primary);
   line-height: 1.4;
+  word-break: break-word;
 }
 
-.alumni-card__school-arrow {
+.pathway-step--curr .pathway-value {
+  color: var(--alumni-accent);
+}
+
+/* Vertical Connector Line & Arrow */
+.pathway-connector {
+  position: absolute;
+  left: 1.25rem;
+  top: 1.8rem;
+  bottom: 1.8rem;
+  width: 2px;
   display: flex;
-  justify-content: center;
-  color: var(--color-border);
-  margin: -8px 0;
-  padding-left: 20px; /* align with text somewhat */
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  pointer-events: none;
 }
 
-/* Quote */
+.connector-line {
+  width: 2px;
+  height: 100%;
+  background: repeating-linear-gradient(to bottom, var(--color-border) 0, var(--color-border) 4px, transparent 4px, transparent 8px);
+}
+
+.alumni-card:hover .connector-line {
+  background: repeating-linear-gradient(to bottom, var(--alumni-accent) 0, var(--alumni-accent) 4px, transparent 4px, transparent 8px);
+  opacity: 0.6;
+}
+
+.connector-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-text-muted);
+  border: 2px solid var(--color-surface);
+  box-shadow: 0 0 0 1px var(--color-border);
+}
+
+.connector-dot--start {
+  background: var(--color-text-muted);
+}
+
+.connector-dot--end {
+  background: var(--alumni-accent);
+  box-shadow: 0 0 0 2px var(--alumni-accent-light);
+}
+
+.connector-arrow {
+  color: var(--alumni-accent);
+  background: var(--color-background);
+  padding: 4px 0;
+  transform: rotate(90deg); /* Points directly DOWN */
+  z-index: 1;
+  animation: pulseConnector 2s infinite ease-in-out;
+}
+
+@keyframes pulseConnector {
+  0%, 100% {
+    transform: rotate(90deg) translateX(0);
+    opacity: 0.8;
+  }
+  50% {
+    transform: rotate(90deg) translateX(4px);
+    opacity: 1;
+  }
+}
+
+/* =============================================
+   QUOTE BLOCK
+   ============================================= */
+
 .alumni-card__quote-wrapper {
   position: relative;
   padding-top: var(--space-lg);
   border-top: 1px solid var(--color-border);
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .alumni-card__quote-icon {
   position: absolute;
   top: -12px;
   right: 0;
-  color: var(--color-primary-light);
-  opacity: 0.3;
+  color: var(--alumni-accent);
+  opacity: 0.15;
+  transition: var(--transition-base);
+}
+
+.alumni-card:hover .alumni-card__quote-icon {
+  opacity: 0.25;
+  transform: translateY(-2px);
 }
 
 .alumni-card__quote {
-  font-size: var(--text-base);
+  font-size: var(--text-sm);
   line-height: 1.6;
   color: var(--color-text-secondary);
   font-style: italic;
   margin: 0;
+  text-align: center;
 }
 
-/* CTA */
+/* =============================================
+   CAROUSEL NAVIGATION
+   ============================================= */
+
+.alumni-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+}
+
+.alumni-nav-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-base);
+}
+
+.alumni-nav-arrow:hover:not(:disabled) {
+  background: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+  transform: scale(1.05);
+  box-shadow: var(--shadow-md);
+}
+
+.alumni-nav-arrow:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.alumni-dots {
+  display: flex;
+  gap: var(--space-sm);
+  align-items: center;
+}
+
+.alumni-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-border);
+  cursor: pointer;
+  transition: var(--transition-base);
+  border: none;
+  padding: 0;
+}
+
+.alumni-dot.active {
+  background: var(--color-primary);
+  width: 28px;
+  border-radius: var(--radius-full);
+}
+
+.alumni-dot:hover:not(.active) {
+  background: var(--color-text-muted);
+}
+
+/* =============================================
+   CALL TO ACTION SECTION
+   ============================================= */
+
 .alumni-cta {
   text-align: center;
   background: var(--color-surface);
@@ -235,6 +500,17 @@
   margin-right: auto;
 }
 
+/* =============================================
+   RESPONSIVE DESIGN
+   ============================================= */
+
+@media (max-width: 1024px) {
+  .alumni-slide {
+    flex: 0 0 50%;
+    min-width: 50%;
+  }
+}
+
 @media (max-width: 768px) {
   .alumni-hero__title {
     font-size: var(--text-4xl);
@@ -246,5 +522,26 @@
   
   .alumni-cta h2 {
     font-size: var(--text-2xl);
+  }
+}
+
+@media (max-width: 640px) {
+  .alumni-slide {
+    flex: 0 0 100%;
+    min-width: 100%;
+  }
+
+  .alumni-card {
+    padding: var(--space-xl);
+  }
+  
+  .alumni-card__header {
+    gap: var(--space-md);
+  }
+  
+  .alumni-card__badge-ribbon {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
   }
 }

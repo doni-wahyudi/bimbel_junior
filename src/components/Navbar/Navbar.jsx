@@ -1,11 +1,14 @@
 import { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { GraduationCap, Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import './Navbar.css';
+
+const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSdO_nrN-Xz7HyRVaJ2gLOzIwoa2X-g3cIDrvKqKwMQ3Hpn_tQ/viewform';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [activeMobileSubmenu, setActiveMobileSubmenu] = useState(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -18,6 +21,7 @@ export default function Navbar() {
 
   useEffect(() => {
     setIsMobileOpen(false);
+    setActiveMobileSubmenu(null);
   }, [location]);
 
   useEffect(() => {
@@ -31,44 +35,103 @@ export default function Navbar() {
 
   const navLinks = [
     { path: '/', label: 'Beranda' },
-    { path: '/program', label: 'Program' },
+    {
+      label: 'Program',
+      path: '/program',
+      submenu: [
+        { path: '/program', label: 'Program Belajar & Biaya' },
+        { path: '/program-tahunan', label: 'Program Tahunan' },
+      ]
+    },
+    {
+      label: 'Tentang Kami',
+      path: '/tentang-kami',
+      submenu: [
+        { path: '/tentang-kami', label: 'Profil & Guru' },
+        { path: '/tentang-kami/struktur', label: 'Struktur Organisasi' },
+        { path: '/tentang-kami/legalitas', label: 'Legalitas & Perizinan' },
+        { path: '/tentang-kami/sop-tata-tertib', label: 'SOP & Tata Tertib' },
+        { path: '/tentang-kami/denah', label: 'Denah Ruang' },
+        { path: '/tentang-kami/peserta-didik', label: 'Daftar Peserta Didik' },
+      ]
+    },
     { path: '/alumni', label: 'Alumni' },
     { path: '/blog', label: 'Blog' },
     { path: '/galeri', label: 'Galeri' },
     { path: '/hubungi-kami', label: 'Kontak' },
   ];
 
+  const isSubmenuActive = (submenu) => {
+    return submenu.some(sub => location.pathname === sub.path);
+  };
+
   return (
     <header className={`navbar ${isScrolled ? 'navbar--scrolled' : ''} ${isMobileOpen ? 'navbar--mobile-open' : ''}`}>
       <nav className="navbar__container container">
-        <Link to="/" className="navbar__logo" aria-label="Bimbel Junior Home">
-          <div className="navbar__logo-icon">
-            <GraduationCap size={24} />
-          </div>
+        <Link to="/" className="navbar__logo" aria-label="Junior Bimbel Home">
+          <img
+            src={`${import.meta.env.BASE_URL}images/logo.jpg`}
+            alt="Junior Bimbel Logo"
+            className="navbar__logo-img"
+            width="40"
+            height="40"
+          />
           <span className="navbar__logo-text">
-            Bimbel <strong>JUNIOR</strong>
+            Junior <strong>BIMBEL</strong>
           </span>
         </Link>
 
         <ul className="navbar__links">
           {navLinks.map((link) => (
-            <li key={link.path} className="navbar__link-item">
-              <NavLink
-                to={link.path}
-                className={({ isActive }) =>
-                  `navbar__link ${isActive ? 'navbar__link--active' : ''}`
-                }
-                end={link.path === '/'}
-              >
-                {link.label}
-              </NavLink>
+            <li
+              key={link.label}
+              className={`navbar__link-item ${link.submenu ? 'navbar__link-item--has-submenu' : ''}`}
+            >
+              {link.submenu ? (
+                <>
+                  <button
+                    className={`navbar__link navbar__link--dropdown-trigger ${
+                      isSubmenuActive(link.submenu) ? 'navbar__link--active' : ''
+                    }`}
+                    onClick={(e) => e.preventDefault()}
+                  >
+                    {link.label}
+                    <ChevronDown size={14} className="navbar__dropdown-arrow" />
+                  </button>
+                  <ul className="navbar__dropdown">
+                    {link.submenu.map((sub) => (
+                      <li key={sub.path} className="navbar__dropdown-item">
+                        <NavLink
+                          to={sub.path}
+                          className={({ isActive }) =>
+                            `navbar__dropdown-link ${isActive ? 'navbar__dropdown-link--active' : ''}`
+                          }
+                          end
+                        >
+                          {sub.label}
+                        </NavLink>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              ) : (
+                <NavLink
+                  to={link.path}
+                  className={({ isActive }) =>
+                    `navbar__link ${isActive ? 'navbar__link--active' : ''}`
+                  }
+                  end={link.path === '/'}
+                >
+                  {link.label}
+                </NavLink>
+              )}
             </li>
           ))}
         </ul>
 
-        <Link to="/daftar" className="navbar__cta btn btn-primary">
+        <a href={GOOGLE_FORM_URL} target="_blank" rel="noopener noreferrer" className="navbar__cta btn btn-primary">
           Daftar Sekarang
-        </Link>
+        </a>
 
         <button
           className="navbar__hamburger"
@@ -85,27 +148,59 @@ export default function Navbar() {
         <div className={`navbar__mobile-menu ${isMobileOpen ? 'navbar__mobile-menu--open' : ''}`}>
           <ul className="navbar__mobile-links">
             {navLinks.map((link, index) => (
-              <li key={link.path} className="navbar__mobile-link-item" style={{ animationDelay: `${index * 0.05}s` }}>
-                <NavLink
-                  to={link.path}
-                  className={({ isActive }) =>
-                    `navbar__mobile-link ${isActive ? 'navbar__mobile-link--active' : ''}`
-                  }
-                  end={link.path === '/'}
-                  onClick={() => setIsMobileOpen(false)}
-                >
-                  {link.label}
-                </NavLink>
+              <li key={link.label} className="navbar__mobile-link-item" style={{ animationDelay: `${index * 0.05}s` }}>
+                {link.submenu ? (
+                  <div className="navbar__mobile-submenu-container">
+                    <button
+                      className={`navbar__mobile-link navbar__mobile-link--trigger ${
+                        isSubmenuActive(link.submenu) ? 'navbar__mobile-link--active' : ''
+                      }`}
+                      onClick={() => setActiveMobileSubmenu(activeMobileSubmenu === link.label ? null : link.label)}
+                    >
+                      {link.label}
+                      <ChevronDown size={18} className={`navbar__mobile-arrow ${activeMobileSubmenu === link.label ? 'navbar__mobile-arrow--open' : ''}`} />
+                    </button>
+                    <ul className={`navbar__mobile-submenu ${activeMobileSubmenu === link.label ? 'navbar__mobile-submenu--open' : ''}`}>
+                      {link.submenu.map((sub) => (
+                        <li key={sub.path} className="navbar__mobile-submenu-item">
+                          <NavLink
+                            to={sub.path}
+                            className={({ isActive }) =>
+                              `navbar__mobile-submenu-link ${isActive ? 'navbar__mobile-submenu-link--active' : ''}`
+                            }
+                            onClick={() => setIsMobileOpen(false)}
+                            end
+                          >
+                            {sub.label}
+                          </NavLink>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ) : (
+                  <NavLink
+                    to={link.path}
+                    className={({ isActive }) =>
+                      `navbar__mobile-link ${isActive ? 'navbar__mobile-link--active' : ''}`
+                    }
+                    end={link.path === '/'}
+                    onClick={() => setIsMobileOpen(false)}
+                  >
+                    {link.label}
+                  </NavLink>
+                )}
               </li>
             ))}
           </ul>
-          <Link
-            to="/daftar"
+          <a
+            href={GOOGLE_FORM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="navbar__mobile-cta btn btn-primary btn-lg"
             onClick={() => setIsMobileOpen(false)}
           >
             Daftar Sekarang
-          </Link>
+          </a>
         </div>
       </div>
     </header>

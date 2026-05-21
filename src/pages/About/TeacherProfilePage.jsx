@@ -5,6 +5,14 @@ import SEO from '../../components/SEO';
 import AnimateOnScroll from '../../components/AnimateOnScroll';
 import './TeacherProfilePage.css';
 
+function getInitials(name) {
+  const parts = name.replace(/,.*$/, '').replace(/\./g, '').trim().split(' ');
+  if (parts.length >= 2) {
+    return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+  }
+  return parts[0][0].toUpperCase();
+}
+
 export default function TeacherProfilePage() {
   const { id } = useParams();
   const teacher = teamMembers.find(t => t.id === parseInt(id, 10));
@@ -17,7 +25,7 @@ export default function TeacherProfilePage() {
     <>
       <SEO 
         title={`Profil Pengajar - ${teacher.name}`}
-        description={`Mengenal lebih dekat ${teacher.name}, ${teacher.role} di Bimbel Junior.`}
+        description={`Mengenal lebih dekat ${teacher.name}, ${teacher.role} di Junior Bimbel.`}
       />
 
       <div className="teacher-profile">
@@ -37,18 +45,35 @@ export default function TeacherProfilePage() {
                   className="teacher-profile__image-bg" 
                   style={{ background: teacher.color }}
                 />
-                <img 
-                  src={teacher.image} 
-                  alt={teacher.name} 
-                  className="teacher-profile__image" 
-                />
+                {teacher.image ? (
+                  <img 
+                    src={teacher.image} 
+                    alt={teacher.name} 
+                    className="teacher-profile__image" 
+                  />
+                ) : (
+                  <div 
+                    className="teacher-profile__image-placeholder"
+                    style={{ background: teacher.color }}
+                  >
+                    {getInitials(teacher.name)}
+                  </div>
+                )}
               </div>
               <div className="teacher-profile__title-wrapper">
                 <h1 className="teacher-profile__name">{teacher.name}</h1>
                 <p className="teacher-profile__role">{teacher.role}</p>
-                <div className="teacher-profile__subject-badge" style={{ backgroundColor: `${teacher.color}20`, color: '#fff', border: `1px solid ${teacher.color}` }}>
-                  <BookOpen size={16} />
-                  {teacher.subjects}
+                <div className="teacher-profile__badges-container">
+                  <div className="teacher-profile__subject-badge" style={{ backgroundColor: `${teacher.color}20`, color: '#fff', border: `1px solid ${teacher.color}` }}>
+                    <BookOpen size={16} />
+                    {teacher.subjects}
+                  </div>
+                  {teacher.certified && (
+                    <div className="teacher-profile__certified-badge">
+                      <Award size={16} />
+                      Sertifikasi Pendidik
+                    </div>
+                  )}
                 </div>
               </div>
             </div>

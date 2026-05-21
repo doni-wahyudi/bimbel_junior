@@ -4,7 +4,7 @@ import './WhatsAppModal.css';
 
 export default function WhatsAppModal() {
   const [showForm, setShowForm] = useState(false);
-  const [modalTitle, setModalTitle] = useState('Hubungi Bimbel Junior');
+  const [modalTitle, setModalTitle] = useState('Hubungi Junior Bimbel');
   const [notesPlaceholder, setNotesPlaceholder] = useState('Tulis pesan Anda di sini...');
   const [gradeVisible, setGradeVisible] = useState(true);
   
@@ -18,7 +18,7 @@ export default function WhatsAppModal() {
   useEffect(() => {
     const handleOpen = (e) => {
       const { title, defaultMessage, placeholder, showGrade, defaultGrade } = e.detail || {};
-      setModalTitle(title || 'Hubungi Bimbel Junior');
+      setModalTitle(title || 'Hubungi Junior Bimbel');
       setFormData({
         name: '',
         phone: '',
@@ -42,7 +42,7 @@ export default function WhatsAppModal() {
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    let text = `Halo Bimbel Junior!%0A%0A`;
+    let text = `Halo Junior Bimbel!%0A%0A`;
     text += `*Nama Siswa/Penanya:* ${formData.name}%0A`;
     text += `*No. WhatsApp / HP:* ${formData.phone}%0A`;
     if (gradeVisible && formData.grade) {
@@ -107,7 +107,7 @@ export default function WhatsAppModal() {
                 className="form-control"
               >
                 <option value="">Pilih jenjang kelas...</option>
-                <option value="SD">SD (Sekolah Dasar)</option>
+                <option value="SD">SD (Sekolah Dasar Kelas 4,5,6)</option>
                 <option value="SMP">SMP (Sekolah Menengah Pertama)</option>
                 <option value="SMA">SMA (Sekolah Menengah Atas)</option>
                 <option value="Alumni/Gap Year">Alumni / Gap Year</option>

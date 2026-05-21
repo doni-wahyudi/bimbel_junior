@@ -6,93 +6,220 @@ export const teamMembers = [
   {
     id: 1,
     name: 'Ona Rahmawati, M.Pd.',
-    role: 'Founder & Lead Instructor',
-    subjects: 'Matematika & IPA',
-    bio: 'Lulusan Magister Pendidikan dengan pengalaman lebih dari 10 tahun di bidang pendidikan. Mendirikan Bimbel Junior dengan visi menciptakan lingkungan belajar yang menyenangkan dan efektif.',
-    longBio: 'Ibu Ona telah mendedikasikan lebih dari satu dekade hidupnya untuk dunia pendidikan. Setelah meraih gelar Magister Pendidikan dengan predikat Cum Laude, beliau menyadari perlunya pendekatan belajar yang lebih personal dan menyenangkan. Hal ini mendorongnya untuk mendirikan Bimbel Junior. Beliau sangat peduli pada perkembangan karakter siswa, bukan hanya pada nilai akademik saja.',
+    role: 'Pimpinan',
+    subjects: 'Manajemen & Pengembangan Kurikulum',
+    bio: 'Pendiri dan pimpinan Bimbel Junior dengan gelar S2 Manajemen Pendidikan. Bersertifikat pendidik dan berpengalaman luas di bidang pendidikan.',
+    longBio: 'Ibu Ona Rahmawati adalah pendiri sekaligus pimpinan Bimbel Junior. Dengan latar belakang S2 Manajemen Pendidikan, beliau mendirikan lembaga ini dengan visi "Cerdaskan Generasi Bangsa". Beliau bertanggung jawab atas penyusunan kurikulum, SOP pembelajaran, evaluasi pendidik, dan pengembangan program tahunan di semua jenjang. Bimbel Junior telah resmi berizin operasional dari Unit Pengelola Penanaman Modal dan Pelayanan Terpadu Satu Pintu Kecamatan Tanjung Priok.',
     education: [
-      'S2 Pendidikan Dasar - Universitas Negeri Jakarta',
-      'S1 Pendidikan Matematika - Universitas Pendidikan Indonesia'
+      'S2 Manajemen Pendidikan'
     ],
     achievements: [
-      'Guru Teladan Tingkat Provinsi 2019',
-      'Pembicara Nasional Metode Belajar Interaktif'
+      'Bersertifikat Pendidik',
+      'Pendiri & Pimpinan Bimbel Junior',
+      'Izin Operasional Lembaga Kursus dan Pelatihan'
     ],
-    motto: '"Pendidikan adalah kunci untuk membuka pintu emas kebebasan dan kesuksesan masa depan."',
+    motto: '"Cerdaskan Generasi Bangsa"',
     color: '#2D6CB4',
-    image: `${cleanBaseUrl}images/team/founder.png`
+    image: null,
+    certified: true
   },
   {
     id: 2,
-    name: 'Ahmad Fauzi, S.Pd.',
-    role: 'Guru Matematika SMP/SMA',
-    subjects: 'Matematika',
-    bio: 'Berpengalaman 8 tahun mengajar Matematika tingkat SMP dan SMA. Spesialis persiapan UTBK dengan metode pengajaran yang mudah dipahami.',
-    longBio: 'Pak Ahmad dikenal sebagai pakar dalam mengubah materi Matematika yang rumit menjadi konsep yang sangat mudah dipahami. Selama 8 tahun karirnya, ia telah membantu ratusan siswa lolos masuk Universitas Negeri impian mereka melalui jalur UTBK dan SNMPTN. Kelasnya selalu diwarnai dengan penyelesaian soal cepat (fast-trick) dan diskusi yang logis.',
+    name: 'Ratna Sari Irsyad, S.Pd., M.Pd.',
+    role: 'Guru IPA SMP',
+    subjects: 'IPA',
+    bio: 'Guru IPA SMP bersertifikat pendidik dengan gelar S2 Pendidikan MIPA. Guru Penggerak Angkatan 7 dan aktif mengajar di SMPN 289 Jakarta.',
+    longBio: 'Ibu Ratna Sari Irsyad adalah pengajar IPA untuk jenjang SMP di Bimbel Junior. Beliau meraih S1 Pendidikan Biologi dari Universitas Negeri Jakarta dan S2 Pendidikan MIPA dari Unindra. Sebagai Guru Penggerak Angkatan 7 (2022–sekarang), beliau juga aktif sebagai Tim Kreatif Sekolah dan mengajar di SMPN 289 Jakarta sejak 2014. Beliau menguasai editing video, Microsoft Office, dan Canva Edu untuk media pembelajaran.',
     education: [
-      'S1 Pendidikan Matematika - Universitas Negeri Semarang'
+      'S2 Pendidikan MIPA – Unindra (2017)',
+      'S1 Pendidikan Biologi – Universitas Negeri Jakarta (2014)'
     ],
     achievements: [
-      'Tutor Terbaik Bimbel Junior 2023',
-      'Pelatih Tim Olimpiade Matematika Nasional (OSN)'
+      'Bersertifikat Pendidik',
+      'Guru Penggerak Angkatan 7 (2022–sekarang)',
+      'Tim Kreatif Sekolah',
+      'Mengajar di SMPN 289 Jakarta (2014–sekarang)'
     ],
-    motto: '"Matematika bukan tentang menghafal rumus, tapi tentang memahami pola alam semesta."',
     color: '#10B981',
-    image: `${cleanBaseUrl}images/team/teacher1.png`
+    image: null,
+    certified: true
   },
   {
     id: 3,
-    name: 'Siti Nurhaliza, S.Pd.',
-    role: 'Guru Bahasa Inggris',
-    subjects: 'Bahasa Inggris',
-    bio: 'TOEFL certified instructor dengan skor 600+. Mengajar Bahasa Inggris untuk semua jenjang dengan pendekatan komunikatif dan fun learning.',
-    longBio: 'Ms. Siti adalah pengajar Bahasa Inggris yang energik dan sangat disukai oleh siswa SD hingga SMA. Ia memfokuskan pembelajarannya pada percakapan aktif (Active Speaking) dan kepercayaan diri, sehingga siswa tidak hanya mahir secara grammar tetapi juga berani mempraktikkan Bahasa Inggris dalam kehidupan sehari-hari.',
+    name: 'Zahratul Jannah, S.Pd.',
+    role: 'Guru IPA SMP / SD Kelas 6',
+    subjects: 'IPA',
+    bio: 'Guru IPA untuk jenjang SMP dan kelas 6 SD. Lulusan Pendidikan Biologi dari IAIN Syekh Nurjati Cirebon, saat ini juga mengajar di SMP Nurul Iman Arhanud.',
+    longBio: 'Ibu Zahratul Jannah mengajar IPA untuk jenjang SMP sekaligus kelas 6 SD di Bimbel Junior. Beliau meraih S1 Pendidikan Biologi dari IAIN Syekh Nurjati Cirebon (2019–2023). Pengalaman mengajar beliau mencakup Mts Bina Cendikia Cirebon, asisten dosen Kewirausahaan, dan saat ini guru IPA di SMP Nurul Iman Arhanud untuk kelas VIII dan IX. Beliau dikenal ceria, inovatif dalam media pembelajaran, dan mampu membuat sains menyenangkan bagi siswa.',
     education: [
-      'S1 Sastra Inggris - Universitas Gadjah Mada',
-      'Sertifikasi Internasional TESOL'
+      'S1 Pendidikan Biologi – IAIN Syekh Nurjati Cirebon (2019–2023)'
     ],
     achievements: [
-      'Skor TOEFL ITP 620',
-      'Pendamping Pertukaran Pelajar Internasional 2021'
+      'Guru IPA SMP Nurul Iman Arhanud (2024–sekarang)',
+      'Asisten Dosen Kewirausahaan di IAIN Cirebon (2023)',
+      'Juara 1 Lomba Menyanyi Tingkat Jurusan'
     ],
-    motto: '"Language is the road map of a culture. It tells you where its people come from and where they are going."',
-    color: '#F59E0B',
-    image: `${cleanBaseUrl}images/team/teacher2.png`
+    color: '#06B6D4',
+    image: null,
+    certified: false
   },
   {
     id: 4,
-    name: 'Rizky Pratama, S.Si.',
-    role: 'Guru IPA & Fisika',
-    subjects: 'IPA & Fisika',
-    bio: 'Alumni Universitas Indonesia jurusan Fisika. Menguasai konsep sains dengan baik dan mampu menjelaskan materi kompleks menjadi sederhana.',
-    longBio: 'Pak Rizky membawa laboratorium ke dalam kelas. Latar belakang murni dalam Fisika membuatnya sangat ahli dalam menjelaskan fenomena alam melalui logika sains terapan. Beliau sering menggunakan alat peraga eksperimental dalam mengajarnya agar siswa benar-benar memahami "mengapa" dan "bagaimana" suatu rumus bekerja.',
+    name: 'Joko Sarjono, S.Pd.',
+    role: 'Guru Bahasa Inggris',
+    subjects: 'Bahasa Inggris',
+    bio: 'Guru Bahasa Inggris bersertifikat pendidik. Berpengalaman mengajar sejak 1992, menguasai berbagai metode pengajaran bahasa Inggris modern.',
+    longBio: 'Pak Joko Sarjono adalah pengajar Bahasa Inggris senior yang bersertifikat pendidik. Beliau menempuh Bachelor of Arts in Philosophy di Driyarkara Philosophy School, kemudian melanjutkan studi English Translation di Universitas Terbuka dan memperoleh Akta IV di Universitas Islam Attahiriyah. Karirnya dimulai sebagai guru SMP Don Bosco di Timor-Timur (1992–1994). Saat ini beliau juga mengajar di Nusantara High School & SMK Jakarta sejak 2004 dan sebagai guru privat bahasa Inggris sejak 1998.',
     education: [
-      'S1 Fisika - Universitas Indonesia'
+      'S1 Bachelor of Arts in Philosophy – Driyarkara Philosophy School',
+      'English Translation – Universitas Terbuka',
+      'Akta IV – Universitas Islam Attahiriyah'
     ],
     achievements: [
-      'Juara 1 Lomba Karya Tulis Ilmiah Mahasiswa Nasional',
-      'Fasilitator Science Camp 2022'
+      'Bersertifikat Pendidik',
+      'Pengalaman mengajar 30+ tahun (sejak 1992)',
+      'Guru di Nusantara High School & SMK (2004–sekarang)',
+      'Guru privat Bahasa Inggris (1998–sekarang)'
     ],
-    motto: '"Sains adalah cara kita memahami bahasa penciptaan yang menakjubkan."',
-    color: '#8B5CF6',
-    image: `${cleanBaseUrl}images/team/teacher3.png`
+    color: '#F59E0B',
+    image: null,
+    certified: true
   },
   {
     id: 5,
-    name: 'Dewi Lestari, S.Pd.',
-    role: 'Guru Bahasa Indonesia',
-    subjects: 'Bahasa Indonesia',
-    bio: 'Spesialis persiapan ujian Bahasa Indonesia. Berpengalaman 6 tahun dengan fokus pada peningkatan kemampuan literasi dan penulisan siswa.',
-    longBio: 'Ibu Dewi adalah sosok yang sangat sabar dan teliti. Beliau membimbing siswa dalam memahami ejaan, tata bahasa, hingga kemampuan literasi tingkat lanjut. Ibu Dewi memiliki rekam jejak yang luar biasa dalam membantu siswa SMA meraih nilai sempurna dalam Ujian Nasional dan SNBT bidang Literasi Bahasa Indonesia.',
+    name: 'Fithriya Wahidah, S.Pd.',
+    role: 'Guru Matematika SMP',
+    subjects: 'Matematika',
+    bio: 'Guru Matematika SMP dengan gelar S1 Matematika. Mengajar dengan pendekatan yang membuat konsep matematika mudah dipahami.',
+    longBio: 'Ibu Fithriya Wahidah adalah pengajar Matematika khusus jenjang SMP di Bimbel Junior. Dengan latar belakang S1 Matematika, beliau fokus membantu siswa memahami konsep aljabar, geometri, dan statistika secara mendalam agar melampaui KKM di sekolah mereka.',
     education: [
-      'S1 Pendidikan Bahasa dan Sastra Indonesia - Universitas Negeri Malang'
+      'S1 Matematika'
+    ],
+    achievements: [],
+    color: '#8B5CF6',
+    image: null,
+    certified: false
+  },
+  {
+    id: 6,
+    name: 'Ratih Pratiwi Asri, S.Pd.',
+    role: 'Guru Bahasa Inggris',
+    subjects: 'Bahasa Inggris',
+    bio: 'Guru Bahasa Inggris lulusan UHAMKA jurusan Pendidikan Bahasa Inggris. Berpengalaman mengajar di SMA/SMK dan lembaga kursus selama 3+ tahun.',
+    longBio: 'Ibu Ratih Pratiwi Asri mengajar Bahasa Inggris di Bimbel Junior. Beliau meraih S1 Pendidikan Bahasa Inggris dari Universitas Muhammadiyah Prof. Dr. Hamka (2017–2022). Berpengalaman mengajar di SMA dan SMK Mutiara Vocational School selama 3 tahun (online & offline), serta di D\'Excellent dan Sinteta Course. Beliau juga terampil dalam membuat soal latihan TOEFL dan UTBK, serta membuat platform pembelajaran bahasa Inggris interaktif seperti Kahoot.',
+    education: [
+      'S1 Pendidikan Bahasa Inggris – UHAMKA (2017–2022)'
     ],
     achievements: [
-      'Penulis Artikel Pendidikan Terbaik Tingkat Kota 2020',
-      'Penyusun Modul Sukses Literasi SNBT'
+      'Pengalaman mengajar SMA/SMK (3 tahun)',
+      'Guru di D\'Excellent dan Sinteta Course (3 tahun)',
+      'Terampil membuat soal TOEFL & UTBK',
+      'Pelatihan TOEFL di UNJ dan Scholars Institutions'
     ],
-    motto: '"Bahasa adalah cermin bangsa. Cintailah bahasamu, maka kamu mencintai identitasmu."',
     color: '#EC4899',
-    image: `${cleanBaseUrl}images/team/teacher4.png`
+    image: null,
+    certified: false
+  },
+  {
+    id: 7,
+    name: 'Frans Detio, S.Pd.',
+    role: 'Guru Matematika SMP',
+    subjects: 'Matematika',
+    bio: 'Guru Matematika SMP dengan gelar S1 Matematika. Ahli dalam menjelaskan konsep matematika dengan cara yang mudah dipahami.',
+    longBio: 'Pak Frans Detio mengajar Matematika untuk jenjang SMP di Bimbel Junior. Dengan gelar S1 Matematika, beliau menggunakan metode problem-solving dan latihan soal terstruktur untuk membantu siswa melampaui nilai KKM.',
+    education: [
+      'S1 Matematika'
+    ],
+    achievements: [],
+    color: '#2563EB',
+    image: null,
+    certified: false
+  },
+  {
+    id: 8,
+    name: 'Ria Agustina, S.Pd.',
+    role: 'Guru Bahasa Indonesia',
+    subjects: 'Bahasa Indonesia',
+    bio: 'Guru Bahasa Indonesia dengan gelar S1 Bahasa Indonesia. Berpengalaman membimbing siswa dalam literasi dan penulisan.',
+    longBio: 'Ibu Ria Agustina mengajar Bahasa Indonesia di Bimbel Junior. Dengan latar belakang S1 Bahasa Indonesia, beliau membantu siswa memahami ejaan, tata bahasa, pemahaman bacaan, dan kemampuan menulis secara komprehensif.',
+    education: [
+      'S1 Bahasa Indonesia'
+    ],
+    achievements: [],
+    color: '#EF4444',
+    image: null,
+    certified: false
+  },
+  {
+    id: 9,
+    name: 'Faizah Zahratun Nissa',
+    role: 'Guru Kelas 5 dan 6 SD',
+    subjects: 'Matematika, B. Indonesia, IPAS',
+    bio: 'Tutor Matematika dan Bahasa Indonesia untuk SD–SMP. Berpengalaman mengajar di beberapa lembaga bimbel di Jakarta.',
+    longBio: 'Faizah Zahratun Nissa mengajar kelas 5 dan 6 SD di Bimbel Junior. Lulusan SMAN 114 Jakarta peminatan MIPA, saat ini sedang menempuh pendidikan di STIKes RS Husada. Beliau berpengalaman sebagai tutor di Bimbel Bina Prestasi Cemerlang, Bimbel Kamaya, Bimbel Az Zirly Smart Education, dan Bimbel Quantum Learning Indonesia, mengajar Matematika (SD–SMP), Bahasa Indonesia, dan IPAS.',
+    education: [
+      'SMAN 114 Jakarta – MIPA (2021–2024)',
+      'STIKes RS Husada – S1 Keperawatan-Ners (sedang ditempuh)'
+    ],
+    achievements: [
+      'Tutor di Bimbel Bina Prestasi Cemerlang (2024–2025)',
+      'Tutor di Bimbel Quantum Learning Indonesia (2025–sekarang)',
+      'Mengajar Matematika kelas 1 SD – 7 SMP'
+    ],
+    color: '#F97316',
+    image: null,
+    certified: false
+  },
+  {
+    id: 10,
+    name: 'Syakira Khairani Salsabila',
+    role: 'Admin',
+    subjects: '-',
+    bio: 'Staf administrasi Bimbel Junior yang sedang kuliah PGSD. Bertanggung jawab atas pendaftaran, keuangan, dan koordinasi siswa.',
+    longBio: 'Syakira Khairani Salsabila bertugas sebagai admin di Bimbel Junior. Saat ini sedang kuliah PGSD, beliau bertanggung jawab atas proses pendaftaran siswa baru, pencatatan pembayaran, pengiriman tagihan, dan koordinasi jadwal belajar.',
+    education: [
+      'Sedang kuliah PGSD'
+    ],
+    achievements: [],
+    color: '#64748B',
+    image: null,
+    certified: false
+  },
+  {
+    id: 11,
+    name: 'Sonny Dwinanto Smith, S.Pd.',
+    role: 'Guru Bahasa Inggris SMP/SD',
+    subjects: 'Bahasa Inggris',
+    bio: 'Guru Bahasa Inggris berpengalaman 25+ tahun. Pernah berkarir di BBC English Training Specialist dan mengajar di beberapa sekolah negeri di Jakarta.',
+    longBio: 'Pak Sonny Smith adalah pengajar Bahasa Inggris berpengalaman sejak 1997. Beliau lulusan S1 Bahasa Inggris dari STKIP Kusuma Negara (2010). Karirnya dimulai di BBC English Training Specialist (1997–2008), kemudian mengajar di SDS Kasih Ananda (2007–2021), SDN Rawasari 05 Jakarta Pusat (2007–2020), SMPN 30 Jakarta Utara (2011–2012), SMPN 231 (2016), dan saat ini masih aktif di SMPN 84 Jakarta Utara (2016–sekarang). Beliau juga aktif di MGMP Bahasa Inggris dan telah membuat Modul Ajar B. Inggris Berdiferensiasi Kelas 7 Kurikulum Merdeka.',
+    education: [
+      'S1 Bahasa Inggris – STKIP Kusuma Negara (2010)'
+    ],
+    achievements: [
+      'Staff & Pengajar BBC English Training Specialist (1997–2008)',
+      'Guru B. Inggris SMPN 84 Jakarta Utara (2016–sekarang)',
+      'Pelatihan Kurikulum Merdeka (Kemendikbud, 2021)',
+      'Guru Belajar Berbagi (Kemendikbud, 2020–2021)',
+      'MGMP: Pembuatan Soal HOTS Bahasa Inggris (2022)',
+      'Modul Ajar B. Inggris Berdiferensiasi Kls 7 Kurikulum Merdeka (2023)'
+    ],
+    color: '#0891B2',
+    image: null,
+    certified: false
+  },
+  {
+    id: 12,
+    name: 'Naifah Salsabila Tri Ariani, S.Pd.',
+    role: 'Guru Bahasa Indonesia',
+    subjects: 'Bahasa Indonesia',
+    bio: 'Guru Bahasa Indonesia dengan gelar S1 Bahasa Indonesia. Fokus pada peningkatan kemampuan literasi dan penulisan siswa.',
+    longBio: 'Ibu Naifah Salsabila Tri Ariani mengajar Bahasa Indonesia di Bimbel Junior. Dengan gelar S1 Bahasa Indonesia, beliau membantu siswa mengembangkan kemampuan membaca, menulis, dan memahami bacaan secara kritis.',
+    education: [
+      'S1 Bahasa Indonesia'
+    ],
+    achievements: [],
+    color: '#A855F7',
+    image: null,
+    certified: false
   }
 ];
