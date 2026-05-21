@@ -58,16 +58,16 @@ export default function Navbar() {
   return (
     <header className={`navbar ${isScrolled ? 'navbar--scrolled' : ''} ${isMobileOpen ? 'navbar--mobile-open' : ''}`}>
       <nav className="navbar__container container">
-        <Link to="/" className="navbar__logo" aria-label="Junior Bimbel Home">
+        <Link to="/" className="navbar__logo" aria-label="Bimbel Junior Home">
           <img
-            src={`${import.meta.env.BASE_URL}images/Logo Junior Bimbel.png`}
-            alt="Junior Bimbel Logo"
+            src={`${import.meta.env.BASE_URL}images/Logo Bimbel Junior.png`}
+            alt="Bimbel Junior Logo"
             className="navbar__logo-img"
             width="54"
             height="54"
           />
           <span className="navbar__logo-text">
-            <strong>JUNIOR </strong>BIMBEL
+            <strong>BIMBEL</strong> JUNIOR
           </span>
         </Link>
 

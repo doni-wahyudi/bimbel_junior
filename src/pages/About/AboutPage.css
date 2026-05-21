@@ -405,8 +405,8 @@
 
 .about-team__certified-badge {
   position: absolute;
-  top: 85px;
-  left: calc(50% + 25px);
+  top: 95px;
+  left: calc(50% + 35px);
   width: 24px;
   height: 24px;
   display: flex;
@@ -426,8 +426,8 @@
 }
 
 .about-team__avatar-container {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   margin: var(--space-xs) 0 var(--space-md);
   flex-shrink: 0;
@@ -454,11 +454,18 @@
 
 .about-team__avatar-img {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: -4%;
+  left: -4%;
+  width: 108%;
+  height: 108%;
+  max-width: none;
   object-fit: cover;
+  object-position: center;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.about-team__card:hover .about-team__avatar-img {
+  transform: scale(1.06);
 }
 
 .about-team__avatar {

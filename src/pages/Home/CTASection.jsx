@@ -24,7 +24,7 @@ export default function CTASection() {
             <h2 className="cta-title">Siap Meraih Prestasi Terbaikmu?</h2>
 
             <p className="cta-subtitle">
-              Bergabung dengan ratusan siswa yang telah berhasil bersama Junior Bimbel.
+              Bergabung dengan ratusan siswa yang telah berhasil bersama Bimbel Junior.
               Konsultasi gratis, tanpa komitmen.
             </p>
 
@@ -37,8 +37,8 @@ export default function CTASection() {
                 onClick={() => {
                   window.dispatchEvent(new CustomEvent('open-whatsapp-modal', {
                     detail: {
-                      title: 'Hubungi Junior Bimbel',
-                      defaultMessage: 'Halo Junior Bimbel, saya tertarik untuk bertanya tentang program bimbingan belajar.',
+                      title: 'Hubungi Bimbel Junior',
+                      defaultMessage: 'Halo Bimbel Junior, saya tertarik untuk bertanya tentang program bimbingan belajar.',
                       placeholder: 'Tulis pertanyaan atau minat paket bimbel Anda di sini...'
                     }
                   }));

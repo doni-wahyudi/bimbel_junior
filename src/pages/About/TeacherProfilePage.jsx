@@ -25,7 +25,7 @@ export default function TeacherProfilePage() {
     <>
       <SEO 
         title={`Profil Pengajar - ${teacher.name}`}
-        description={`Mengenal lebih dekat ${teacher.name}, ${teacher.role} di Junior Bimbel.`}
+        description={`Mengenal lebih dekat ${teacher.name}, ${teacher.role} di Bimbel Junior.`}
       />
 
       <div className="teacher-profile">

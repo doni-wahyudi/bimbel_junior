@@ -20,14 +20,14 @@ export default function Footer() {
             <div className="footer__brand">
               <Link to="/" className="footer__logo">
                 <img
-                  src={`${import.meta.env.BASE_URL}images/Logo Junior Bimbel.png`}
-                  alt="Junior Bimbel Logo"
+                  src={`${import.meta.env.BASE_URL}images/Logo Bimbel Junior.png`}
+                  alt="Bimbel Junior Logo"
                   className="footer__logo-img"
                   width="50"
                   height="50"
                 />
                 <span className="footer__logo-text">
-                  <strong>JUNIOR</strong> BIMBEL
+                  <strong>BIMBEL</strong> JUNIOR
                 </span>
               </Link>
               <div className="footer__tagline">Cerdaskan Generasi Bangsa</div>
@@ -40,7 +40,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="footer__social-link"
-                  aria-label="Instagram Junior Bimbel"
+                  aria-label="Instagram Bimbel Junior"
                 >
                   <Camera size={20} />
                 </a>
@@ -98,7 +98,7 @@ export default function Footer() {
       <div className="footer__bottom">
         <div className="container">
           <p className="footer__copyright">
-            © {currentYear} Junior Bimbel. All rights reserved. Made with <Heart size={14} className="footer__heart" /> in Jakarta.
+            © {currentYear} Bimbel Junior. All rights reserved. Made with <Heart size={14} className="footer__heart" /> in Jakarta.
           </p>
         </div>
       </div>

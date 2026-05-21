@@ -1,8 +1,8 @@
 export const faqData = [
   {
     id: 1,
-    question: 'Jam belajar dan jadwal Junior Bimbel?',
-    answer: 'Junior Bimbel beroperasi setiap Senin hingga Jumat dengan 3 pilihan waktu: Pagi (09:00–10:30 WIB), Sore (16:00–17:30 WIB), dan Malam (18:30–20:00 WIB). Setiap sesi berdurasi 90 menit. Siswa bebas memilih hari dan waktu sesuai kenyamanan.'
+    question: 'Jam belajar dan jadwal Bimbel Junior?',
+    answer: 'Bimbel Junior beroperasi setiap Senin hingga Jumat dengan 3 pilihan waktu: Pagi (09:00–10:30 WIB), Sore (16:00–17:30 WIB), dan Malam (18:30–20:00 WIB). Setiap sesi berdurasi 90 menit. Siswa bebas memilih hari dan waktu sesuai kenyamanan.'
   },
   {
     id: 2,
@@ -16,7 +16,7 @@ export const faqData = [
   },
   {
     id: 4,
-    question: 'Bagaimana sistem pengajaran di Junior Bimbel?',
+    question: 'Bagaimana sistem pengajaran di Bimbel Junior?',
     answer: 'Kami menggunakan metode pengajaran interaktif dengan pendekatan personal. Kelas reguler berisi 5–10 siswa, sedangkan kelas privat hanya 1–2 siswa. Materi disesuaikan dengan kurikulum sekolah (Kurikulum Merdeka) dan dilengkapi latihan soal serta evaluasi berkala. Guru juga melayani pembelajaran online bagi siswa yang terkendala dengan mata pelajaran di sekolah.'
   },
   {

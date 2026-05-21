@@ -80,7 +80,7 @@ export default function ProgramPage() {
     <>
       <SEO
         title="Program Bimbingan Belajar"
-        description="Program bimbingan belajar SD, SMP, dan SMA di Junior Bimbel Tanjung Priok. Kurikulum lengkap, jadwal fleksibel, dan biaya terjangkau."
+        description="Program bimbingan belajar SD, SMP, dan SMA di Bimbel Junior Tanjung Priok. Kurikulum lengkap, jadwal fleksibel, dan biaya terjangkau."
         keywords="program bimbel, les SD, les SMP, les SMA, bimbel Tanjung Priok, les privat Jakarta Utara"
       />
 
@@ -287,7 +287,7 @@ export default function ProgramPage() {
                       </div>
                       <div className="benefit-details">
                         <h5 className="benefit-name">Voucher Outing Akhir Semester</h5>
-                        <p className="benefit-desc">Akses gratis ke acara jalan-jalan/outing seru bersama teman-teman Junior Bimbel di akhir semester!</p>
+                        <p className="benefit-desc">Akses gratis ke acara jalan-jalan/outing seru bersama teman-teman Bimbel Junior di akhir semester!</p>
                       </div>
                     </div>
                   </div>

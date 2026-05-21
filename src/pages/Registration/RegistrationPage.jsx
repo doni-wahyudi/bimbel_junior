@@ -28,7 +28,7 @@ export default function RegistrationPage() {
     e.preventDefault();
     
     // Format message for WhatsApp
-    const message = `Halo Junior Bimbel! Saya ingin mendaftar dengan rincian berikut:
+    const message = `Halo Bimbel Junior! Saya ingin mendaftar dengan rincian berikut:
     
 *DATA SISWA*
 Nama Lengkap: ${formData.name}
@@ -50,7 +50,7 @@ Mohon informasi mengenai ketersediaan jadwal dan metode pembayaran. Terima kasih
     <div className="registration-page">
       <SEO 
         title="Pendaftaran Online"
-        description="Daftar bimbingan belajar di Junior Bimbel Tanjung Priok sekarang. Tersedia paket untuk SD, SMP, dan SMA dengan kelas reguler maupun privat."
+        description="Daftar bimbingan belajar di Bimbel Junior Tanjung Priok sekarang. Tersedia paket untuk SD, SMP, dan SMA dengan kelas reguler maupun privat."
       />
 
       <section className="registration-hero gradient-hero">

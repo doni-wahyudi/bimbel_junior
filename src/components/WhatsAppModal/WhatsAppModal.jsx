@@ -4,7 +4,7 @@ import './WhatsAppModal.css';
 
 export default function WhatsAppModal() {
   const [showForm, setShowForm] = useState(false);
-  const [modalTitle, setModalTitle] = useState('Hubungi Junior Bimbel');
+  const [modalTitle, setModalTitle] = useState('Hubungi Bimbel Junior');
   const [notesPlaceholder, setNotesPlaceholder] = useState('Tulis pesan Anda di sini...');
   const [gradeVisible, setGradeVisible] = useState(true);
   
@@ -18,7 +18,7 @@ export default function WhatsAppModal() {
   useEffect(() => {
     const handleOpen = (e) => {
       const { title, defaultMessage, placeholder, showGrade, defaultGrade } = e.detail || {};
-      setModalTitle(title || 'Hubungi Junior Bimbel');
+      setModalTitle(title || 'Hubungi Bimbel Junior');
       setFormData({
         name: '',
         phone: '',
@@ -42,7 +42,7 @@ export default function WhatsAppModal() {
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    let text = `Halo Junior Bimbel!%0A%0A`;
+    let text = `Halo Bimbel Junior!%0A%0A`;
     text += `*Nama Siswa/Penanya:* ${formData.name}%0A`;
     text += `*No. WhatsApp / HP:* ${formData.phone}%0A`;
     if (gradeVisible && formData.grade) {

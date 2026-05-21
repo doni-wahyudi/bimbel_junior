@@ -62,9 +62,9 @@ The following modules and pages have been completely deleted from the active cod
 * Native slow-pulse and slow-bounce animations added directly in pure CSS to keep the layout interactive and engaging.
 
 ### D. Brand Logo & Favicon Integration (`src/components/Navbar/`, `src/components/Footer/`, `index.html`)
-* **Logo Update**: Replaced `images/logo.webp` with `images/Logo Junior Bimbel.png` in the header (`Navbar.jsx`) and footer (`Footer.jsx`) layouts.
+* **Logo Update**: Replaced `images/logo.webp` with `images/Logo Bimbel Junior.png` in the header (`Navbar.jsx`) and footer (`Footer.jsx`) layouts.
 * **Bigger Logo Layout**: Increased header logo image container size from `40px` to `54px` in `Navbar.css` and set HTML dimensions to `54` inside `Navbar.jsx` to make it prominent and beautiful. Increased footer logo image to `50px`.
-* **Favicon Integration**: Updated `index.html`'s `<link rel="icon">` reference to `/images/Logo Junior Bimbel.png` so the browser tab matches the new brand identity.
+* **Favicon Integration**: Updated `index.html`'s `<link rel="icon">` reference to `/images/Logo Bimbel Junior.png` so the browser tab matches the new brand identity.
 
 ### E. Spacious & Enlarged Hero Slider System (`src/pages/Home/HeroSection.jsx`, `src/pages/Home/HeroSection.css`)
 * **Automatic Slider Without Nav**: Built a clean, zero-navigation React slider that loops through `13.jpg.jpeg`, `14.jpg.jpeg`, and `15.jpg.jpeg` images in the `public/images/hero/` folder every 4 seconds.

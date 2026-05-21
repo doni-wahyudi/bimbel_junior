@@ -91,7 +91,7 @@ export default function AboutPage() {
     {
       id: 'manajemen',
       title: 'Pimpinan, Bendahara & Administrasi',
-      desc: 'Pengelola operasional, keuangan, dan administrasi Junior Bimbel',
+      desc: 'Pengelola operasional, keuangan, dan administrasi Bimbel Junior',
       members: teamMembers.filter(m => m.id === 1 || m.id === 3 || m.id === 10)
     },
     {
@@ -128,8 +128,8 @@ export default function AboutPage() {
     <>
       <SEO
         title="Tentang Kami"
-        description="Tentang Junior Bimbel — lembaga bimbingan belajar terpercaya di Tanjung Priok, Jakarta Utara. Didirikan oleh Ona Rahmawati, M.Pd. dengan rating 4.9 di Google."
-        keywords="tentang junior bimbel, profil bimbel, les privat tanjung priok, bimbel terpercaya jakarta utara"
+        description="Tentang Bimbel Junior — lembaga bimbingan belajar terpercaya di Tanjung Priok, Jakarta Utara. Didirikan oleh Ona Rahmawati, M.Pd. dengan rating 4.9 di Google."
+        keywords="tentang bimbel junior, profil bimbel, les privat tanjung priok, bimbel terpercaya jakarta utara"
       />
 
       {/* ===== Hero ===== */}
@@ -139,7 +139,7 @@ export default function AboutPage() {
           <span className="about-hero__badge">
             <Heart size={14} /> Tentang Kami
           </span>
-          <h1 className="about-hero__title">Tentang Junior Bimbel</h1>
+          <h1 className="about-hero__title">Tentang Bimbel Junior</h1>
           <p className="about-hero__subtitle">
             Lebih dari sekadar tempat les — kami adalah partner belajar anak Anda
           </p>
@@ -163,12 +163,12 @@ export default function AboutPage() {
                 Sejarah &amp; Profil
               </h2>
               <p>
-                Junior Bimbel didirikan oleh <strong>Ona Rahmawati, M.Pd.</strong> dengan visi menciptakan lingkungan belajar yang menyenangkan dan efektif bagi
+                Bimbel Junior didirikan oleh <strong>Ona Rahmawati, M.Pd.</strong> dengan visi menciptakan lingkungan belajar yang menyenangkan dan efektif bagi
                 siswa di Tanjung Priok, Jakarta Utara.
               </p>
               <p>
                 Berawal dari keinginan untuk membantu anak-anak di lingkungan sekitar
-                yang kesulitan dalam pelajaran sekolah, Junior Bimbel kini telah
+                yang kesulitan dalam pelajaran sekolah, Bimbel Junior kini telah
                 berkembang menjadi lembaga bimbingan belajar terpercaya yang melayani
                 jenjang SD, SMP, dan SMA.
               </p>

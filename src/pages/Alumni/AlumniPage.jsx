@@ -79,7 +79,7 @@ export default function AlumniPage() {
     <div className="alumni-page">
       <SEO 
         title="Kisah Sukses Alumni"
-        description="Ratusan siswa telah berhasil meraih sekolah impian bersama Junior Bimbel. Temukan kisah inspiratif mereka di sini."
+        description="Ratusan siswa telah berhasil meraih sekolah impian bersama Bimbel Junior. Temukan kisah inspiratif mereka di sini."
       />
 
       <section className="alumni-hero gradient-hero">

@@ -44,7 +44,7 @@ export default function HeroSection() {
             <h1 className="hero-title">
               Raih{' '}
               <span className="hero-title-highlight">Prestasi Terbaikmu</span>{' '}
-              Bersama Junior Bimbel
+              Bersama Bimbel Junior
             </h1>
 
             <p className="hero-subtitle">
@@ -61,7 +61,7 @@ export default function HeroSection() {
                   window.dispatchEvent(new CustomEvent('open-whatsapp-modal', {
                     detail: {
                       title: 'Konsultasi Gratis',
-                      defaultMessage: 'Halo Junior Bimbel, saya ingin berkonsultasi mengenai bimbingan belajar.',
+                      defaultMessage: 'Halo Bimbel Junior, saya ingin berkonsultasi mengenai bimbingan belajar.',
                       placeholder: 'Contoh: Jadwal kelas baru, harga paket, atau tryout terdekat.'
                     }
                   }));
@@ -83,7 +83,7 @@ export default function HeroSection() {
                 <img 
                   key={imgSrc}
                   src={imgSrc} 
-                  alt={`Siswa-siswi Junior Bimbel belajar bersama ${index + 1}`} 
+                  alt={`Siswa-siswi Bimbel Junior belajar bersama ${index + 1}`} 
                   className={`hero-image ${index === currentImageIndex ? 'active' : ''}`}
                 />
               ))}
