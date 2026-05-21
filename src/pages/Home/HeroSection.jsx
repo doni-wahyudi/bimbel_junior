@@ -64,7 +64,7 @@ export default function HeroSection() {
             <div className="hero-image-wrapper">
               <div className="hero-image-glow" />
               <img 
-                src={`${import.meta.env.BASE_URL}images/hero_student.png`} 
+                src={`${import.meta.env.BASE_URL}images/hero_student.webp`} 
                 alt="Siswa-siswi Junior Bimbel belajar bersama" 
                 className="hero-image"
               />

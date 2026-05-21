@@ -70,7 +70,7 @@ export default function Navbar() {
       <nav className="navbar__container container">
         <Link to="/" className="navbar__logo" aria-label="Junior Bimbel Home">
           <img
-            src={`${import.meta.env.BASE_URL}images/logo.jpg`}
+            src={`${import.meta.env.BASE_URL}images/logo.webp`}
             alt="Junior Bimbel Logo"
             className="navbar__logo-img"
             width="40"
