@@ -1,1 +1,0 @@
-import{u as e}from"./index-BjobK4-k.js";var t=e(`chevron-right`,[[`path`,{d:`m9 18 6-6-6-6`,key:`mthhwq`}]]);export{t};
