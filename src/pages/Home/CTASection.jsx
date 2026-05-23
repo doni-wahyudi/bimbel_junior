@@ -2,7 +2,7 @@ import { GraduationCap, MessageCircle, Star, Users, ShieldCheck } from 'lucide-r
 import AnimateOnScroll from '../../components/AnimateOnScroll';
 import './CTASection.css';
 
-const WHATSAPP_URL = 'https://wa.me/6281211663711?text=Halo%20Junior%20Bimbel%2C%20saya%20ingin%20bertanya%20tentang%20program%20bimbingan%20belajar.';
+const WHATSAPP_URL = 'https://wa.me/62881024193340?text=Halo%20Bimbel%20Junior%2C%20saya%20ingin%20bertanya%20tentang%20program%20bimbingan%20belajar.';
 
 export default function CTASection() {
   return (

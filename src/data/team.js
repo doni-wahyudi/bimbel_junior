@@ -85,6 +85,29 @@ export const teamMembers = [
     image: null,
     certified: true
   },
+  {
+    id: 5,
+    name: 'Salsabillah Rizki Al Husna',
+    role: 'Guru Kelas SD',
+    subjects: 'Matematika & IPAS (SD)',
+    bio: 'Tutor kelas SD berlatar belakang Pendidikan Guru Sekolah Dasar (PGSD) UNJ. Berdedikasi tinggi dan terampil merancang pembelajaran kreatif.',
+    longBio: 'Ibu Salsabillah Rizki Al Husna adalah pengajar kelas SD di Bimbel Junior. Beliau menempuh pendidikan S1 PGSD di Universitas Negeri Jakarta (UNJ). Dengan latar belakang tersebut, beliau sangat menguasai pedagogi anak usia SD dan terampil dalam menyusun metode pembelajaran kreatif berbasis sains serta interaktif yang membuat siswa antusias belajar. Beliau juga memegang Sertifikat Kompetensi Junior Administrative Assistant dari BNSP.',
+    education: [
+      'S1 Pendidikan Guru Sekolah Dasar (PGSD) – Universitas Negeri Jakarta (sedang ditempuh)'
+    ],
+    achievements: [
+      'Sertifikat Kompetensi Junior Administrative Assistant (BNSP, 2024)',
+      'Ketua Pelaksana KPUP PGSD UNJ (2023–2024)',
+      'Divisi PSDM Rumah Belajar Ceria PGSD UNJ (2023–2024)',
+      'Relawan Pengajar Dedikasi PGSD UNJ (2022)'
+    ],
+    color: '#8B5CF6',
+    image: cleanBaseUrl + 'images/teacher/salsabilah rizki al husna.png',
+    certified: false,
+    phone: '0896-447-53130',
+    email: 'salsabilarzk24@gmail.com',
+    birthPlaceDate: 'Jakarta, Indonesia'
+  },
 
   {
     id: 6,
@@ -154,8 +177,12 @@ export const teamMembers = [
     ],
     achievements: [],
     color: '#64748B',
-    image: cleanBaseUrl + 'images/teacher/syakira.jpeg',
-    certified: false
+    image: cleanBaseUrl + 'images/teacher/syakira_2.png',
+    certified: false,
+    birthPlaceDate: 'Jakarta, 19 April 2005',
+    address: 'Jl. Sindang No. 99D',
+    bloodType: 'O+',
+    teachingLocation: 'SD Nurul Hikmah'
   },
   {
     id: 11,
@@ -176,7 +203,7 @@ export const teamMembers = [
       'Modul Ajar B. Inggris Berdiferensiasi Kls 7 Kurikulum Merdeka (2023)'
     ],
     color: '#0891B2',
-    image: cleanBaseUrl + 'images/teacher/sonny smith.jpeg',
+    image: cleanBaseUrl + 'images/teacher/sonny smith.png',
     certified: false
   },
   {
@@ -191,7 +218,7 @@ export const teamMembers = [
     ],
     achievements: [],
     color: '#A855F7',
-    image: cleanBaseUrl + 'images/teacher/naifah.jpeg',
+    image: cleanBaseUrl + 'images/teacher/naifah.png',
     certified: false
   },
   {
@@ -212,6 +239,9 @@ export const teamMembers = [
     ],
     color: '#3B82F6',
     image: cleanBaseUrl + 'images/teacher/Muhammad Fathur Rahman.png',
-    certified: false
+    certified: false,
+    birthPlaceDate: 'Jakarta, 21 April 1997',
+    address: 'Jalan Swasembada Barat III No. 14, RT 008 / RW 09, Kebon Bawang, Tanjung Priok, Jakarta Utara',
+    religion: 'Islam'
   }
 ];

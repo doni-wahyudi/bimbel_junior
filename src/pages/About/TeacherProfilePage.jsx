@@ -1,5 +1,17 @@
 import { useParams, Link, Navigate } from 'react-router-dom';
-import { ChevronLeft, GraduationCap, Award, BookOpen } from 'lucide-react';
+import { 
+  ChevronLeft, 
+  GraduationCap, 
+  Award, 
+  BookOpen, 
+  User, 
+  MapPin, 
+  Calendar, 
+  Heart, 
+  Mail, 
+  Phone, 
+  Building2 
+} from 'lucide-react';
 import { teamMembers } from '../../data/team';
 import SEO from '../../components/SEO';
 import AnimateOnScroll from '../../components/AnimateOnScroll';
@@ -99,6 +111,85 @@ export default function TeacherProfilePage() {
 
               {/* Right Column - Sidebar */}
               <div className="teacher-profile__sidebar">
+                {/* Additional Info Card */}
+                {(teacher.birthPlaceDate || teacher.address || teacher.bloodType || teacher.teachingLocation || teacher.email || teacher.phone || teacher.religion) && (
+                  <AnimateOnScroll delay={0.1}>
+                    <div className="teacher-profile__card">
+                      <h3 className="teacher-profile__sidebar-title">
+                        <User size={20} style={{ color: teacher.color }} />
+                        Profil &amp; Kontak
+                      </h3>
+                      <ul className="teacher-profile__info-list">
+                        {teacher.birthPlaceDate && (
+                          <li className="teacher-profile__info-item">
+                            <Calendar size={16} className="teacher-profile__info-icon" style={{ color: teacher.color }} />
+                            <div>
+                              <span className="teacher-profile__info-label">Tempat, Tgl Lahir</span>
+                              <span className="teacher-profile__info-value">{teacher.birthPlaceDate}</span>
+                            </div>
+                          </li>
+                        )}
+                        {teacher.religion && (
+                          <li className="teacher-profile__info-item">
+                            <User size={16} className="teacher-profile__info-icon" style={{ color: teacher.color }} />
+                            <div>
+                              <span className="teacher-profile__info-label">Agama</span>
+                              <span className="teacher-profile__info-value">{teacher.religion}</span>
+                            </div>
+                          </li>
+                        )}
+                        {teacher.address && (
+                          <li className="teacher-profile__info-item">
+                            <MapPin size={16} className="teacher-profile__info-icon" style={{ color: teacher.color }} />
+                            <div>
+                              <span className="teacher-profile__info-label">Alamat</span>
+                              <span className="teacher-profile__info-value">{teacher.address}</span>
+                            </div>
+                          </li>
+                        )}
+                        {teacher.bloodType && (
+                          <li className="teacher-profile__info-item">
+                            <Heart size={16} className="teacher-profile__info-icon" style={{ color: teacher.color }} />
+                            <div>
+                              <span className="teacher-profile__info-label">Golongan Darah</span>
+                              <span className="teacher-profile__info-value">{teacher.bloodType}</span>
+                            </div>
+                          </li>
+                        )}
+                        {teacher.teachingLocation && (
+                          <li className="teacher-profile__info-item">
+                            <Building2 size={16} className="teacher-profile__info-icon" style={{ color: teacher.color }} />
+                            <div>
+                              <span className="teacher-profile__info-label">Tempat Mengajar</span>
+                              <span className="teacher-profile__info-value">{teacher.teachingLocation}</span>
+                            </div>
+                          </li>
+                        )}
+                        {teacher.email && (
+                          <li className="teacher-profile__info-item">
+                            <Mail size={16} className="teacher-profile__info-icon" style={{ color: teacher.color }} />
+                            <div>
+                              <span className="teacher-profile__info-label">Email</span>
+                              <span className="teacher-profile__info-value">
+                                <a href={`mailto:${teacher.email}`} style={{ color: 'var(--color-primary-light)' }}>{teacher.email}</a>
+                              </span>
+                            </div>
+                          </li>
+                        )}
+                        {teacher.phone && (
+                          <li className="teacher-profile__info-item">
+                            <Phone size={16} className="teacher-profile__info-icon" style={{ color: teacher.color }} />
+                            <div>
+                              <span className="teacher-profile__info-label">No. HP</span>
+                              <span className="teacher-profile__info-value">{teacher.phone}</span>
+                            </div>
+                          </li>
+                        )}
+                      </ul>
+                    </div>
+                  </AnimateOnScroll>
+                )}
+
                 <AnimateOnScroll delay={0.2}>
                   <div className="teacher-profile__card">
                     <h3 className="teacher-profile__sidebar-title">

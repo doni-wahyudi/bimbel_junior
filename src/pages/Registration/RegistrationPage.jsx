@@ -4,7 +4,7 @@ import SEO from '../../components/SEO';
 import AnimateOnScroll from '../../components/AnimateOnScroll';
 import './RegistrationPage.css';
 
-const WHATSAPP_NUMBER = '6281211663711';
+const WHATSAPP_NUMBER = '62881024193340';
 
 export default function RegistrationPage() {
   const [formData, setFormData] = useState({
@@ -102,7 +102,7 @@ Mohon informasi mengenai ketersediaan jadwal dan metode pembayaran. Terima kasih
                     <p>Hubungi admin kami jika ada pertanyaan seputar pendaftaran.</p>
                     <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer" className="contact-link">
                       <Phone size={18} />
-                      0812-1166-3711
+                      0881-0241-93340
                     </a>
                     <div className="contact-address">
                       <MapPin size={18} />

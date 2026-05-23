@@ -3,6 +3,10 @@ import SEO from '../../components/SEO';
 import AnimateOnScroll from '../../components/AnimateOnScroll';
 import './LegalityPage.css';
 
+const cleanBaseUrl = (import.meta.env.BASE_URL || '/').endsWith('/')
+  ? import.meta.env.BASE_URL || '/'
+  : `${import.meta.env.BASE_URL || '/'}/`;
+
 export default function LegalityPage() {
   const documents = [
     {
@@ -10,6 +14,7 @@ export default function LegalityPage() {
       subtitle: 'Izin Operasional Lembaga Kursus dan Pelatihan (LKP)',
       icon: FileCheck,
       badgeColor: '#10B981',
+      fileUrl: cleanBaseUrl + 'documents/IZIN_OPERASIONAL_LEMBAGA_KURSUS_DAN_PELATIHAN.pdf',
       details: [
         { label: 'Nomor Keputusan', value: '2/A.5a/31.72.02.1007.14.R-1/3/TM.08.18/e/2025' },
         { label: 'Jenis Perizinan', value: 'Izin Operasional LKP' },
@@ -32,6 +37,7 @@ export default function LegalityPage() {
       subtitle: 'Perizinan Berusaha Berbasis Risiko (Sistem OSS)',
       icon: ShieldCheck,
       badgeColor: '#2563EB',
+      fileUrl: cleanBaseUrl + 'documents/Perizinan_Usaha_NIB.pdf',
       details: [
         { label: 'Nomor Induk Berusaha', value: '2106250057343' },
         { label: 'Nama Pelaku Usaha', value: 'LKP BIMBEL JUNIOR' },
@@ -54,6 +60,7 @@ export default function LegalityPage() {
       subtitle: 'Registrasi Resmi Kementerian Pendidikan RI',
       icon: Landmark,
       badgeColor: '#8B5CF6',
+      fileUrl: cleanBaseUrl + 'documents/LKP_Bimbel_Junior_NPSN.pdf',
       details: [
         { label: 'Nomor Pokok Satuan (NPSN)', value: 'K5669620' },
         { label: 'Nama Lembaga Terdaftar', value: 'LKP BIMBEL JUNIOR' },
@@ -161,6 +168,19 @@ export default function LegalityPage() {
                             <span className="detail-value">{detail.value}</span>
                           </div>
                         ))}
+                        {doc.fileUrl && (
+                          <div className="certificate-card__action" style={{ marginTop: 'var(--space-md)' }}>
+                            <a 
+                              href={doc.fileUrl} 
+                              target="_blank" 
+                              rel="noopener noreferrer" 
+                              className="btn btn-secondary btn-sm"
+                              style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}
+                            >
+                              <FileText size={16} /> Lihat / Unduh Dokumen Asli (PDF)
+                            </a>
+                          </div>
+                        )}
                       </div>
 
                       {/* Official Visual Stamp Seal */}

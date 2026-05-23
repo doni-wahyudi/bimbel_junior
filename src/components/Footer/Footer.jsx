@@ -79,7 +79,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <Phone size={16} />
-                  <a href="https://wa.me/6281211663711">+62 812-1166-3711</a>
+                  <a href="https://wa.me/62881024193340">+62 881-0241-93340</a>
                 </li>
                 <li>
                   <Clock size={16} />

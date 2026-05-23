@@ -4,7 +4,7 @@ import { faqData } from '../../data/faq';
 import AnimateOnScroll from '../../components/AnimateOnScroll';
 import './FAQSection.css';
 
-const WHATSAPP_URL = 'https://wa.me/6281211663711?text=Halo%20Bimbel%20Junior%2C%20saya%20ingin%20bertanya%20tentang%20program%20bimbingan%20belajar.';
+const WHATSAPP_URL = 'https://wa.me/62881024193340?text=Halo%20Bimbel%20Junior%2C%20saya%20ingin%20bertanya%20tentang%20program%20bimbingan%20belajar.';
 
 export default function FAQSection() {
   const [activeId, setActiveId] = useState(null);

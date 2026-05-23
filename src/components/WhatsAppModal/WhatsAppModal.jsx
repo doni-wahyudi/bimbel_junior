@@ -50,7 +50,7 @@ export default function WhatsAppModal() {
     }
     text += `*Pesan:* ${formData.notes || '-'}`;
 
-    window.open(`https://wa.me/6281211663711?text=${text}`, '_blank');
+    window.open(`https://wa.me/62881024193340?text=${text}`, '_blank');
     setShowForm(false);
     setFormData({ name: '', phone: '', grade: '', notes: '' });
   };

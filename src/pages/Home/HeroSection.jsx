@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { GraduationCap, Star, Users, Award, MessageCircle, BookOpen } from 'lucide-react';
 import './HeroSection.css';
 
-const WHATSAPP_URL = 'https://wa.me/6281211663711?text=Halo%20Bimbel%20Junior%2C%20saya%20ingin%20bertanya%20tentang%20program%20bimbingan%20belajar.';
+const WHATSAPP_URL = 'https://wa.me/62881024193340?text=Halo%20Bimbel%20Junior%2C%20saya%20ingin%20bertanya%20tentang%20program%20bimbingan%20belajar.';
 
 export default function HeroSection() {
   const HERO_IMAGES = [

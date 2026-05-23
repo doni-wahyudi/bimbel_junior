@@ -23,9 +23,9 @@ const contactInfo = [
   {
     icon: Phone,
     label: 'WhatsApp',
-    value: '+62 812-1166-3711',
+    value: '+62 881-0241-93340',
     color: 'whatsapp',
-    link: 'https://wa.me/6281211663711'
+    link: 'https://wa.me/62881024193340'
   },
   {
     icon: Clock,
@@ -56,7 +56,7 @@ export default function ContactPage() {
     <>
       <SEO
         title="Hubungi Kami"
-        description="Hubungi Bimbel Junior untuk konsultasi gratis. Alamat: Jl. Warakas 8 Gg. 10 No.34, Tanjung Priok, Jakarta Utara. WhatsApp: 0812-1166-3711."
+        description="Hubungi Bimbel Junior untuk konsultasi gratis. Alamat: Jl. Warakas 8 Gg. 10 No.34, Tanjung Priok, Jakarta Utara. WhatsApp: 0881-0241-93340."
         keywords="kontak bimbel junior, hubungi bimbel, les tanjung priok, bimbel jakarta utara, konsultasi gratis"
       />
 

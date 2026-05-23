@@ -32,7 +32,7 @@ export const faqData = [
   {
     id: 7,
     question: 'Bagaimana cara mendaftar?',
-    answer: 'Pendaftaran sangat mudah! Anda bisa mengisi formulir online melalui tombol "Daftar Sekarang" di website kami, menghubungi kami via WhatsApp di 0812-1166-3711, atau datang langsung ke lokasi kami di Jl. Warakas 8 Gg. 10 No.34, Tanjung Priok, Jakarta Utara.'
+    answer: 'Pendaftaran sangat mudah! Anda bisa mengisi formulir online melalui tombol "Daftar Sekarang" di website kami, menghubungi kami via WhatsApp di 0881-0241-93340, atau datang langsung ke lokasi kami di Jl. Warakas 8 Gg. 10 No.34, Tanjung Priok, Jakarta Utara.'
   },
   {
     id: 8,
