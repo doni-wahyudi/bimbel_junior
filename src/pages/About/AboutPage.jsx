@@ -104,7 +104,7 @@ export default function AboutPage() {
       id: 'ipa',
       title: 'Tutor Sains / IPA',
       desc: 'Tutor IPA (Fisika, Kimia, Biologi) yang menguasai pembelajaran praktis dan teori.',
-      members: teamMembers.filter(m => m.id === 2 || m.id === 3 || m.id === 5 || m.id === 13)
+      members: teamMembers.filter(m => m.id === 2 || m.id === 3 || m.id === 13)
     },
     {
       id: 'inggris',

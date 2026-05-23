@@ -88,10 +88,10 @@ export const teamMembers = [
   {
     id: 5,
     name: 'Salsabillah Rizki Al Husna',
-    role: 'Guru Kelas SD',
-    subjects: 'Matematika & IPAS (SD)',
-    bio: 'Tutor kelas SD berlatar belakang Pendidikan Guru Sekolah Dasar (PGSD) UNJ. Berdedikasi tinggi dan terampil merancang pembelajaran kreatif.',
-    longBio: 'Ibu Salsabillah Rizki Al Husna adalah pengajar kelas SD di Bimbel Junior. Beliau menempuh pendidikan S1 PGSD di Universitas Negeri Jakarta (UNJ). Dengan latar belakang tersebut, beliau sangat menguasai pedagogi anak usia SD dan terampil dalam menyusun metode pembelajaran kreatif berbasis sains serta interaktif yang membuat siswa antusias belajar. Beliau juga memegang Sertifikat Kompetensi Junior Administrative Assistant dari BNSP.',
+    role: 'Guru Matematika SMP',
+    subjects: 'Matematika (SMP)',
+    bio: 'Tutor Matematika SMP yang berdedikasi tinggi dan terampil merancang pembelajaran interaktif serta menyenangkan.',
+    longBio: 'Ibu Salsabillah Rizki Al Husna adalah pengajar Matematika SMP di Bimbel Junior. Beliau memiliki kemampuan mendalam dalam menyusun metode pembelajaran yang interaktif dan mudah dipahami, membantu siswa memecahkan masalah matematika dengan penuh percaya diri.',
     education: [
       'S1 Pendidikan Guru Sekolah Dasar (PGSD) – Universitas Negeri Jakarta (sedang ditempuh)'
     ],

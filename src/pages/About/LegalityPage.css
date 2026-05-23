@@ -222,25 +222,9 @@
 
 .certificate-card__body {
   padding: var(--space-2xl);
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: var(--space-2xl);
-  align-items: stretch;
-}
-
-.certificate-card__content {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: var(--space-lg);
-}
-
-.certificate-card__actions-stamp {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-lg);
-  margin-top: var(--space-lg);
+  gap: var(--space-xl);
 }
 
 .certificate-card__preview {
@@ -248,9 +232,10 @@
   border-radius: var(--radius-xl);
   overflow: hidden;
   background: #f8fafc;
-  height: 480px;
+  height: 680px;
   position: relative;
   box-shadow: var(--shadow-sm);
+  margin-top: var(--space-md);
 }
 
 .certificate-card__iframe {
@@ -562,23 +547,8 @@
     align-items: center;
   }
 
-  .certificate-card__body {
-    grid-template-columns: 1fr;
-    gap: var(--space-2xl);
-  }
-
-  .certificate-card__actions-stamp {
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-md);
-  }
-
   .certificate-card__preview {
-    height: 420px;
-  }
-
-  .digital-stamp {
-    order: 0;
+    height: 500px;
   }
 
   .detail-row {

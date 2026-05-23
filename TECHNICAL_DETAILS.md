@@ -56,8 +56,9 @@ The following modules and pages have been completely deleted from the active cod
 * Centered single-column layout centered around a premium Google Maps container. The "Buka di Google Maps" link is styled as a premium outline pill button with elegant hover translations.
 
 ### C. Legality Page & Document Previews (`src/pages/About/LegalityPage.jsx`, `src/pages/About/LegalityPage.css`)
-* **Split Grid Document Layout**: Converted the certificate cards into split-panel layouts on desktop (`1.2fr 1fr`), grouping the metadata details, action buttons, and digital stamp seals on the left, and embedding a live PDF preview frame (`<iframe>`) directly on the right.
-* **Responsive Falling Back**: Stacks the panels on tablets and collapses them to a clean fallback placeholder card on mobile devices (where inline iframe PDFs are unsupported).
+* **Spacious Document Previews**: Converted the document cards into elegant, single-column vertical flows. Inside each card, the live interactive PDF preview frame (`<iframe>`) is embedded directly below the metadata details table, taking full-width visual scale (`680px` height on desktop).
+* **No Redundant Elements**: Completely removed the "Lihat / Unduh Dokumen Asli" buttons and official visual digital stamp seals from the cards, producing an extremely clean, modern, and uncluttered presentation.
+* **Responsive Falling Back**: Shrinks the viewer height on tablets and collapses to a neat fallback placeholder badge on mobile viewports (where inline PDF iframes are unsupported by browsers).
 * **Tabbed Viewer Removal**: Completely removed the redundant bottom tabbed interactive viewer and associated state controllers to keep the page clean and loading instantly.
 * Centered flex alignment in the *Komitmen Transparansi Publik* section.
 * High-contrast `.trust-title` set to pure white (`#ffffff`) for perfect visibility against the dark backdrop.

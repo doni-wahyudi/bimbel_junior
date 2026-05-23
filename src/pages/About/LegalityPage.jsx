@@ -162,43 +162,16 @@ export default function LegalityPage() {
 
                     {/* Content Body */}
                     <div className="certificate-card__body">
-                      <div className="certificate-card__content">
-                        <div className="details-grid">
-                          {doc.details.map((detail, idx) => (
-                            <div key={idx} className="detail-row">
-                              <span className="detail-label">{detail.label}</span>
-                              <span className="detail-value">{detail.value}</span>
-                            </div>
-                          ))}
-                        </div>
-                        
-                        <div className="certificate-card__actions-stamp">
-                          {doc.fileUrl && (
-                            <div className="certificate-card__action">
-                              <a 
-                                href={doc.fileUrl} 
-                                target="_blank" 
-                                rel="noopener noreferrer" 
-                                className="btn btn-secondary btn-sm"
-                                style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}
-                              >
-                                <FileText size={16} /> Lihat / Unduh Dokumen Asli (PDF)
-                              </a>
-                            </div>
-                          )}
-
-                          {/* Official Visual Stamp Seal */}
-                          <div className={`digital-stamp digital-stamp--${doc.sealType}`}>
-                            <div className="stamp-circle">
-                              <span className="stamp-title">{doc.stampText}</span>
-                              <span className="stamp-mid">★ ★ ★</span>
-                              <span className="stamp-sub">{doc.stampSubText}</span>
-                            </div>
+                      <div className="details-grid">
+                        {doc.details.map((detail, idx) => (
+                          <div key={idx} className="detail-row">
+                            <span className="detail-label">{detail.label}</span>
+                            <span className="detail-value">{detail.value}</span>
                           </div>
-                        </div>
+                        ))}
                       </div>
 
-                      {/* Embedded Interactive Viewer Frame (PDF Preview) */}
+                      {/* Embedded Interactive Viewer Frame (PDF Preview) — Positioned Below Details */}
                       {doc.fileUrl && (
                         <div className="certificate-card__preview">
                           <iframe
