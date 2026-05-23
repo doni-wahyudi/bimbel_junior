@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { ShieldCheck, FileCheck, Landmark, CheckCircle, Calendar, FileText, UserCheck, MapPin, Eye, ExternalLink } from 'lucide-react';
 import SEO from '../../components/SEO';
 import AnimateOnScroll from '../../components/AnimateOnScroll';
@@ -9,35 +8,6 @@ const cleanBaseUrl = (import.meta.env.BASE_URL || '/').endsWith('/')
   : `${import.meta.env.BASE_URL || '/'}/`;
 
 export default function LegalityPage() {
-  const [activeDocTab, setActiveDocTab] = useState(0);
-
-  const interactiveDocs = [
-    {
-      label: 'Izin Operasional LKP',
-      fileUrl: cleanBaseUrl + 'documents/IZIN_OPERASIONAL_LEMBAGA_KURSUS_DAN_PELATIHAN.pdf',
-      title: 'Izin Operasional Pendirian Satuan Pendidikan'
-    },
-    {
-      label: 'Perizinan Usaha (NIB)',
-      fileUrl: cleanBaseUrl + 'documents/Perizinan_Usaha_NIB.pdf',
-      title: 'Nomor Induk Berusaha (NIB) Resmi'
-    },
-    {
-      label: 'Referensi NPSN',
-      fileUrl: cleanBaseUrl + 'documents/LKP_Bimbel_Junior_NPSN.pdf',
-      title: 'Verifikasi Nomor Pokok Sekolah Nasional'
-    },
-    {
-      label: 'Struktur Organisasi',
-      fileUrl: cleanBaseUrl + 'documents/Struktur_Organisasi.pdf',
-      title: 'Struktur Organisasi LKP Bimbel Junior'
-    },
-    {
-      label: 'Denah Lokasi & Ruang',
-      fileUrl: cleanBaseUrl + 'documents/Denah_Lokasi_dan_Ruang.pdf',
-      title: 'Denah Lokasi dan Tata Ruang Lembaga'
-    }
-  ];
 
   const documents = [
     {
@@ -192,36 +162,65 @@ export default function LegalityPage() {
 
                     {/* Content Body */}
                     <div className="certificate-card__body">
-                      <div className="details-grid">
-                        {doc.details.map((detail, idx) => (
-                          <div key={idx} className="detail-row">
-                            <span className="detail-label">{detail.label}</span>
-                            <span className="detail-value">{detail.value}</span>
-                          </div>
-                        ))}
-                        {doc.fileUrl && (
-                          <div className="certificate-card__action" style={{ marginTop: 'var(--space-md)' }}>
-                            <a 
-                              href={doc.fileUrl} 
-                              target="_blank" 
-                              rel="noopener noreferrer" 
-                              className="btn btn-secondary btn-sm"
-                              style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}
-                            >
-                              <FileText size={16} /> Lihat / Unduh Dokumen Asli (PDF)
-                            </a>
-                          </div>
-                        )}
-                      </div>
+                      <div className="certificate-card__content">
+                        <div className="details-grid">
+                          {doc.details.map((detail, idx) => (
+                            <div key={idx} className="detail-row">
+                              <span className="detail-label">{detail.label}</span>
+                              <span className="detail-value">{detail.value}</span>
+                            </div>
+                          ))}
+                        </div>
+                        
+                        <div className="certificate-card__actions-stamp">
+                          {doc.fileUrl && (
+                            <div className="certificate-card__action">
+                              <a 
+                                href={doc.fileUrl} 
+                                target="_blank" 
+                                rel="noopener noreferrer" 
+                                className="btn btn-secondary btn-sm"
+                                style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}
+                              >
+                                <FileText size={16} /> Lihat / Unduh Dokumen Asli (PDF)
+                              </a>
+                            </div>
+                          )}
 
-                      {/* Official Visual Stamp Seal */}
-                      <div className={`digital-stamp digital-stamp--${doc.sealType}`}>
-                        <div className="stamp-circle">
-                          <span className="stamp-title">{doc.stampText}</span>
-                          <span className="stamp-mid">★ ★ ★</span>
-                          <span className="stamp-sub">{doc.stampSubText}</span>
+                          {/* Official Visual Stamp Seal */}
+                          <div className={`digital-stamp digital-stamp--${doc.sealType}`}>
+                            <div className="stamp-circle">
+                              <span className="stamp-title">{doc.stampText}</span>
+                              <span className="stamp-mid">★ ★ ★</span>
+                              <span className="stamp-sub">{doc.stampSubText}</span>
+                            </div>
+                          </div>
                         </div>
                       </div>
+
+                      {/* Embedded Interactive Viewer Frame (PDF Preview) */}
+                      {doc.fileUrl && (
+                        <div className="certificate-card__preview">
+                          <iframe
+                            src={`${doc.fileUrl}#toolbar=0&navpanes=0&scrollbar=1`}
+                            title={doc.title}
+                            className="certificate-card__iframe"
+                          />
+                          <div className="certificate-card__preview-fallback">
+                            <ShieldCheck size={36} className="fallback-icon" />
+                            <p className="fallback-text">Pratinjau interaktif PDF memerlukan desktop.</p>
+                            <a
+                              href={doc.fileUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="btn btn-whatsapp btn-sm"
+                              style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}
+                            >
+                              <ExternalLink size={14} /> Buka PDF
+                            </a>
+                          </div>
+                        </div>
+                      )}
                     </div>
 
                     {/* Footer */}
@@ -241,62 +240,6 @@ export default function LegalityPage() {
         </div>
       </section>
 
-      {/* ===== Tabbed Interactive Document Viewer ===== */}
-      <section className="section legality-viewer bg-light">
-        <div className="container">
-          <AnimateOnScroll>
-            <div className="section-header">
-              <h2 className="section-title">Pratinjau Dokumen Fisik</h2>
-              <p className="section-subtitle">
-                Pratinjau lembar fisik perizinan, bagan struktur organisasi, dan denah ruangan Bimbel Junior secara langsung dan transparan.
-              </p>
-            </div>
-          </AnimateOnScroll>
-
-          <AnimateOnScroll delay={0.1}>
-            {/* Tab Navigation Pills */}
-            <div className="legality-viewer__tabs">
-              {interactiveDocs.map((doc, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setActiveDocTab(idx)}
-                  className={`legality-viewer__tab-btn ${activeDocTab === idx ? 'legality-viewer__tab-btn--active' : ''}`}
-                >
-                  {doc.label}
-                </button>
-              ))}
-            </div>
-
-            {/* Embedded Interactive Viewer Frame */}
-            <div className="legality-viewer__frame-container">
-              {/* Native PDF Iframe Preview for Desktops */}
-              <iframe
-                src={`${interactiveDocs[activeDocTab].fileUrl}#toolbar=0&navpanes=0&scrollbar=1`}
-                title={interactiveDocs[activeDocTab].title}
-                className="legality-viewer__frame"
-              />
-
-              {/* Mobile / Responsive Fallback Card */}
-              <div className="legality-viewer__fallback">
-                <ShieldCheck size={48} className="legality-viewer__fallback-icon" />
-                <h3 className="legality-viewer__fallback-title">{interactiveDocs[activeDocTab].title}</h3>
-                <p className="legality-viewer__fallback-desc">
-                  Pratinjau interaktif PDF memerlukan layar desktop. Untuk perangkat seluler/mobile, silakan lihat dokumen asli secara langsung menggunakan tombol di bawah ini.
-                </p>
-                <a
-                  href={interactiveDocs[activeDocTab].fileUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-whatsapp btn-lg"
-                  style={{ gap: '8px' }}
-                >
-                  <ExternalLink size={18} /> Buka Dokumen Fisik (PDF)
-                </a>
-              </div>
-            </div>
-          </AnimateOnScroll>
-        </div>
-      </section>
 
       {/* ===== Transparency and Trust Banner ===== */}
       <section className="section legality-trust bg-dark text-white text-center">
