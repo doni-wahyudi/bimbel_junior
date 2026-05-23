@@ -55,7 +55,10 @@ The following modules and pages have been completely deleted from the active cod
 * The registration form has been completely removed to streamline offline signups via the main registration CTA.
 * Centered single-column layout centered around a premium Google Maps container. The "Buka di Google Maps" link is styled as a premium outline pill button with elegant hover translations.
 
-### C. Legality Page Visibility & Alignment (`src/pages/About/LegalityPage.jsx`)
+### C. Legality Page & Document Previews (`src/pages/About/LegalityPage.jsx`, `src/pages/About/LegalityPage.css`)
+* **Split Grid Document Layout**: Converted the certificate cards into split-panel layouts on desktop (`1.2fr 1fr`), grouping the metadata details, action buttons, and digital stamp seals on the left, and embedding a live PDF preview frame (`<iframe>`) directly on the right.
+* **Responsive Falling Back**: Stacks the panels on tablets and collapses them to a clean fallback placeholder card on mobile devices (where inline iframe PDFs are unsupported).
+* **Tabbed Viewer Removal**: Completely removed the redundant bottom tabbed interactive viewer and associated state controllers to keep the page clean and loading instantly.
 * Centered flex alignment in the *Komitmen Transparansi Publik* section.
 * High-contrast `.trust-title` set to pure white (`#ffffff`) for perfect visibility against the dark backdrop.
 * Green and blue highlight coloring applied to key icons.
