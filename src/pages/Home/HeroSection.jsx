@@ -44,11 +44,12 @@ export default function HeroSection() {
             <h1 className="hero-title">
               Raih{' '}
               <span className="hero-title-highlight">Prestasi Terbaikmu</span>{' '}
-              Bersama Bimbel Junior
+              Bersama <span style={{ whiteSpace: 'nowrap' }}>Bimbel Junior</span>
             </h1>
 
             <p className="hero-subtitle">
-              Bimbingan belajar terpercaya untuk SD, SMP, dan SMA di Tanjung Priok, Jakarta Utara
+              Bimbingan belajar terpercaya untuk SD, SMP, dan SMA{' '}
+              <span style={{ whiteSpace: 'nowrap' }}>di Tanjung Priok, Jakarta Utara</span>
             </p>
 
             <div className="hero-buttons">

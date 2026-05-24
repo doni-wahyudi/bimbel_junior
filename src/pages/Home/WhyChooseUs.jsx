@@ -43,7 +43,8 @@ export default function WhyChooseUs() {
           <div className="section-header">
             <h2 className="section-title">Mengapa Memilih Bimbel Junior?</h2>
             <p className="section-subtitle">
-              Kami berkomitmen memberikan bimbingan belajar terbaik untuk putra-putri Anda
+              Kami berkomitmen memberikan bimbingan belajar terbaik <br />
+              untuk putra-putri Anda
             </p>
           </div>
         </AnimateOnScroll>

@@ -19,15 +19,15 @@ The routing table uses lazy-loaded code-splitting for performance. Active top-le
 * `.` or `/` (Home Page)
 * `/tentang-kami` (Profil & Guru Page)
 * `/tentang-kami/pengajar/:id` (Individual Teacher Profile view)
+* `/tentang-kami/legalitas` (Legality & Dapodik Status Page)
+* `/tentang-kami/sop-tata-tertib` (SOP & Rule Guidelines Page)
 * `/program` (Program Page)
 * `/galeri` (Gallery Page)
 * `/alumni` (Alumni Testimonials Page)
 * `/blog` (Blog listing Page)
-* `/blog/:id` (Individual Blog Article view)
-* `/kontak` (Contact Page)
-* `/registrasi` (Registration Page)
-* `/legalitas` (Legality & Dapodik Status Page)
-* `/sop-rules` (SOP & Rule Guidelines Page)
+* `/blog/:slug` (Individual Blog Article view)
+* `/hubungi-kami` (Contact Page)
+* `/daftar` (Registration Page)
 
 ---
 
@@ -105,6 +105,36 @@ The following modules and pages have been completely deleted from the active cod
 ### I. Teacher WebP Avatars Conversion & Binding (`public/images/teacher/`, `src/data/team.js`)
 * **WebP Image Conversion & Updates**: Converted new high-resolution avatar source photos `Ona Rahmawati.jpeg`, `Frans Detio.jpeg`, and `Ratna Sari Irsyad.jpeg` into optimized, high-performance `.webp` versions using Python's Pillow library. This keeps pages loading rapidly and maintains consistent design system parameters.
 * **Database Alignment**: The team records in `src/data/team.js` for Ona Rahmawati (`id: 1`), Ratna Sari Irsyad (`id: 2`), and Frans Detio (`id: 7`) are all bound to their corresponding `.webp` paths. All images now resolve and render successfully.
+
+### J. Home Hero Title & Subtitle Wrapping Refinements (`src/pages/Home/HeroSection.jsx`)
+* **Bimbel Junior nowrap**: Wrapped the word "Bimbel Junior" inside the main hero title `<h1 className="hero-title">` in a `nowrap` span, preventing awkward wrapping that pushes "Junior" alone to the next line.
+* **Location nowrap**: Wrapped "di Tanjung Priok, Jakarta Utara" inside the hero subtitle `<p className="hero-subtitle">` in a `nowrap` span, ensuring the location remains neatly formatted on a single line at all viewports.
+
+### K. Class Size Wrapping & Spacing Refinements (`src/pages/Programs/ProgramPage.jsx`)
+* **Block Element Splitting**: Modified the `classSize` rendering logic under `Ukuran Kelas`. It now splits the en-dash enfolded string by the `' / '` separator and maps each portion into its own block-level span element. This cleanly wraps the `"1–2 siswa (Privat)"` text onto a new line, preventing it from breaking mid-word or wrapping awkwardly.
+
+### L. SOP Signature Block Removal (`src/pages/About/SopRulesPage.jsx`)
+* **Signature Section Cleanup**: Completely removed the legal signature footer section (`.sop-signature`) from the bottom of the page to maintain a clean, modern, and non-redundant structure.
+* **Unused Code Cleanup**: Cleaned up the import list to remove the unused `CheckCircle` icon, ensuring clean compilation.
+
+### M. Contact Page Landmark Cards & Segmented Layout Polish (`src/pages/Contact/ContactPage.jsx`, `src/pages/Contact/ContactPage.css`)
+* **Visual Layout Polish & Premium Aesthetics**: Elevated the entire directions and landmarks layout on the Contact page to create a luxury premium feel:
+  - Replaced the flat white section style with a rich dual-color background gradient (`linear-gradient(180deg, var(--color-background) 0%, #eff6ff 100%)`) featuring blur-filtered background glowing accent circles.
+  - Upgraded the tab controls into a sleek, iOS-inspired segmented grid (`.transit-tabs`) that handles tablet and mobile viewports seamlessly, adding vibrant hover transformations and glowing primary active gradients.
+  - Revamped the vertical timeline steps into beautifully elevated cards (`.transit-step`) that hover/translate elegantly, coupled with a perfectly aligned connecting pipeline track (`margin-left: 46px`) matching the number circles mathematically.
+  - Enhanced the landmark cards (`.contact-directions-landmark-card`) with rich glowing color-accented headers, circular icon backings, bold typography, and interactive scale/rotate animations when hovered.
+* **Pixel-Perfect Card Sizing & Alignment**: Configured labels inside the `landmarks` array in `ContactPage.jsx` to use explicit string array line breaks (`['Landmark', 'Terdekat']`, `['Akses', 'Commuter & Bus']`, and `['Titik Temu', 'Lingkungan']`). To prevent horizontal flex wrapping inside the flexbox container, set `flex-direction: column` and `align-items: center` on `.contact-directions-landmark-card__label`, causing each split segment to stack and center vertically with absolute precision. Assigned explicit `min-height` boxes to titles (`min-height: 2.8em`) and descriptions (`min-height: 3.2em`) to guarantee absolute baseline consistency across the grid.
+* **Increased Breathing Room (Card Gaps)**: Increased vertical margin gaps inside landmark cards—adjusting the space below the icon to `var(--space-lg)` (24px) and the space below the title label to `var(--space-md)` (16px) to give a spacious, high-end vertical rhythm between the card header and content.
+* **Landmarks Data Enrichment**: Upgraded the `landmarks` array from flat strings to object arrays, mapping specific icons (`School`, `Train`, `ShoppingBag`), context-rich labels, and visual color styles (`primary`, `success`, `warning`) to each respective landmark.
+* **Responsive 3-Column Grid**: Replaced the wrapping flex pills container with a clean, highly structured responsive 3-column CSS Grid. On tablets and mobile, it collapses naturally into a perfectly centered single-column grid.
+
+### N. Footer Navigation Sync & Real-World Directions Refinement (`src/components/Footer/`, `src/pages/Contact/ContactPage.jsx`)
+* **Footer Menu Sync**: Expanded the footer structure in `Footer.jsx` and `Footer.css` into a perfectly balanced 5-column layout (`1.5fr 1fr 1fr 1fr 1.2fr`). Added the missing active pages (`/alumni`, `/blog`, `/daftar`, `/tentang-kami/legalitas`, `/tentang-kami/sop-tata-tertib`) into a dedicated **"Informasi & Legal"** column to match the header Navbar exactly.
+* **In-Depth Real-World Directions**: Replaced synthetic landmarks in `ContactPage.jsx` with highly specific, verified points of interest—specifically highlighting **Sekolah Mekar Tanjung (SDS & SMP)** just 10 meters away, along with local hubs like **Pasar Warakas** and **Puskesmas Warakas**. 
+
+### O. Interactive Transit Route Guide & Joko Sarjono's Avatar (`src/pages/Contact/`, `src/data/team.js`)
+* **Interactive Transit Stepper**: Replaced the static text directions with a fully interactive tabs-and-stepper guide inside the contact page directions card. Users can switch between **KRL Commuter Line**, **TransJakarta / Busway**, and **Pribadi & Ojek Online** tabs, instantly rendering an animated vertical timeline complete with numbered step badges, connecting track lines, bold step titles, and transit descriptions.
+* **Joko Sarjono's Avatar**: Converted Joko Sarjono's newly uploaded source photo `Joko Sarjono.jpeg` into optimized `Joko Sarjono.webp` via Python's Pillow library. Updated his team record (`id: 4`) in `team.js` from `image: null` to map to `cleanBaseUrl + 'images/teacher/Joko Sarjono.webp'`.
 
 ---
 

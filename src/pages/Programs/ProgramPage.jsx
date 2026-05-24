@@ -152,7 +152,13 @@ export default function ProgramPage() {
                   </div>
                   <div>
                     <span className="program-overview__label">Ukuran Kelas</span>
-                    <span className="program-overview__value">{program.classSize}</span>
+                    <span className="program-overview__value">
+                      {program.classSize.split(' / ').map((part, i, arr) => (
+                        <span key={i} style={{ display: 'block' }}>
+                          {part}
+                        </span>
+                      ))}
+                    </span>
                   </div>
                 </div>
                 <div className="program-overview__item">

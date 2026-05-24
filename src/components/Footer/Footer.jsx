@@ -50,12 +50,12 @@ export default function Footer() {
 
             {/* Menu Column */}
             <div className="footer__col">
-              <h4 className="footer__col-title">Menu</h4>
+              <h4 className="footer__col-title">Menu Utama</h4>
               <ul className="footer__col-links">
                 <li><Link to="/">Beranda</Link></li>
-                <li><Link to="/program">Program</Link></li>
-                <li><Link to="/tentang-kami">Tentang Kami</Link></li>
-                <li><Link to="/galeri">Galeri</Link></li>
+                <li><Link to="/program">Program Belajar</Link></li>
+                <li><Link to="/tentang-kami">Profil &amp; Guru</Link></li>
+                <li><Link to="/galeri">Galeri Foto</Link></li>
                 <li><Link to="/hubungi-kami">Hubungi Kami</Link></li>
               </ul>
             </div>
@@ -67,6 +67,18 @@ export default function Footer() {
                 <li><Link to="/program#sd">Program SD</Link></li>
                 <li><Link to="/program#smp">Program SMP</Link></li>
                 <li><Link to="/program#sma">Program SMA</Link></li>
+              </ul>
+            </div>
+
+            {/* Informasi & Regulasi Column */}
+            <div className="footer__col">
+              <h4 className="footer__col-title">Informasi &amp; Legal</h4>
+              <ul className="footer__col-links">
+                <li><Link to="/alumni">Alumni &amp; Testimoni</Link></li>
+                <li><Link to="/blog">Blog &amp; Jurnal</Link></li>
+                <li><Link to="/tentang-kami/legalitas">Legalitas &amp; Izin</Link></li>
+                <li><Link to="/tentang-kami/sop-tata-tertib">SOP &amp; Tata Tertib</Link></li>
+                <li><Link to="/daftar">Pendaftaran Siswa</Link></li>
               </ul>
             </div>
 

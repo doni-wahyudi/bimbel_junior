@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FileText, ClipboardList, ShieldAlert, Award, Clock, BookOpen, CreditCard, UserCheck, GraduationCap, ChevronDown, CheckCircle, AlertCircle } from 'lucide-react';
+import { FileText, ClipboardList, ShieldAlert, Award, Clock, BookOpen, CreditCard, UserCheck, GraduationCap, ChevronDown, AlertCircle } from 'lucide-react';
 import SEO from '../../components/SEO';
 import AnimateOnScroll from '../../components/AnimateOnScroll';
 import './SopRulesPage.css';
@@ -475,20 +475,6 @@ export default function SopRulesPage() {
               </div>
             </div>
           )}
-        </div>
-      </section>
-
-      {/* ===== Legal Signature Footer ===== */}
-      <section className="section sop-signature bg-light">
-        <div className="container text-center">
-          <div className="signature-card">
-            <CheckCircle size={32} className="signature-icon text-success animate-pulse-slow" />
-            <p className="signature-date">Ditetapkan di: Jakarta, 10 Juli 2025</p>
-            <p className="signature-authority">Mengetahui &amp; Mengesahkan,</p>
-            <h3 className="signature-name">Manajemen Bimbel Junior</h3>
-            <p className="signature-role">Lembaga Kursus &amp; Pelatihan</p>
-            <div className="certified-stamp-badge">DOKUMEN RESMI DISAHKAN</div>
-          </div>
         </div>
       </section>
     </>

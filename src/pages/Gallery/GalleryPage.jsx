@@ -372,7 +372,7 @@ export default function GalleryPage() {
             <span className="section-tag">Jurnal Belajar</span>
             <h2 className="section-title">Linimasa Aktivitas Harian Kelas</h2>
             <p className="section-description">
-              Dokumentasi nyata kegiatan belajar mengajar siswa SD & SMP di Bimbel Junior yang terus diupdate secara harian.
+              Dokumentasi kegiatan belajar mengajar siswa SD & SMP di Bimbel Junior yang terus diupdate.
             </p>
           </div>
 

@@ -82,7 +82,7 @@ export const teamMembers = [
       'Guru privat Bahasa Inggris (1998–sekarang)'
     ],
     color: '#F59E0B',
-    image: null,
+    image: cleanBaseUrl + 'images/teacher/Joko Sarjono.webp',
     certified: true
   },
   {

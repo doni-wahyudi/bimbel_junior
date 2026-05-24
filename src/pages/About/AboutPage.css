@@ -348,7 +348,7 @@
 .about-team__division-desc {
   font-size: var(--text-xs);
   color: var(--color-text-secondary);
-  max-width: 600px;
+  max-width: 650px;
 }
 
 .about-team__grid {
@@ -733,5 +733,3 @@
     grid-template-columns: 1fr;
   }
 }
-
-

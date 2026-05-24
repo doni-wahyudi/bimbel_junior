@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   MapPin,
@@ -6,7 +7,12 @@ import {
   Camera,
   ChevronRight,
   Navigation,
-  ExternalLink
+  ExternalLink,
+  School,
+  Train,
+  ShoppingBag,
+  Bus,
+  Car
 } from 'lucide-react';
 import SEO from '../../components/SEO';
 import AnimateOnScroll from '../../components/AnimateOnScroll';
@@ -45,12 +51,28 @@ const contactInfo = [
 ];
 
 const landmarks = [
-  'Dekat dengan SDN Warakas 01',
-  '5 menit dari Stasiun Tanjung Priok',
-  '10 menit dari Mall Kelapa Gading'
+  {
+    icon: School,
+    text: '10 meter dari Sekolah Mekar Tanjung (SDS & SMP)',
+    label: ['Sekolah', 'Terdekat'],
+    color: 'primary'
+  },
+  {
+    icon: Train,
+    text: '5-7 menit dari Stasiun & Terminal Tanjung Priok',
+    label: ['Akses', 'Commuter & Bus'],
+    color: 'success'
+  },
+  {
+    icon: ShoppingBag,
+    text: '3 menit dari Pasar Warakas & Puskesmas Warakas',
+    label: ['Urban Area', 'Terdekat'],
+    color: 'warning'
+  }
 ];
 
 export default function ContactPage() {
+  const [activeTransit, setActiveTransit] = useState('krl');
 
   return (
     <>
@@ -166,22 +188,152 @@ export default function ContactPage() {
         <div className="container">
           <AnimateOnScroll>
             <div className="contact-directions-card">
-              <div className="contact-directions-card__icon">
+              <div className="contact-directions-card__icon animate-bounce-slow">
                 <Navigation size={28} />
               </div>
-              <h2 className="contact-directions-card__title">Cara Menuju Bimbel Junior</h2>
+              <h2 className="contact-directions-card__title">Panduan Transportasi &amp; Rute</h2>
               <p className="contact-directions-card__text">
-                Dari Stasiun Tanjung Priok, ambil arah selatan menuju Jl. Warakas. Belok ke Gg. 10,
-                Bimbel Junior berada di No. 34 sisi kanan jalan.
+                Pilih opsi transportasi Anda di bawah ini untuk melihat panduan rute langkah-demi-langkah menuju LKP Bimbel Junior.
               </p>
 
-              <div className="contact-directions-landmarks">
-                {landmarks.map((item, i) => (
-                  <div className="contact-directions-landmark" key={i}>
-                    <MapPin size={16} />
-                    <span>{item}</span>
+              {/* Transit Tabs */}
+              <div className="transit-tabs">
+                <button
+                  className={`transit-tab ${activeTransit === 'krl' ? 'transit-tab--active' : ''}`}
+                  onClick={() => setActiveTransit('krl')}
+                >
+                  <Train size={18} />
+                  <span>KRL Commuter Line</span>
+                </button>
+                <button
+                  className={`transit-tab ${activeTransit === 'busway' ? 'transit-tab--active' : ''}`}
+                  onClick={() => setActiveTransit('busway')}
+                >
+                  <Bus size={18} />
+                  <span>TransJakarta / Busway</span>
+                </button>
+                <button
+                  className={`transit-tab ${activeTransit === 'pribadi' ? 'transit-tab--active' : ''}`}
+                  onClick={() => setActiveTransit('pribadi')}
+                >
+                  <Car size={18} />
+                  <span>Pribadi &amp; Ojek Online</span>
+                </button>
+              </div>
+
+              {/* Steps Content */}
+              <div className="transit-steps">
+                {activeTransit === 'krl' && (
+                  <div className="transit-timeline animate-fade-in">
+                    <div className="transit-step">
+                      <div className="transit-step__num">1</div>
+                      <div className="transit-step__content">
+                        <h4>Stasiun Asal &amp; Lintas KRL</h4>
+                        <p>Naik KRL Commuter Line rute lintas Bogor atau Bekasi menuju <strong>Stasiun Jakarta Kota</strong>.</p>
+                      </div>
+                    </div>
+                    <div className="transit-step-line" />
+                    <div className="transit-step">
+                      <div className="transit-step__num">2</div>
+                      <div className="transit-step__content">
+                        <h4>Transit Stasiun Jakarta Kota</h4>
+                        <p>Lakukan transit di peron Jakarta Kota, lalu berpindah ke KRL feeder tujuan akhir <strong>Stasiun Tanjung Priok</strong>.</p>
+                      </div>
+                    </div>
+                    <div className="transit-step-line" />
+                    <div className="transit-step">
+                      <div className="transit-step__num">3</div>
+                      <div className="transit-step__content">
+                        <h4>Mikrotrans / Ojek Online</h4>
+                        <p>Dari Stasiun Tanjung Priok, naik <strong>Mikrotrans JakLingko JAK-117</strong> (Tanjung Priok - Tanah Merah) atau ojek online (Gojek/Grab) selama 5-7 menit langsung turun di <strong>Jl. Warakas VIII Gg. 10 No. 34</strong>.</p>
+                      </div>
+                    </div>
                   </div>
-                ))}
+                )}
+
+                {activeTransit === 'busway' && (
+                  <div className="transit-timeline animate-fade-in">
+                    <div className="transit-step">
+                      <div className="transit-step__num">1</div>
+                      <div className="transit-step__content">
+                        <h4>Koridor TransJakarta</h4>
+                        <p>Naik busway TransJakarta rute <strong>Koridor 10</strong> (PGC 2 - Tanjung Priok) atau <strong>Koridor 12</strong> (Pluit - Tanjung Priok).</p>
+                      </div>
+                    </div>
+                    <div className="transit-step-line" />
+                    <div className="transit-step">
+                      <div className="transit-step__num">2</div>
+                      <div className="transit-step__content">
+                        <h4>Halte Terminal Tanjung Priok</h4>
+                        <p>Turun di halte integrasi akhir <strong>Terminal Bus Tanjung Priok</strong>.</p>
+                      </div>
+                    </div>
+                    <div className="transit-step-line" />
+                    <div className="transit-step">
+                      <div className="transit-step__num">3</div>
+                      <div className="transit-step__content">
+                        <h4>JakLingko / Ojol Ke Lokasi</h4>
+                        <p>Gunakan layanan gratis <strong>JakLingko JAK-117</strong> atau ojek online (Gojek/Grab) langsung menuju <strong>Jl. Warakas VIII Gg. 10 No. 34</strong>.</p>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {activeTransit === 'pribadi' && (
+                  <div className="transit-timeline animate-fade-in">
+                    <div className="transit-step">
+                      <div className="transit-step__num">1</div>
+                      <div className="transit-step__content">
+                        <h4>Akses Tol Pelabuhan</h4>
+                        <p>Menggunakan kendaraan roda dua/empat, keluar di pintu tol <strong>Tanjung Priok</strong> atau <strong>Ancol Timur</strong>.</p>
+                      </div>
+                    </div>
+                    <div className="transit-step-line" />
+                    <div className="transit-step">
+                      <div className="transit-step__num">2</div>
+                      <div className="transit-step__content">
+                        <h4>Rute Jalan Utama</h4>
+                        <p>Masuk ke Jl. Raya Pelabuhan, belok kanan ke Jl. Warakas I, terus lurus melintasi pertigaan utama, lalu belok kiri ke Jl. Warakas VIII.</p>
+                      </div>
+                    </div>
+                    <div className="transit-step-line" />
+                    <div className="transit-step">
+                      <div className="transit-step__num">3</div>
+                      <div className="transit-step__content">
+                        <h4>Titik Sampai Gang 10</h4>
+                        <p>Belok kanan masuk ke <strong>Gang 10 (Gg. 10)</strong>. Bimbel Junior berada tepat di No. 34 (sebelah kiri jalan) sebelum Sekolah Mekar Tanjung.</p>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Landmarks Section */}
+              <div className="contact-directions-landmarks-title">
+                <h3>Patokan Utama Terdekat</h3>
+              </div>
+
+              <div className="contact-directions-landmarks">
+                {landmarks.map((item, i) => {
+                  const IconComp = item.icon;
+                  return (
+                    <div className={`contact-directions-landmark-card contact-directions-landmark-card--${item.color}`} key={i}>
+                      <div className="contact-directions-landmark-card__icon">
+                        <IconComp size={24} />
+                      </div>
+                      <span className="contact-directions-landmark-card__label">
+                        {Array.isArray(item.label) ? (
+                          item.label.map((line, idx) => (
+                            <span key={idx} style={{ display: 'block' }}>{line}</span>
+                          ))
+                        ) : (
+                          item.label
+                        )}
+                      </span>
+                      <h4 className="contact-directions-landmark-card__text">{item.text}</h4>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </AnimateOnScroll>
