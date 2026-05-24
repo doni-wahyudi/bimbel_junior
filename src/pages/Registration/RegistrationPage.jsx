@@ -9,7 +9,6 @@ const WHATSAPP_NUMBER = '62881024193340';
 export default function RegistrationPage() {
   const [formData, setFormData] = useState({
     name: '',
-    phone: '',
     school: '',
     grade: 'SD', // Default
     gradeClass: '',
@@ -32,7 +31,6 @@ export default function RegistrationPage() {
     
 *DATA SISWA*
 Nama Lengkap: ${formData.name}
-No. WhatsApp: ${formData.phone}
 Asal Sekolah: ${formData.school}
 Jenjang: ${formData.grade}
 Kelas: ${formData.gradeClass}
@@ -132,18 +130,6 @@ Mohon informasi mengenai ketersediaan jadwal dan metode pembayaran. Terima kasih
                     />
                   </div>
 
-                  <div className="form-group">
-                    <label htmlFor="phone">Nomor WhatsApp *</label>
-                    <input 
-                      type="tel" 
-                      id="phone" 
-                      name="phone" 
-                      value={formData.phone}
-                      onChange={handleChange}
-                      placeholder="Contoh: 0812xxxxxx"
-                      required
-                    />
-                  </div>
 
                   <div className="form-group">
                     <label htmlFor="school">Asal Sekolah *</label>

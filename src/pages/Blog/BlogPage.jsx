@@ -56,7 +56,7 @@ export default function BlogPage() {
                   <Link to={`/blog/${post.slug}`} className="blog-card__image-link">
                     <div className="blog-card__image-wrapper">
                       {post.image ? (
-                        <img src={post.image} alt={post.title} className="blog-card__image" />
+                        <img src={post.image} alt={post.title} className="blog-card__image" loading="lazy" />
                       ) : (
                         <div className="blog-card__image-fallback" />
                       )}

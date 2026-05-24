@@ -6,9 +6,9 @@ const WHATSAPP_URL = 'https://wa.me/62881024193340?text=Halo%20Bimbel%20Junior%2
 
 export default function HeroSection() {
   const HERO_IMAGES = [
-    `${import.meta.env.BASE_URL}images/hero/13.jpg.jpeg`,
-    `${import.meta.env.BASE_URL}images/hero/14.jpg.jpeg`,
-    `${import.meta.env.BASE_URL}images/hero/15.jpg.jpeg`
+    `${import.meta.env.BASE_URL}images/hero/13.webp`,
+    `${import.meta.env.BASE_URL}images/hero/14.webp`,
+    `${import.meta.env.BASE_URL}images/hero/15.webp`
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);

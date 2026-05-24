@@ -243,6 +243,7 @@ export default function AboutPage() {
                               src={member.image}
                               alt={member.name}
                               className="about-team__avatar-img"
+                              loading="lazy"
                             />
                           ) : (
                             <div

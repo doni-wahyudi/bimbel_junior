@@ -125,7 +125,7 @@ export default function AlumniPage() {
                           <div className="alumni-card__avatar-container">
                             <div className="alumni-card__avatar">
                               {alumni.image ? (
-                                <img src={alumni.image} alt={alumni.name} />
+                                <img src={alumni.image} alt={alumni.name} loading="lazy" />
                               ) : (
                                 <div className="alumni-card__avatar-fallback">
                                   <GraduationCap size={32} />

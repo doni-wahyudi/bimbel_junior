@@ -257,6 +257,7 @@ export default function GalleryPage() {
                             src={item.photo.startsWith('http') ? item.photo : `${import.meta.env.BASE_URL || '/'}${item.photo}`}
                             alt={item.title}
                             className="gallery-item__card-img"
+                            loading="lazy"
                           />
                         )
                       ) : (
@@ -332,6 +333,7 @@ export default function GalleryPage() {
                               src={item.photo.startsWith('http') ? item.photo : `${import.meta.env.BASE_URL || '/'}${item.photo}`}
                               alt={item.title}
                               className="gallery-item__card-img"
+                              loading="lazy"
                             />
                           )
                         ) : (
@@ -421,6 +423,7 @@ export default function GalleryPage() {
                             src={item.photo.startsWith('http') ? item.photo : `${import.meta.env.BASE_URL || '/'}${item.photo}`}
                             alt={item.title}
                             className="gallery-item__card-img"
+                            loading="lazy"
                           />
                         )
                       ) : (

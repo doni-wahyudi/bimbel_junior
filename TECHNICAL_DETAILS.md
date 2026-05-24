@@ -52,8 +52,10 @@ The following modules and pages have been completely deleted from the active cod
 * **Zahratul Jannah, S.Pd. (Bendahara & Tutor)**: She resides in both the *Manajemen & Administrasi* group and the *Tutor & Staf Pengajar* group seamlessly since she is both the treasurer and active in SMP/SD science tutoring.
 * **Salsabillah Rizki Al Husna (ID 5)**: Role updated to **Guru Matematika SMP** (subjects: *Matematika (SMP)*). She is placed purely in the *Tutor & Staf Pengajar* section, removed from any elementary school teaching assignments.
 
-### B. Contact Page Restructure (`src/pages/Contact/ContactPage.jsx`)
-* The registration form has been completely removed to streamline offline signups via the main registration CTA.
+### B. Contact & WhatsApp Forms Streamlining
+* **Registration Form Simplification** (`src/pages/Registration/RegistrationPage.jsx`): Completely removed the `phone` form input and `No. WhatsApp: ${formData.phone}` message template string. Since submissions are directed straight to WhatsApp, the user's phone number is already visible in the chat thread, removing duplicate inputs.
+* **Quick Contact Modal Streamlining** (`src/components/WhatsAppModal/WhatsAppModal.jsx`): Removed the `phone` input group and associated formatted text template lines to speed up user submissions and prevent redundant data entry.
+* **Contact Page Restructure** (`src/pages/Contact/ContactPage.jsx`): The registration form has been completely removed to streamline offline signups via the main registration CTA.
 * Centered single-column layout centered around a premium Google Maps container. The "Buka di Google Maps" link is styled as a premium outline pill button with elegant hover translations.
 
 ### C. Legality Page & Document Previews (`src/pages/About/LegalityPage.jsx`, `src/pages/About/LegalityPage.css`)
@@ -67,12 +69,12 @@ The following modules and pages have been completely deleted from the active cod
 * Native slow-pulse and slow-bounce animations added directly in pure CSS to keep the layout interactive and engaging.
 
 ### D. Brand Logo & Favicon Integration (`src/components/Navbar/`, `src/components/Footer/`, `index.html`)
-* **Logo Update**: Replaced `images/logo.webp` with `images/Logo Bimbel Junior.png` in the header (`Navbar.jsx`) and footer (`Footer.jsx`) layouts.
+* **Logo Update**: Replaced `images/logo.webp` with `images/Logo Bimbel Junior.webp` in the header (`Navbar.jsx`) and footer (`Footer.jsx`) layouts.
 * **Bigger Logo Layout**: Increased header logo image container size from `40px` to `54px` in `Navbar.css` and set HTML dimensions to `54` inside `Navbar.jsx` to make it prominent and beautiful. Increased footer logo image to `50px`.
-* **Favicon Integration**: Updated `index.html`'s `<link rel="icon">` reference to `/images/Logo Bimbel Junior.png` so the browser tab matches the new brand identity.
+* **Favicon Integration**: Updated `index.html`'s `<link rel="icon">` reference to `/images/Logo Bimbel Junior.webp` so the browser tab matches the new brand identity.
 
 ### E. Spacious & Enlarged Hero Slider System (`src/pages/Home/HeroSection.jsx`, `src/pages/Home/HeroSection.css`)
-* **Automatic Slider Without Nav**: Built a clean, zero-navigation React slider that loops through `13.jpg.jpeg`, `14.jpg.jpeg`, and `15.jpg.jpeg` images in the `public/images/hero/` folder every 4 seconds.
+* **Automatic Slider Without Nav**: Built a clean, zero-navigation React slider that loops through `13.webp`, `14.webp`, and `15.webp` images in the `public/images/hero/` folder every 4 seconds.
 * **Overlapping Cross-fade**: Used absolute positioning within the `.hero-image-wrapper` (along with `aspect-ratio: 4 / 3` and `max-width: 520px` boundaries) and styled `opacity: 0; transition: opacity 0.8s ease-in-out` on `.hero-image` so slides overlap and cross-fade dynamically without nav buttons or layout shifts.
 * **Generous Grand Hero Layout**: Enlarged all vertical margins, padding, typography, and element spacing to give the homepage a bold, premium, and professional first impression:
   - Set `.hero` min-height to `80vh` and padding to `calc(var(--navbar-height) + var(--space-3xl))` top, `var(--space-3xl)` bottom for deep breathing room.
@@ -95,6 +97,10 @@ The following modules and pages have been completely deleted from the active cod
 ### G. Gallery Filter & Teacher Avatars Polishing (`src/pages/Gallery/GalleryPage.css`, `src/pages/About/AboutPage.css`)
 * **Gallery Filter Bar**: Expanded the `.gallery-filter__bar` desktop `max-width` to `820px` with `flex-wrap: nowrap` to prevent desktop wrapping. Integrated a premium horizontal scroll overflow system for viewports under `850px` with a sticky funnel icon on the left, keeping filter pills on a single clean line across mobile and tablet viewports.
 * **Centered Teacher Avatars**: Configured `.about-team__avatar-img` with absolute positioning (`position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center;`) to eliminate baseline spacing offsets or browser rendering shifts, rendering all teacher photos beautifully centered inside their circular outlines.
+
+### H. Search Crawling & Off-Screen Image Optimization (`public/sitemap.xml`, `public/robots.txt`)
+* **Crawling & Indexing Assets**: Created `public/sitemap.xml` and `public/robots.txt` containing all 10+ core pages, 12 teacher profiles, and 8 blog articles mapped under the production base URL (`https://doni-wahyudi.github.io/bimbel_junior/`).
+* **Off-Screen Image Lazy Loading**: Injected `loading="lazy"` in scroll-dependent images across `Footer.jsx`, `AboutPage.jsx`, `GalleryPage.jsx`, `BlogPage.jsx`, and `AlumniPage.jsx` to maximize Google PageSpeed performance.
 
 ---
 

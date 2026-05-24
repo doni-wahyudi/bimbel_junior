@@ -19,7 +19,7 @@ export const teamMembers = [
       'Izin Operasional Lembaga Kursus dan Pelatihan'
     ],
     color: '#2D6CB4',
-    image: cleanBaseUrl + 'images/teacher/Ona Rahmawati.png',
+    image: cleanBaseUrl + 'images/teacher/Ona Rahmawati.webp',
     certified: true
   },
   {
@@ -40,7 +40,7 @@ export const teamMembers = [
       'Mengajar di SMPN 289 Jakarta (2014–sekarang)'
     ],
     color: '#10B981',
-    image: cleanBaseUrl + 'images/teacher/Ratna Sari Irsyad.png',
+    image: cleanBaseUrl + 'images/teacher/Ratna Sari Irsyad.webp',
     certified: true
   },
   {
@@ -60,7 +60,7 @@ export const teamMembers = [
       'Juara 1 Lomba Menyanyi Tingkat Jurusan'
     ],
     color: '#06B6D4',
-    image: cleanBaseUrl + 'images/teacher/Zahratul Jannah.png',
+    image: cleanBaseUrl + 'images/teacher/Zahratul Jannah.webp',
     certified: false
   },
   {
@@ -102,7 +102,7 @@ export const teamMembers = [
       'Relawan Pengajar Dedikasi PGSD UNJ (2022)'
     ],
     color: '#8B5CF6',
-    image: cleanBaseUrl + 'images/teacher/salsabilah rizki al husna.png',
+    image: cleanBaseUrl + 'images/teacher/salsabilah rizki al husna.webp',
     certified: false,
     phone: '0896-447-53130',
     email: 'salsabilarzk24@gmail.com',
@@ -126,7 +126,7 @@ export const teamMembers = [
       'Pelatihan TOEFL di UNJ dan Scholars Institutions'
     ],
     color: '#EC4899',
-    image: cleanBaseUrl + 'images/teacher/Ratih Pratiwi Asri.png',
+    image: cleanBaseUrl + 'images/teacher/Ratih Pratiwi Asri.webp',
     certified: false
   },
   {
@@ -162,7 +162,7 @@ export const teamMembers = [
       'Mengajar Matematika kelas 1 SD – 7 SMP'
     ],
     color: '#F97316',
-    image: cleanBaseUrl + 'images/teacher/Faizah Zahratun Nissa.png',
+    image: cleanBaseUrl + 'images/teacher/Faizah Zahratun Nissa.webp',
     certified: false
   },
   {
@@ -177,7 +177,7 @@ export const teamMembers = [
     ],
     achievements: [],
     color: '#64748B',
-    image: cleanBaseUrl + 'images/teacher/syakira_2.png',
+    image: cleanBaseUrl + 'images/teacher/syakira_2.webp',
     certified: false,
     birthPlaceDate: 'Jakarta, 19 April 2005',
     address: 'Jl. Sindang No. 99D',
@@ -203,7 +203,7 @@ export const teamMembers = [
       'Modul Ajar B. Inggris Berdiferensiasi Kls 7 Kurikulum Merdeka (2023)'
     ],
     color: '#0891B2',
-    image: cleanBaseUrl + 'images/teacher/sonny smith.png',
+    image: cleanBaseUrl + 'images/teacher/sonny smith.webp',
     certified: false
   },
   {
@@ -218,7 +218,7 @@ export const teamMembers = [
     ],
     achievements: [],
     color: '#A855F7',
-    image: cleanBaseUrl + 'images/teacher/naifah.png',
+    image: cleanBaseUrl + 'images/teacher/naifah.webp',
     certified: false
   },
   {
@@ -238,7 +238,7 @@ export const teamMembers = [
       'Tutor Matematika di Primagama (2016)'
     ],
     color: '#3B82F6',
-    image: cleanBaseUrl + 'images/teacher/Muhammad Fathur Rahman.png',
+    image: cleanBaseUrl + 'images/teacher/Muhammad Fathur Rahman.webp',
     certified: false,
     birthPlaceDate: 'Jakarta, 21 April 1997',
     address: 'Jalan Swasembada Barat III No. 14, RT 008 / RW 09, Kebon Bawang, Tanjung Priok, Jakarta Utara',

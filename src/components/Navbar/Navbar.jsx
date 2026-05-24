@@ -60,7 +60,7 @@ export default function Navbar() {
       <nav className="navbar__container container">
         <Link to="/" className="navbar__logo" aria-label="Bimbel Junior Home">
           <img
-            src={`${import.meta.env.BASE_URL}images/Logo Bimbel Junior.png`}
+            src={`${import.meta.env.BASE_URL}images/Logo Bimbel Junior.webp`}
             alt="Bimbel Junior Logo"
             className="navbar__logo-img"
             width="54"
@@ -133,8 +133,14 @@ export default function Navbar() {
       </nav>
 
       {/* Mobile Menu Overlay */}
-      <div className={`navbar__mobile-overlay ${isMobileOpen ? 'navbar__mobile-overlay--open' : ''}`}>
-        <div className={`navbar__mobile-menu ${isMobileOpen ? 'navbar__mobile-menu--open' : ''}`}>
+      <div 
+        className={`navbar__mobile-overlay ${isMobileOpen ? 'navbar__mobile-overlay--open' : ''}`}
+        onClick={() => setIsMobileOpen(false)}
+      >
+        <div 
+          className={`navbar__mobile-menu ${isMobileOpen ? 'navbar__mobile-menu--open' : ''}`}
+          onClick={(e) => e.stopPropagation()}
+        >
           <ul className="navbar__mobile-links">
             {navLinks.map((link, index) => (
               <li key={link.label} className="navbar__mobile-link-item" style={{ animationDelay: `${index * 0.05}s` }}>

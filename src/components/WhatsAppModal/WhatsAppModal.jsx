@@ -10,7 +10,6 @@ export default function WhatsAppModal() {
   
   const [formData, setFormData] = useState({
     name: '',
-    phone: '',
     grade: '',
     notes: ''
   });
@@ -21,7 +20,6 @@ export default function WhatsAppModal() {
       setModalTitle(title || 'Hubungi Bimbel Junior');
       setFormData({
         name: '',
-        phone: '',
         grade: defaultGrade || '',
         notes: defaultMessage || ''
       });
@@ -44,7 +42,6 @@ export default function WhatsAppModal() {
     
     let text = `Halo Bimbel Junior!%0A%0A`;
     text += `*Nama Siswa/Penanya:* ${formData.name}%0A`;
-    text += `*No. WhatsApp / HP:* ${formData.phone}%0A`;
     if (gradeVisible && formData.grade) {
       text += `*Jenjang Kelas:* ${formData.grade}%0A`;
     }
@@ -52,7 +49,7 @@ export default function WhatsAppModal() {
 
     window.open(`https://wa.me/62881024193340?text=${text}`, '_blank');
     setShowForm(false);
-    setFormData({ name: '', phone: '', grade: '', notes: '' });
+    setFormData({ name: '', grade: '', notes: '' });
   };
 
   if (!showForm) return null;
@@ -81,19 +78,6 @@ export default function WhatsAppModal() {
             />
           </div>
           
-          <div className="form-group">
-            <label htmlFor="wa-form-phone">No. WhatsApp / HP</label>
-            <input 
-              id="wa-form-phone"
-              type="tel" 
-              name="phone" 
-              value={formData.phone} 
-              onChange={handleInputChange} 
-              required 
-              placeholder="Contoh: 08123456789"
-              className="form-control"
-            />
-          </div>
           
           {gradeVisible && (
             <div className="form-group">
