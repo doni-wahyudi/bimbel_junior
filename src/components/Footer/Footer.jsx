@@ -35,17 +35,6 @@ export default function Footer() {
               <p className="footer__brand-desc">
                 Lembaga bimbingan belajar terpercaya untuk SD, SMP, dan SMA di Tanjung Priok, Jakarta Utara. Cerdaskan Generasi Bangsa.
               </p>
-              <div className="footer__social">
-                <a
-                  href="https://instagram.com/juniorbimbel"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="footer__social-link"
-                  aria-label="Instagram Bimbel Junior"
-                >
-                  <Camera size={20} />
-                </a>
-              </div>
             </div>
 
             {/* Menu Column */}
