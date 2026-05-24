@@ -90,8 +90,10 @@ The following modules and pages have been completely deleted from the active cod
 ### F. Teacher Profile Details Layout Refinement (`src/pages/About/TeacherProfilePage.jsx`, `src/pages/About/TeacherProfilePage.css`)
 * **Quotation Card Removal**: Completely removed the quotation/motto card (`.teacher-profile__quote-card`) from the bottom of the left bio column (`teacher-profile__main`).
 * **CTA Card Removal**: Completely removed the enrollment/consultation CTA card (`.teacher-profile__cta-card`) from the bottom of the right sidebar column (`teacher-profile__sidebar`).
-* **Unused Code Cleanup**: Removed unused icon imports (`Quote` and `MessageCircle` from `lucide-react`) to keep code compilation ultra lean.
-* **Layout Margin Alignment**: Set `style={{ marginBottom: 0 }}` on the final cards of both columns so there are no dangling margins.
+* **Profil & Kontak Removal**: Completely removed the private data / contact card (`.teacher-profile__card` with title "Profil & Kontak") from the right sidebar column to protect tutor privacy and simplify teacher profiles.
+* **Unused Code Cleanup**: Cleaned up the unused icon imports (`User`, `MapPin`, `Calendar`, `Heart`, `Mail`, `Phone`, `Building2`, `Quote`, and `MessageCircle` from `lucide-react`) to keep code compilation lean and prevent build or static analysis warnings.
+* **Layout Margin Alignment & Loading**: Set `style={{ marginBottom: 0 }}` on the achievements card (`Pencapaian`), which is now the last card of the sidebar. Adjusted the progressive stag-loading transition delays (`delay={0.1}` on `Riwayat Pendidikan` and `delay={0.2}` on `Pencapaian`) to preserve smooth progressive entry animation sequences.
+* **High-Contrast Typography**: Explicitly assigned `color: var(--color-text-white)` to `.teacher-profile__name` in `TeacherProfilePage.css`. This overrides the global dark slate heading styling inherited from `index.css`, creating a crisp, accessible, and high-contrast white presentation for all teacher names against the dark blue gradient hero background.
 * **Column Height Matching**: Configured `.teacher-profile__grid` with `align-items: stretch` and styled `.teacher-profile__main` and `.animate-on-scroll` to use flex column layouts (`display: flex; flex-direction: column; flex: 1`). This allows the main "Tentang" card to stretch and match the combined height of "Riwayat Pendidikan" and "Pencapaian" in the sidebar, producing an aligned, cohesive, and premium grid layout.
 
 ### G. Gallery Filter & Teacher Avatars Polishing (`src/pages/Gallery/GalleryPage.css`, `src/pages/About/AboutPage.css`)
@@ -135,6 +137,21 @@ The following modules and pages have been completely deleted from the active cod
 ### O. Interactive Transit Route Guide & Joko Sarjono's Avatar (`src/pages/Contact/`, `src/data/team.js`)
 * **Interactive Transit Stepper**: Replaced the static text directions with a fully interactive tabs-and-stepper guide inside the contact page directions card. Users can switch between **KRL Commuter Line**, **TransJakarta / Busway**, and **Pribadi & Ojek Online** tabs, instantly rendering an animated vertical timeline complete with numbered step badges, connecting track lines, bold step titles, and transit descriptions.
 * **Joko Sarjono's Avatar**: Converted Joko Sarjono's newly uploaded source photo `Joko Sarjono.jpeg` into optimized `Joko Sarjono.webp` via Python's Pillow library. Updated his team record (`id: 4`) in `team.js` from `image: null` to map to `cleanBaseUrl + 'images/teacher/Joko Sarjono.webp'`.
+
+### P. Mobile Layout & Gallery Horizontal Scroll Optimization (`src/pages/Gallery/GalleryPage.jsx`, `src/pages/Gallery/GalleryPage.css`)
+* **Horizontal Scroll & Overflow Resolution**: Mathematically eliminated all horizontal scrolling page overflows on mobile devices (e.g. iPhone viewports at 375px wide) so the layout stays locked and pixel-perfect.
+* **Auto-Scrolling & Filmstrips Deactivation on Mobile**: 
+  - Integrated a dynamic `isMobile` screen width listener (triggering at `window.innerWidth <= 768`).
+  - Disabled the Javascript `requestAnimationFrame` filmstrip auto-scrolling render loop entirely on mobile viewports to conserve CPU/GPU resources and avoid offset glitches.
+  - Converted the decorative desktop infinite marquee rows (`.gallery-filmstrip`) into a static grid display of exactly the top 3 unique featured/outing items, preventing flex strips from stretching thousands of pixels wide.
+* **Fluid Grid Sizing & Aspect Ratios**:
+  - Replaced the rigid `min-height: 180px` constraint on `.gallery-item__card` under `@media (max-width: 480px)`. Previously, because of the `4/3` aspect ratio, a minimum height of `180px` mathematically forced cards to expand to `240px` wide, blowing out the 2-column mobile grid to `496px` wide and breaking the viewport. Setting `min-height: auto` enables the cards to scale fluidly according to column size.
+  - Cleaned up the redundant `flex: 0 0 280px` override from the `<= 480px` media query, guaranteeing `.gallery-item` is always `flex: none` and `width: 100%` on all mobile viewports.
+  - Tightened the gallery grid gap to `var(--space-sm)` on mobile for a neat, compact visual presentation.
+
+### Q. Home Page Hero Height Mobile Optimization (`src/pages/Home/HeroSection.css`)
+* **Full-Screen Mobile Hero**: Set the home page `.hero` container height on mobile viewports ($\le 768\text{px}$) to exactly one full viewport width/height (`min-height: 100dvh` with a `100vh` fallback). This blocks off the layout so the hero occupies exactly one full visual fold on mobile devices.
+* **Vertical Centering**: Enabled dynamic flex alignment (`display: flex; flex-direction: column; justify-content: center;`) on mobile so the text content and visual stats grid remain beautifully centered in the screen fold, providing a premium, uncluttered, and highly spacious presentation.
 
 ---
 

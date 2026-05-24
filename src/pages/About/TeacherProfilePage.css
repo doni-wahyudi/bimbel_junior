@@ -101,6 +101,7 @@
   font-weight: 800;
   margin-bottom: var(--space-xs);
   line-height: 1.2;
+  color: var(--color-text-white); /* High contrast white text on dark blue header */
 }
 
 .teacher-profile__role {

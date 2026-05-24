@@ -733,6 +733,20 @@
     gap: var(--space-xs);
   }
 
+  .gallery-filmstrip {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+    gap: var(--space-md) !important;
+    padding: var(--space-md) !important;
+    overflow-x: hidden !important;
+    margin-bottom: var(--space-lg) !important;
+  }
+
+  .gallery-item {
+    flex: none !important;
+    width: 100% !important;
+  }
+
 
 
   .gallery-lightbox__content {
@@ -814,16 +828,17 @@
   }
 
   .gallery-item {
-    flex: 0 0 280px;
+    flex: none !important;
+    width: 100% !important;
   }
 
   .gallery-grid {
     grid-template-columns: 1fr 1fr;
-    gap: var(--space-md);
+    gap: var(--space-sm);
   }
 
   .gallery-item__card {
-    min-height: 180px;
+    min-height: auto;
   }
 
   .gallery-item__card-icon {

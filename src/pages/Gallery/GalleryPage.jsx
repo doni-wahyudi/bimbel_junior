@@ -47,6 +47,16 @@ export default function GalleryPage() {
   const scrollRef2 = useRef(null);
   const [isHovered1, setIsHovered1] = useState(false);
   const [isHovered2, setIsHovered2] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   // Featured items for the top scrolling filmstrip
   const featuredItems = useMemo(() => {
@@ -57,6 +67,19 @@ export default function GalleryPage() {
   const outingItems = useMemo(() => {
     return galleryItems.filter((item) => item.category === 'outing');
   }, []);
+
+  // Unique featured & outing items for mobile grid (no duplicates)
+  const displayFeaturedItems = useMemo(() => {
+    return isMobile ? featuredItems.slice(0, 3) : [...featuredItems, ...featuredItems, ...featuredItems, ...featuredItems];
+  }, [isMobile, featuredItems]);
+
+  const displayOutingItems = useMemo(() => {
+    return isMobile ? outingItems.slice(0, 3) : [...outingItems].reverse().concat(
+      [...outingItems].reverse(),
+      [...outingItems].reverse(),
+      [...outingItems].reverse()
+    );
+  }, [isMobile, outingItems]);
 
   // Filtered items for the main grid
   const filteredGridItems = useMemo(() => {
@@ -73,8 +96,9 @@ export default function GalleryPage() {
     setVisibleCount(12);
   }, [activeFilter]);
 
-  // Auto scroll effect for filmstrips
+  // Auto scroll effect for filmstrips (disabled on mobile)
   useEffect(() => {
+    if (isMobile) return;
     let animationFrameId;
     const scrollContainer1 = scrollRef1.current;
     const scrollContainer2 = scrollRef2.current;
@@ -118,7 +142,7 @@ export default function GalleryPage() {
     }
 
     return () => cancelAnimationFrame(animationFrameId);
-  }, [isHovered1, isHovered2, featuredItems, outingItems]);
+  }, [isHovered1, isHovered2, featuredItems, outingItems, isMobile]);
 
   const openLightboxFromFeatured = (index) => {
     setLightboxSource('featured');
@@ -227,9 +251,9 @@ export default function GalleryPage() {
             onTouchStart={() => setIsHovered1(true)}
             onTouchEnd={() => setIsHovered1(false)}
           >
-            {[...featuredItems, ...featuredItems, ...featuredItems, ...featuredItems].map(
+            {displayFeaturedItems.map(
               (item, index) => {
-                const originalIndex = index % featuredItems.length;
+                const originalIndex = isMobile ? index : index % featuredItems.length;
                 const Icon = item.icon || BookOpen;
                 return (
                   <div key={`row1-${item.id}-${index}`} className="gallery-item">
@@ -297,69 +321,62 @@ export default function GalleryPage() {
               onTouchStart={() => setIsHovered2(true)}
               onTouchEnd={() => setIsHovered2(false)}
             >
-              {[...outingItems]
-                .reverse()
-                .concat(
-                  [...outingItems].reverse(),
-                  [...outingItems].reverse(),
-                  [...outingItems].reverse()
-                )
-                .map((item, index) => {
-                  const originalIndex = outingItems.findIndex((orig) => orig.id === item.id);
-                  const Icon = item.icon || BookOpen;
-                  return (
-                    <div key={`row2-${item.id}-${index}`} className="gallery-item">
-                      <button
-                        className="gallery-item__card"
-                        onClick={() => openLightboxFromOuting(originalIndex)}
-                        aria-label={`Lihat foto: ${item.title}`}
-                      >
-                        {item.photo ? (
-                          item.isVideo ? (
-                            <div className="gallery-item__video-wrapper">
-                              <video
-                                src={item.photo.startsWith('http') ? `${item.photo}#t=0.1` : `${import.meta.env.BASE_URL || '/'}${item.photo}#t=0.1`}
-                                className="gallery-item__card-img"
-                                preload="metadata"
-                                muted
-                                playsInline
-                              />
-                              <div className="gallery-item__play-btn">
-                                <Play size={24} fill="currentColor" />
-                              </div>
-                            </div>
-                          ) : (
-                            <img
-                              src={item.photo.startsWith('http') ? item.photo : `${import.meta.env.BASE_URL || '/'}${item.photo}`}
-                              alt={item.title}
+              {displayOutingItems.map((item, index) => {
+                const originalIndex = outingItems.findIndex((orig) => orig.id === item.id);
+                const Icon = item.icon || BookOpen;
+                return (
+                  <div key={`row2-${item.id}-${index}`} className="gallery-item">
+                    <button
+                      className="gallery-item__card"
+                      onClick={() => openLightboxFromOuting(originalIndex)}
+                      aria-label={`Lihat foto: ${item.title}`}
+                    >
+                      {item.photo ? (
+                        item.isVideo ? (
+                          <div className="gallery-item__video-wrapper">
+                            <video
+                              src={item.photo.startsWith('http') ? `${item.photo}#t=0.1` : `${import.meta.env.BASE_URL || '/'}${item.photo}#t=0.1`}
                               className="gallery-item__card-img"
-                              loading="lazy"
+                              preload="metadata"
+                              muted
+                              playsInline
                             />
-                          )
-                        ) : (
-                          <div
-                            className="gallery-item__card-fallback"
-                            style={{ background: item.gradient }}
-                          >
-                            <Icon size={48} className="gallery-item__card-icon" />
+                            <div className="gallery-item__play-btn">
+                              <Play size={24} fill="currentColor" />
+                            </div>
                           </div>
-                        )}
-                        <div className="gallery-item__card-overlay" />
-                        <div className="gallery-item__card-info">
-                          <span
-                            className={`gallery-item__card-category gallery-item__card-category--${item.category}`}
-                          >
-                            {categoryLabels[item.category] || 'Kegiatan'}
-                          </span>
-                          <h3 className="gallery-item__card-title">{item.title}</h3>
+                        ) : (
+                          <img
+                            src={item.photo.startsWith('http') ? item.photo : `${import.meta.env.BASE_URL || '/'}${item.photo}`}
+                            alt={item.title}
+                            className="gallery-item__card-img"
+                            loading="lazy"
+                          />
+                        )
+                      ) : (
+                        <div
+                          className="gallery-item__card-fallback"
+                          style={{ background: item.gradient }}
+                        >
+                          <Icon size={48} className="gallery-item__card-icon" />
                         </div>
-                        <div className="gallery-item__card-zoom">
-                          <Camera size={20} />
-                        </div>
-                      </button>
-                    </div>
-                  );
-                })}
+                      )}
+                      <div className="gallery-item__card-overlay" />
+                      <div className="gallery-item__card-info">
+                        <span
+                          className={`gallery-item__card-category gallery-item__card-category--${item.category}`}
+                        >
+                          {categoryLabels[item.category] || 'Kegiatan'}
+                        </span>
+                        <h3 className="gallery-item__card-title">{item.title}</h3>
+                      </div>
+                      <div className="gallery-item__card-zoom">
+                        <Camera size={20} />
+                      </div>
+                    </button>
+                  </div>
+                );
+              })}
             </div>
           )}
         </div>

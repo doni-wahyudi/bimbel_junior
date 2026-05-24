@@ -430,9 +430,14 @@
 
 @media (max-width: 768px) {
   .hero {
-    min-height: auto;
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding-top: calc(var(--navbar-height) + var(--space-xl));
-    padding-bottom: 0;
+    padding-bottom: var(--space-lg);
+    box-sizing: border-box;
   }
 
   .hero-title {
