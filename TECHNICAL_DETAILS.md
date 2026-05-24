@@ -44,12 +44,13 @@ The following modules and pages have been completely deleted from the active cod
 ## 4. Key Configurations & Restorations
 
 ### A. Team Database & Divisions (`src/data/team.js`, `src/pages/About/AboutPage.jsx`)
+* **Simplified Two-Section Structure**: The teacher profiles overview page is structured into exactly two main visual blocks, displaying sequentially without complex filter tabs:
+  1. **Manajemen & Administrasi**: Houses Ona Rahmawati (id: 1), Zahratul Jannah (id: 3), and Admin Syakira (id: 10).
+  2. **Tutor & Staf Pengajar**: Groups all 10 tutors together seamlessly in a single unified grid.
 * **Ona Rahmawati, M.Pd. (Pimpinan)**: Restored as `id: 1` at the beginning of the `teamMembers` array. Her details are integrated back into the about narrative and SEO descriptions.
   - **No Founder Reference**: Removed all references to "pendiri" (founder) and "mendirikan" (founded) in her card profile bio, longBio description, and achievements list. She is referred to purely as **Pimpinan Bimbel Junior** to preserve standard, clean title profiles.
-* **Zahratul Jannah, S.Pd. (Bendahara & Tutor)**: Promoted to **Bendahara & Guru IPA SMP/SD** (`id: 3`). She resides in both:
-  - **Pimpinan, Bendahara & Administrasi** group
-  - **Tutor Sains / IPA** group (she displays in both sections seamlessly).
-* **"Tutor" Terminology**: All user-facing division headers are renamed from "Divisi ..." to **"Tutor ..."** (e.g. *Tutor Matematika & Guru Kelas*, *Tutor Sains / IPA*, etc.).
+* **Zahratul Jannah, S.Pd. (Bendahara & Tutor)**: She resides in both the *Manajemen & Administrasi* group and the *Tutor & Staf Pengajar* group seamlessly since she is both the treasurer and active in SMP/SD science tutoring.
+* **Salsabillah Rizki Al Husna (ID 5)**: Role updated to **Guru Matematika SMP** (subjects: *Matematika (SMP)*). She is placed purely in the *Tutor & Staf Pengajar* section, removed from any elementary school teaching assignments.
 
 ### B. Contact Page Restructure (`src/pages/Contact/ContactPage.jsx`)
 * The registration form has been completely removed to streamline offline signups via the main registration CTA.

@@ -734,42 +734,4 @@
   }
 }
 
-/* ---- Team Category Filters ---- */
-.about-team__filters {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: var(--space-xs);
-  margin-bottom: var(--space-2xl);
-  animation: fadeInUp 0.6s ease-out;
-}
 
-.about-team__filter-btn {
-  background: var(--color-surface);
-  color: var(--color-text-secondary);
-  border: 1px solid var(--color-border);
-  padding: 0.6rem 1.2rem;
-  border-radius: var(--radius-full);
-  font-size: var(--text-sm);
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.about-team__filter-btn:hover {
-  transform: translateY(-2px);
-  color: var(--color-primary-light);
-  border-color: var(--color-primary-light);
-  box-shadow: var(--shadow-sm);
-}
-
-.about-team__filter-btn--active {
-  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
-  color: var(--color-text-white);
-  border-color: transparent;
-  box-shadow: 0 4px 12px rgba(45, 108, 180, 0.25);
-}

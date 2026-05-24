@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   GraduationCap,
@@ -76,53 +75,20 @@ const legalItems = [
 ];
 
 export default function AboutPage() {
-  const [activeCategory, setActiveCategory] = useState('semua');
-  
-  const categories = [
-    { id: 'semua', label: 'Semua' },
-    { id: 'manajemen', label: 'Pimpinan, Bendahara & Administrasi' },
-    { id: 'matematika', label: 'Matematika' },
-    { id: 'ipa', label: 'IPA' },
-    { id: 'inggris', label: 'Bahasa Inggris' },
-    { id: 'indonesia', label: 'Bahasa Indonesia' }
-  ];
-
   const divisions = [
     {
       id: 'manajemen',
-      title: 'Pimpinan, Bendahara & Administrasi',
-      desc: 'Pengelola operasional, keuangan, dan administrasi Bimbel Junior',
+      title: 'Manajemen & Administrasi',
+      desc: 'Pengelola operasional, keuangan, akademis, dan administrasi Bimbel Junior.',
       members: teamMembers.filter(m => m.id === 1 || m.id === 3 || m.id === 10)
     },
     {
-      id: 'matematika',
-      title: 'Tutor Matematika & Guru Kelas',
-      desc: 'Tutor ahli Matematika SMP dan Guru Kelas SD yang berpengalaman.',
-      members: teamMembers.filter(m => m.id === 5 || m.id === 7 || m.id === 9 || m.id === 13)
-    },
-    {
-      id: 'ipa',
-      title: 'Tutor Sains / IPA',
-      desc: 'Tutor IPA (Fisika, Kimia, Biologi) yang menguasai pembelajaran praktis dan teori.',
-      members: teamMembers.filter(m => m.id === 2 || m.id === 3 || m.id === 13)
-    },
-    {
-      id: 'inggris',
-      title: 'Tutor Bahasa Inggris',
-      desc: 'Tutor Bahasa Inggris berpengalaman untuk meningkatkan kemampuan berbicara dan menulis.',
-      members: teamMembers.filter(m => m.id === 4 || m.id === 6 || m.id === 11)
-    },
-    {
-      id: 'indonesia',
-      title: 'Tutor Bahasa Indonesia',
-      desc: 'Tutor Bahasa Indonesia untuk jenjang SD dan SMP.',
-      members: teamMembers.filter(m => m.id === 12)
+      id: 'tutor',
+      title: 'Tutor & Staf Pengajar',
+      desc: 'Tenaga pendidik profesional dan berpengalaman yang berdedikasi tinggi membimbing siswa meraih prestasi.',
+      members: teamMembers.filter(m => m.id === 2 || m.id === 3 || m.id === 4 || m.id === 5 || m.id === 6 || m.id === 7 || m.id === 9 || m.id === 11 || m.id === 12 || m.id === 13)
     }
   ];
-
-  const activeDivisions = activeCategory === 'semua'
-    ? divisions
-    : divisions.filter(d => d.id === activeCategory);
 
   return (
     <>
@@ -254,22 +220,8 @@ export default function AboutPage() {
               </p>
             </div>
           </AnimateOnScroll>
-
-          {/* Category Filter Pills */}
-          <div className="about-team__filters">
-            {categories.map((category) => (
-              <button
-                key={category.id}
-                className={`about-team__filter-btn ${activeCategory === category.id ? 'about-team__filter-btn--active' : ''}`}
-                onClick={() => setActiveCategory(category.id)}
-              >
-                {category.label}
-              </button>
-            ))}
-          </div>
-
           <div className="about-team__divisions stagger-children">
-            {activeDivisions.map((division) => (
+            {divisions.map((division) => (
               <div key={division.id} className="about-team__division-section">
                 <div className="about-team__division-header">
                   <h3 className="about-team__division-title">{division.title}</h3>
