@@ -102,6 +102,10 @@ The following modules and pages have been completely deleted from the active cod
 * **Crawling & Indexing Assets**: Created `public/sitemap.xml` and `public/robots.txt` containing all 10+ core pages, 12 teacher profiles, and 8 blog articles mapped under the production base URL (`https://doni-wahyudi.github.io/bimbel_junior/`).
 * **Off-Screen Image Lazy Loading**: Injected `loading="lazy"` in scroll-dependent images across `Footer.jsx`, `AboutPage.jsx`, `GalleryPage.jsx`, `BlogPage.jsx`, and `AlumniPage.jsx` to maximize Google PageSpeed performance.
 
+### I. Teacher WebP Avatars Conversion & Binding (`public/images/teacher/`, `src/data/team.js`)
+* **WebP Image Conversion & Updates**: Converted new high-resolution avatar source photos `Ona Rahmawati.jpeg`, `Frans Detio.jpeg`, and `Ratna Sari Irsyad.jpeg` into optimized, high-performance `.webp` versions using Python's Pillow library. This keeps pages loading rapidly and maintains consistent design system parameters.
+* **Database Alignment**: The team records in `src/data/team.js` for Ona Rahmawati (`id: 1`), Ratna Sari Irsyad (`id: 2`), and Frans Detio (`id: 7`) are all bound to their corresponding `.webp` paths. All images now resolve and render successfully.
+
 ---
 
 ## 5. Guidelines for Future Chats & Agents

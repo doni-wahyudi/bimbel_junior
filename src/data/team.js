@@ -141,7 +141,7 @@ export const teamMembers = [
     ],
     achievements: [],
     color: '#2563EB',
-    image: null,
+    image: cleanBaseUrl + 'images/teacher/Frans Detio.webp',
     certified: false
   },
 
