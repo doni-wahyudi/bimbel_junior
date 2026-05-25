@@ -88,10 +88,10 @@ export const teamMembers = [
   {
     id: 5,
     name: 'Salsabillah Rizki Al Husna',
-    role: 'Guru Matematika SMP',
-    subjects: 'Matematika (SMP)',
-    bio: 'Tutor Matematika SMP yang berdedikasi tinggi dan terampil merancang pembelajaran interaktif serta menyenangkan.',
-    longBio: 'Ibu Salsabillah Rizki Al Husna adalah pengajar Matematika SMP di Bimbel Junior. Beliau memiliki kemampuan mendalam dalam menyusun metode pembelajaran yang interaktif dan mudah dipahami, membantu siswa memecahkan masalah matematika dengan penuh percaya diri.',
+    role: 'Guru SD (Kelas 4, 5, 6)',
+    subjects: 'Seluruh Pelajaran (SD)',
+    bio: 'Tutor SD Kelas 4, 5, 6 yang berdedikasi tinggi dan terampil merancang pembelajaran interaktif serta menyenangkan.',
+    longBio: 'Ibu Salsabillah Rizki Al Husna adalah pengajar SD kelas 4, 5, dan 6 di Bimbel Junior. Beliau memiliki kemampuan mendalam dalam menyusun metode pembelajaran yang interaktif dan mudah dipahami, membantu siswa sekolah dasar menguasai seluruh mata pelajaran dengan penuh percaya diri.',
     education: [
       'S1 Pendidikan Guru Sekolah Dasar (PGSD) – Universitas Negeri Jakarta (sedang ditempuh)'
     ],

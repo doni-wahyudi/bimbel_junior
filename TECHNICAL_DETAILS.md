@@ -50,7 +50,7 @@ The following modules and pages have been completely deleted from the active cod
 * **Ona Rahmawati, M.Pd. (Pimpinan)**: Restored as `id: 1` at the beginning of the `teamMembers` array. Her details are integrated back into the about narrative and SEO descriptions.
   - **No Founder Reference**: Removed all references to "pendiri" (founder) and "mendirikan" (founded) in her card profile bio, longBio description, and achievements list. She is referred to purely as **Pimpinan Bimbel Junior** to preserve standard, clean title profiles.
 * **Zahratul Jannah, S.Pd. (Bendahara & Tutor)**: She resides in both the *Manajemen & Administrasi* group and the *Tutor & Staf Pengajar* group seamlessly since she is both the treasurer and active in SMP/SD science tutoring.
-* **Salsabillah Rizki Al Husna (ID 5)**: Role updated to **Guru Matematika SMP** (subjects: *Matematika (SMP)*). She is placed purely in the *Tutor & Staf Pengajar* section, removed from any elementary school teaching assignments.
+* **Salsabillah Rizki Al Husna (ID 5)**: Role updated to **Guru SD (Kelas 4, 5, 6)** (subjects: *Seluruh Pelajaran (SD)*) to align with her PGSD teacher education profile, placing her in the Tutor & Staf Pengajar section.
 
 ### B. Contact & WhatsApp Forms Streamlining
 * **Registration Form Simplification** (`src/pages/Registration/RegistrationPage.jsx`): Completely removed the `phone` form input and `No. WhatsApp: ${formData.phone}` message template string. Since submissions are directed straight to WhatsApp, the user's phone number is already visible in the chat thread, removing duplicate inputs.
