@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://doni-wahyudi.github.io/bimbel_junior/sitemap.xml
+Sitemap: https://juniorbimbel.web.id/sitemap.xml
