@@ -48,8 +48,8 @@ const missionItems = [
 const facilities = [
   {
     icon: Monitor,
-    title: '2 Ruang Belajar Nyaman',
-    desc: 'Dilengkapi AC untuk kenyamanan belajar'
+    title: '3 Ruang Belajar Nyaman',
+    desc: '2 ruang untuk kelas reguler & 1 ruang khusus kelas privat (Full AC)'
   },
   {
     icon: Users,

@@ -2,6 +2,8 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  padding-top: var(--announcement-height, 0px);
+  transition: padding-top 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .layout__main {
