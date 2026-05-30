@@ -153,6 +153,13 @@ The following modules and pages have been completely deleted from the active cod
 * **Full-Screen Mobile Hero**: Set the home page `.hero` container height on mobile viewports ($\le 768\text{px}$) to exactly one full viewport width/height (`min-height: 100dvh` with a `100vh` fallback). This blocks off the layout so the hero occupies exactly one full visual fold on mobile devices.
 * **Vertical Centering**: Enabled dynamic flex alignment (`display: flex; flex-direction: column; justify-content: center;`) on mobile so the text content and visual stats grid remain beautifully centered in the screen fold, providing a premium, uncluttered, and highly spacious presentation.
 
+### R. Custom Domain Mapping & SEO Sync (`vite.config.js`, `public/CNAME`, `public/robots.txt`, `public/sitemap.xml`)
+* **Base Path Re-Alignment**: Updated Vite configuration base path from `'/bimbel_junior/'` to `'/'`. This allows the built application bundles, CSS resources, dynamic scripts, and routers to resolve relative to the root of the custom domain rather than looking for a project subfolder.
+* **Persistent CNAME File**: Created a `public/CNAME` file containing the domain `juniorbimbel.web.id`. This ensures that GitHub Pages maps the domain persistently across all subsequent deploy compiles.
+* **SEO Domain Updates**:
+  - Re-bound the `Sitemap` link inside `public/robots.txt` to point to `https://juniorbimbel.web.id/sitemap.xml`.
+  - Updated all 31 static, teacher profile, and blog article locations in `public/sitemap.xml` to point directly to `https://juniorbimbel.web.id/` instead of the old GitHub Pages path, preserving pixel-perfect indexing health and SEO rankings.
+
 ---
 
 ## 5. Guidelines for Future Chats & Agents
