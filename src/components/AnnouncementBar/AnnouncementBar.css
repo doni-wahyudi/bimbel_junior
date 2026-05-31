@@ -2,6 +2,11 @@
    Announcement Bar Component Styles
    ============================================= */
 
+:root {
+  /* Constant height for announcement bar since running text never wraps */
+  --announcement-height: 40px;
+}
+
 .announcement-bar {
   position: fixed;
   top: 0;
@@ -37,20 +42,39 @@
   height: 100%;
 }
 
-.announcement-bar__content {
+/* Marquee Wrapper */
+.announcement-bar__marquee {
   flex: 1;
+  overflow: hidden;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: var(--space-md);
+  position: relative;
+  height: 100%;
+  padding-right: var(--space-xl); /* Safe padding to prevent overlap with close button */
+}
+
+/* Continuous scroll track */
+.announcement-bar__track {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-lg);
   font-size: var(--text-sm);
-  font-weight: 500;
-  text-align: center;
-  padding-right: var(--space-xl); /* Leave space for close button */
+  font-weight: 600;
+  white-space: nowrap;
+  animation: announcement-marquee 25s linear infinite;
+  padding-left: 100%; /* Start off-screen to the right */
+  height: 100%;
+}
+
+/* Pause on hover so the user can easily read or click the link */
+.announcement-bar__track:hover {
+  animation-play-state: paused;
 }
 
 .announcement-bar__text {
   letter-spacing: -0.01em;
+  display: inline-flex;
+  align-items: center;
 }
 
 .announcement-bar__link {
@@ -60,17 +84,17 @@
   color: #fff;
   font-weight: 700;
   text-decoration: none;
-  background: rgba(255, 255, 255, 0.18);
-  padding: 0.2rem 0.75rem;
+  background: rgba(255, 255, 255, 0.22);
+  padding: 0.15rem 0.75rem;
   border-radius: var(--radius-full);
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   transition: var(--transition-fast);
   white-space: nowrap;
 }
 
 .announcement-bar__link:hover {
-  background: rgba(255, 255, 255, 0.3);
-  transform: translateX(2px);
+  background: rgba(255, 255, 255, 0.35);
+  transform: scale(1.05);
   color: #fff;
 }
 
@@ -86,14 +110,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 28px;
-  height: 28px;
+  width: 26px;
+  height: 26px;
   border-radius: 50%;
   color: rgba(255, 255, 255, 0.8);
   background: transparent;
   transition: var(--transition-fast);
   cursor: pointer;
   flex-shrink: 0;
+  position: absolute;
+  right: var(--container-padding);
+  z-index: 10;
 }
 
 .announcement-bar__close:hover {
@@ -102,17 +129,22 @@
   transform: rotate(90deg);
 }
 
-/* Override height variable on mobile devices to handle text wrapping */
-@media (max-width: 768px) {
-  :root {
-    --announcement-height: 56px !important;
+/* Pure CSS Marquee Animation */
+@keyframes announcement-marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
   }
+  100% {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
 
-  .announcement-bar__content {
-    flex-direction: column;
-    gap: 0.15rem;
+/* ---- Mobile Adjustments ---- */
+@media (max-width: 768px) {
+  .announcement-bar__track {
     font-size: 0.75rem;
-    padding-right: var(--space-lg);
+    animation-duration: 20s; /* Slightly faster loop for smaller screens */
+    gap: var(--space-md);
   }
 
   .announcement-bar__link {
@@ -123,16 +155,5 @@
   .announcement-bar__close {
     width: 24px;
     height: 24px;
-  }
-}
-
-@media (max-width: 480px) {
-  :root {
-    --announcement-height: 64px !important;
-  }
-  
-  .announcement-bar__content {
-    font-size: 0.7rem;
-    line-height: 1.3;
   }
 }

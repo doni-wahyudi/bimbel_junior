@@ -44,13 +44,15 @@ export default function AnnouncementBar() {
   return (
     <div className={`announcement-bar ${isDismissing ? 'announcement-bar--dismissing' : ''}`}>
       <div className="announcement-bar__container">
-        <div className="announcement-bar__content">
-          <span className="announcement-bar__text">{text}</span>
-          {link && ctaText && (
-            <Link to={link} className="announcement-bar__link">
-              {ctaText} <ArrowRight size={14} className="announcement-bar__arrow" />
-            </Link>
-          )}
+        <div className="announcement-bar__marquee">
+          <div className="announcement-bar__track">
+            <span className="announcement-bar__text">{text}</span>
+            {link && ctaText && (
+              <Link to={link} className="announcement-bar__link">
+                {ctaText} <ArrowRight size={14} className="announcement-bar__arrow" />
+              </Link>
+            )}
+          </div>
         </div>
         <button 
           onClick={handleDismiss} 
