@@ -10,8 +10,8 @@ export default function AnnouncementBar() {
   const [isDismissing, setIsDismissing] = useState(false);
 
   useEffect(() => {
-    // Only show if active and not dismissed in localStorage
-    const isDismissed = localStorage.getItem(`dismissed_announcement_${id}`) === 'true';
+    // Only show if active and not dismissed in sessionStorage
+    const isDismissed = sessionStorage.getItem(`dismissed_announcement_${id}`) === 'true';
     if (isActive && !isDismissed) {
       setIsVisible(true);
       // Dynamically set the height offset for the fixed navbar
@@ -33,7 +33,7 @@ export default function AnnouncementBar() {
     
     // Smooth transition delay before hiding completely
     setTimeout(() => {
-      localStorage.setItem(`dismissed_announcement_${id}`, 'true');
+      sessionStorage.setItem(`dismissed_announcement_${id}`, 'true');
       setIsVisible(false);
       document.documentElement.style.setProperty('--announcement-height', '0px');
     }, 300); // Matches CSS transition duration
