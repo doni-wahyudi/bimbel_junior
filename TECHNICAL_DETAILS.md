@@ -101,7 +101,7 @@ The following modules and pages have been completely deleted from the active cod
 * **Centered Teacher Avatars**: Configured `.about-team__avatar-img` with absolute positioning (`position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center;`) to eliminate baseline spacing offsets or browser rendering shifts, rendering all teacher photos beautifully centered inside their circular outlines.
 
 ### H. Search Crawling & Off-Screen Image Optimization (`public/sitemap.xml`, `public/robots.txt`)
-* **Crawling & Indexing Assets**: Created `public/sitemap.xml` and `public/robots.txt` containing all 10+ core pages, 12 teacher profiles, and 8 blog articles mapped under the production base URL (`https://doni-wahyudi.github.io/bimbel_junior/`).
+* **Crawling & Indexing Assets**: Created `public/sitemap.xml` and `public/robots.txt` containing all 10+ core pages, 12 teacher profiles, and 8 blog articles mapped under the production base URL (`https://bimbeljunior.com/`).
 * **Off-Screen Image Lazy Loading**: Injected `loading="lazy"` in scroll-dependent images across `Footer.jsx`, `AboutPage.jsx`, `GalleryPage.jsx`, `BlogPage.jsx`, and `AlumniPage.jsx` to maximize Google PageSpeed performance.
 
 ### I. Teacher WebP Avatars Conversion & Binding (`public/images/teacher/`, `src/data/team.js`)
@@ -153,12 +153,13 @@ The following modules and pages have been completely deleted from the active cod
 * **Full-Screen Mobile Hero**: Set the home page `.hero` container height on mobile viewports ($\le 768\text{px}$) to exactly one full viewport width/height (`min-height: 100dvh` with a `100vh` fallback). This blocks off the layout so the hero occupies exactly one full visual fold on mobile devices.
 * **Vertical Centering**: Enabled dynamic flex alignment (`display: flex; flex-direction: column; justify-content: center;`) on mobile so the text content and visual stats grid remain beautifully centered in the screen fold, providing a premium, uncluttered, and highly spacious presentation.
 
-### R. Custom Domain Mapping & SEO Sync (`vite.config.js`, `public/CNAME`, `public/robots.txt`, `public/sitemap.xml`)
+### R. Custom Domain Mapping & SEO Sync (`vite.config.js`, `public/CNAME`, `public/robots.txt`, `public/sitemap.xml`, `public/.htaccess`)
 * **Base Path Re-Alignment**: Updated Vite configuration base path from `'/bimbel_junior/'` to `'/'`. This allows the built application bundles, CSS resources, dynamic scripts, and routers to resolve relative to the root of the custom domain rather than looking for a project subfolder.
-* **Persistent CNAME File**: Created a `public/CNAME` file containing the domain `juniorbimbel.web.id`. This ensures that GitHub Pages maps the domain persistently across all subsequent deploy compiles.
+* **Persistent CNAME File**: Created a `public/CNAME` file containing the domain `bimbeljunior.com`.
 * **SEO Domain Updates**:
-  - Re-bound the `Sitemap` link inside `public/robots.txt` to point to `https://juniorbimbel.web.id/sitemap.xml`.
-  - Updated all 31 static, teacher profile, and blog article locations in `public/sitemap.xml` to point directly to `https://juniorbimbel.web.id/` instead of the old GitHub Pages path, preserving pixel-perfect indexing health and SEO rankings.
+  - Re-bound the `Sitemap` link inside `public/robots.txt` to point to `https://bimbeljunior.com/sitemap.xml`.
+  - Updated all 31 static, teacher profile, and blog article locations in `public/sitemap.xml` to point directly to `https://bimbeljunior.com/` instead of the old GitHub Pages path, preserving pixel-perfect indexing health and SEO rankings.
+* **Apache cPanel SPA Routing**: Introduced a `public/.htaccess` rewrite rule to direct all nested routes to `index.html` allowing React Router to handle HTML5 History API paths client-side on Apache hosting.
 
 ---
 

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://juniorbimbel.web.id/sitemap.xml
+Sitemap: https://bimbeljunior.com/sitemap.xml
