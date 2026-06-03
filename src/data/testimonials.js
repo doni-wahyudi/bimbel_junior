@@ -1,44 +1,86 @@
 export const testimonials = [
   {
     id: 1,
-    name: 'Ibu Ratna Sari',
-    role: 'Orang Tua Siswa SD',
-    text: 'Anak saya yang tadinya kesulitan Matematika, sekarang jadi lancar dan percaya diri. Bimbel Junior benar-benar sabar membimbing anak-anak. Terima kasih banyak!',
+    name: 'Abdul Latif',
+    role: 'Orang Tua Siswa SLTP',
+    text: 'Tempat les para siswa SLTP yang nyaman dan menyenangkan...\n\nRecommended untuk Para Ortu yang ingin anaknya sukses dalam pendidikan.\n\nDimana pun Kita berada perlu ikuti prokes...\nAgar diri dan keluarga terhindar dari Corona...\nKalau Bapak Ibu bingung cari tempat les...\nKami sarankan untuk ke BIMBELl BU ONA.',
     rating: 5
   },
   {
     id: 2,
-    name: 'Bapak Hendra Wijaya',
-    role: 'Orang Tua Siswa SMP',
-    text: 'Nilai anak saya naik drastis setelah bergabung dengan Bimbel Junior. Guru-gurunya profesional dan sangat memperhatikan perkembangan setiap siswa. Sangat recommended!',
+    name: 'Mirza Surbakti',
+    role: 'Siswa / Alumni',
+    text: 'Harga terjangkau✅\nTempat ada ACnya✅\nAda wifi✅\nGurunya berprestasi✅\n(Tempatnya nyaman dan uenak)\n\nBagi bapak ibu yg mau anaknya jadi rajin dan pinter maka daftar di bimbel bu ona sekarang👌👌',
     rating: 5
   },
   {
     id: 3,
-    name: 'Anisa Putri',
-    role: 'Siswa SMP Kelas 9',
-    text: 'Belajar di Bimbel Junior seru banget! Gurunya enak neranginnya dan teman-temannya juga asik. Nilai Matematika aku naik dari 65 jadi 90!',
+    name: 'Leni Purbasari',
+    role: 'Siswa / Alumni',
+    text: 'Gurunya asik banget, seru ngajarnya, dan paling penting ilmu yg disampaikan bener2 sampe ke kita 👍🏻👍🏻👍🏻 …',
     rating: 5
   },
   {
     id: 4,
-    name: 'Ibu Diana Kusuma',
-    role: 'Orang Tua Siswa SD',
-    text: 'Saya sangat puas dengan Bimbel Junior. Laporan perkembangan anak dikirim rutin setiap bulan, jadi saya bisa memantau kemajuan belajar anak dengan baik.',
+    name: 'Mutiara devi',
+    role: 'Siswa / Alumni',
+    text: 'Nyaman banget les disini, yg bingung cari les bisa les disini, mantep bngt dah😉 …',
     rating: 5
   },
   {
     id: 5,
-    name: 'Muhammad Rizki',
-    role: 'Siswa SMP Kelas 8',
-    text: 'Dulu aku malas belajar, tapi setelah ikut Bimbel Junior jadi semangat karena cara ngajarnya beda dari yang lain. Lebih gampang dimengerti!',
+    name: 'Jibril aryo',
+    role: 'Siswa / Alumni',
+    text: 'banyak temen, seru karena guru nya asik, gampang ngerti',
     rating: 5
   },
   {
     id: 6,
-    name: 'Ibu Fitriani',
-    role: 'Orang Tua Siswa SD',
-    text: 'Bimbel Junior itu kecil tapi berkualitas. Karena kelasnya kecil, anak saya jadi lebih fokus dan tidak malu bertanya. Perkembangannya sangat pesat.',
+    name: 'Radix Sa\'adaty',
+    role: 'Siswa / Alumni',
+    text: 'gurunya asik, gaul bgt ga ada lawan dh',
+    rating: 5
+  },
+  {
+    id: 7,
+    name: 'Heni Apryaningsih',
+    role: 'Orang Tua Siswa',
+    text: 'AYO LES DISINI, ADA GURU YG PALING CANTIK NAMA NYA BU ONAA😁 😁 😁 ...',
+    rating: 5
+  },
+  {
+    id: 8,
+    name: 'citra ade putri',
+    role: 'Siswa / Alumni',
+    text: 'Alhamdulillah less disini seruu dan cptt paham,jdii less disini seruu deh',
+    rating: 5
+  },
+  {
+    id: 9,
+    name: 'Nafis Raihan Hafizh',
+    role: 'Siswa / Alumni',
+    text: 'Enak les disini ada WiFi gratis bos',
+    rating: 5
+  },
+  {
+    id: 10,
+    name: 'Lusi Pardede',
+    role: 'Siswa / Alumni',
+    text: 'Sdh bagus,jgn terlalu cepat neranginnya',
+    rating: 5
+  },
+  {
+    id: 11,
+    name: 'bayiss',
+    role: 'Siswa / Alumni',
+    text: 'Sangad ramah bintang 5',
+    rating: 5
+  },
+  {
+    id: 12,
+    name: 'Nasyarira Ayudia',
+    role: 'Siswa / Alumni',
+    text: 'Sangat menyenangkan dan lebih cepat memahami pelajaran.',
     rating: 5
   }
 ];

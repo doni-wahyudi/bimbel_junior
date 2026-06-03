@@ -1,39 +1,22 @@
 import { useState, useEffect, useCallback } from 'react';
-import { Quote, GraduationCap, School, ArrowRight, ChevronLeft, ChevronRight, Trophy } from 'lucide-react';
+import { GraduationCap, ChevronLeft, ChevronRight, Trophy, Sparkles } from 'lucide-react';
 import SEO from '../../components/SEO';
 import AnimateOnScroll from '../../components/AnimateOnScroll';
 import { alumniData } from '../../data/alumni';
 import './AlumniPage.css';
 
-const getAlumniColorTheme = (id) => {
-  switch (id) {
-    case 1:
-    case 4:
+const getAlumniColorTheme = (category) => {
+  switch (category) {
+    case 'PTN':
       return { accent: '#D97706', bgLight: '#FEF3C7', label: 'SNBT / PTN' }; // Gold
-    case 2:
-    case 5:
+    case 'SMA':
       return { accent: '#2563EB', bgLight: '#DBEAFE', label: 'PPDB SMA' }; // Blue
-    case 3:
+    case 'SMK':
+      return { accent: '#7C3AED', bgLight: '#F3E8FF', label: 'PPDB SMK' }; // Purple
+    case 'SMP':
       return { accent: '#0D9488', bgLight: '#CCFBF1', label: 'PPDB SMP' }; // Teal
     default:
       return { accent: '#2563EB', bgLight: '#DBEAFE', label: 'Alumni' };
-  }
-};
-
-const getBadgeText = (id) => {
-  switch (id) {
-    case 1:
-      return 'Lolos FK UI';
-    case 2:
-      return 'Lolos SMAN 8 Jakarta';
-    case 3:
-      return 'Lolos SMPN 115 Jakarta';
-    case 4:
-      return 'Lolos Teknik ITB';
-    case 5:
-      return 'Lolos Taruna Nusantara';
-    default:
-      return 'Lolos Sekolah Impian';
   }
 };
 
@@ -104,8 +87,8 @@ export default function AlumniPage() {
                 }}
               >
                 {alumniData.map((alumni) => {
-                  const theme = getAlumniColorTheme(alumni.id);
-                  const achievementText = getBadgeText(alumni.id);
+                  const theme = getAlumniColorTheme(alumni.category);
+                  const achievementText = alumni.achievement;
                   return (
                     <div key={alumni.id} className="alumni-slide">
                       <div
@@ -115,6 +98,14 @@ export default function AlumniPage() {
                           '--alumni-accent-light': theme.bgLight
                         }}
                       >
+                        {/* Brand Logo in Upper Left */}
+                        <div className="alumni-card__brand-badge">
+                          <img
+                            src={`${import.meta.env.BASE_URL || '/'}images/Logo Bimbel Junior.webp`}
+                            alt="Bimbel Junior"
+                          />
+                        </div>
+
                         {/* Floating Trophy Ribbon */}
                         <div className="alumni-card__badge-ribbon">
                           <Trophy size={12} />
@@ -141,32 +132,20 @@ export default function AlumniPage() {
                             <h2 className="alumni-card__name">{alumni.name}</h2>
                             <div className="alumni-card__badge-row">
                               <span className="alumni-card__year">Alumni {alumni.year}</span>
-                              <span className="alumni-card__success-badge">{achievementText}</span>
                             </div>
                           </div>
                         </div>
 
-                        {/* Pathway Flow */}
-                        <div className="alumni-card__pathway">
-                          <div className="pathway-step pathway-step--prev">
-                            <span className="pathway-label">Asal Sekolah</span>
-                            <span className="pathway-value">{alumni.previousSchool}</span>
+                        {/* Accepted Destination */}
+                        <div className="alumni-card__destination">
+                          <div className="destination-header">
+                            <GraduationCap size={16} className="destination-icon" />
+                            <span className="destination-label">Diterima di</span>
                           </div>
-                          <div className="pathway-connector">
-                            <div className="connector-dot connector-dot--start"></div>
-                            <div className="connector-line"></div>
-                            <ArrowRight size={14} className="connector-arrow" />
-                            <div className="connector-dot connector-dot--end"></div>
-                          </div>
-                          <div className="pathway-step pathway-step--curr">
-                            <span className="pathway-label">Diterima di</span>
-                            <span className="pathway-value">{alumni.currentSchool}</span>
-                          </div>
-                        </div>
-
-                        <div className="alumni-card__quote-wrapper">
-                          <Quote className="alumni-card__quote-icon" size={24} />
-                          <p className="alumni-card__quote">"{alumni.quote}"</p>
+                          <span className="destination-value">{alumni.currentSchool}</span>
+                          {alumni.pathway && (
+                            <span className="destination-pathway">({alumni.pathway})</span>
+                          )}
                         </div>
                       </div>
                     </div>
@@ -206,6 +185,15 @@ export default function AlumniPage() {
                 <ChevronRight />
               </button>
             </div>
+
+            <AnimateOnScroll delay={0.2}>
+              <div className="alumni-carousel-caption">
+                <Sparkles className="alumni-carousel-caption__icon" size={24} />
+                <p>
+                  ...dan masih banyak alumni lainnya yang telah <strong>sukses mengukir prestasi terbaik</strong>, menembus sekolah impian, serta <strong>berkembang lebih baik</strong> bersama <strong>Bimbel Junior</strong>.
+                </p>
+              </div>
+            </AnimateOnScroll>
           </div>
 
           <AnimateOnScroll delay={0.4}>

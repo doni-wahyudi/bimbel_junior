@@ -1,20 +1,30 @@
 import { Helmet } from 'react-helmet-async';
+import { useLocation } from 'react-router-dom';
 
 export default function SEO({ title, description, keywords, canonical, schema }) {
   const siteTitle = 'Bimbel Junior';
   const fullTitle = title ? `${title} — ${siteTitle}` : `${siteTitle} — Bimbingan Belajar SD, SMP, SMA di Tanjung Priok Jakarta Utara`;
   const defaultDescription = 'Bimbel Junior adalah lembaga bimbingan belajar terpercaya di Tanjung Priok, Jakarta Utara untuk SD, SMP, dan SMA. Cerdaskan Generasi Bangsa. Rating 4.9⭐, pengajar bersertifikat. Hubungi: 0881-0241-93340';
 
+  const location = useLocation();
+  const baseDomain = 'https://bimbeljunior.com';
+  const currentPath = location.pathname === '/' ? '' : location.pathname;
+  const autoCanonical = canonical || `${baseDomain}${currentPath}`;
+
   return (
     <Helmet>
       <title>{fullTitle}</title>
       <meta name="description" content={description || defaultDescription} />
       {keywords && <meta name="keywords" content={keywords} />}
-      {canonical && <link rel="canonical" href={canonical} />}
+      <link rel="canonical" href={autoCanonical} />
       
       {/* Open Graph */}
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description || defaultDescription} />
+      <meta property="og:url" content={autoCanonical} />
+      <meta property="og:image" content={`${baseDomain}/images/Logo Bimbel Junior.webp`} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
       <meta property="og:type" content="website" />
       <meta property="og:locale" content="id_ID" />
       <meta property="og:site_name" content={siteTitle} />

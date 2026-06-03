@@ -34,31 +34,77 @@
 
 /* Testimonial Card */
 .testimonial-card {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 100%);
+  border: 1px solid rgba(226, 232, 240, 0.8);
   border-radius: var(--radius-2xl);
-  padding: var(--space-2xl);
+  padding: var(--space-xl);
   height: 100%;
   display: flex;
   flex-direction: column;
   position: relative;
   transition: var(--transition-base);
+  overflow: hidden;
+  box-shadow: 0 10px 30px -10px rgba(30, 41, 59, 0.04), inset 0 1px 0 0 rgba(255, 255, 255, 0.6);
+}
+
+.testimonial-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, var(--color-primary-light), var(--color-primary), var(--color-secondary));
+  border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
+  opacity: 0.85;
+  transition: var(--transition-base);
+}
+
+.testimonial-card::after {
+  content: '';
+  position: absolute;
+  bottom: -40px;
+  right: -40px;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.04) 0%, transparent 70%);
+  pointer-events: none;
 }
 
 .testimonial-card:hover {
-  border-color: var(--color-primary-lighter);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-6px);
+  border-color: rgba(37, 99, 235, 0.15);
+  box-shadow: 0 20px 40px -15px rgba(37, 99, 235, 0.1), 0 0 0 1px rgba(37, 99, 235, 0.05), inset 0 1px 0 0 rgba(255, 255, 255, 0.8);
+}
+
+.testimonial-card:hover::before {
+  opacity: 1;
+  height: 8px;
 }
 
 /* Quote icon */
 .testimonial-quote-icon {
-  color: var(--color-primary-lighter);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(37, 99, 235, 0.05);
+  color: var(--color-primary);
   margin-bottom: var(--space-md);
+  transition: var(--transition-base);
 }
 
 .testimonial-quote-icon svg {
-  width: 32px;
-  height: 32px;
+  width: 22px;
+  height: 22px;
+}
+
+.testimonial-card:hover .testimonial-quote-icon {
+  background: var(--color-primary);
+  color: white;
+  transform: rotate(-10deg) scale(1.05);
 }
 
 /* Star rating */
@@ -73,19 +119,22 @@
 }
 
 .testimonial-star svg {
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   fill: var(--color-secondary);
+  filter: drop-shadow(0 2px 4px rgba(249, 115, 22, 0.15));
 }
 
 /* Quote text */
 .testimonial-text {
-  font-size: var(--text-base);
-  color: var(--color-text-secondary);
-  line-height: 1.8;
+  font-size: var(--text-sm);
+  color: #334155;
+  line-height: 1.65;
   font-style: italic;
+  font-weight: 500;
   flex: 1;
-  margin-bottom: var(--space-xl);
+  margin-bottom: var(--space-md);
+  white-space: pre-line;
 }
 
 /* Author info */
@@ -94,34 +143,44 @@
   align-items: center;
   gap: var(--space-md);
   padding-top: var(--space-md);
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid rgba(226, 232, 240, 0.8);
 }
 
 .testimonial-avatar {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
   color: white;
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: var(--text-lg);
+  font-size: var(--text-base);
   flex-shrink: 0;
+  border: 2px solid white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: var(--transition-base);
 }
+
+.testimonial-avatar.avatar-blue { background: linear-gradient(135deg, #3B82F6, #1D4ED8); }
+.testimonial-avatar.avatar-purple { background: linear-gradient(135deg, #8B5CF6, #6D28D9); }
+.testimonial-avatar.avatar-green { background: linear-gradient(135deg, #10B981, #047857); }
+.testimonial-avatar.avatar-orange { background: linear-gradient(135deg, #F97316, #EA580C); }
+.testimonial-avatar.avatar-pink { background: linear-gradient(135deg, #EC4899, #D946EF); }
 
 .testimonial-name {
   font-family: var(--font-heading);
-  font-weight: 600;
-  font-size: var(--text-base);
+  font-weight: 700;
+  font-size: 0.95rem;
   color: var(--color-text-primary);
 }
 
 .testimonial-role {
-  font-size: var(--text-sm);
-  color: var(--color-text-secondary); /* Improved contrast */
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  letter-spacing: 0.02em;
 }
 
 /* Navigation arrows */
@@ -199,7 +258,7 @@
 }
 
 /* ---- Responsive ---- */
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
   .testimonial-slide {
     flex: 0 0 50%;
   }

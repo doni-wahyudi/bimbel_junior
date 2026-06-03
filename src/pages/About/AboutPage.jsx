@@ -31,10 +31,12 @@ function getInitials(name) {
   return parts[0][0].toUpperCase();
 }
 
+const yearsOfOperation = new Date().getFullYear() - 2007;
+
 const stats = [
-  { value: '5+', label: 'Tahun Pengalaman', icon: Award },
+  { value: `${yearsOfOperation}`, label: 'Tahun (Sejak 2007)', icon: Award },
   { value: '4.9', label: 'Rating Google', icon: Star },
-  { value: '100+', label: 'Siswa Alumni', icon: Users },
+  { value: '1000+', label: 'Alumni', icon: Users },
   { value: '3', label: 'Jenjang Pendidikan', icon: GraduationCap }
 ];
 
@@ -139,7 +141,7 @@ export default function AboutPage() {
                 jenjang SD, SMP, dan SMA.
               </p>
               <p>
-                Dengan pengalaman lebih dari 5 tahun dan rating 4.9 di Google Maps,
+                Dengan pengalaman lebih dari {yearsOfOperation} tahun (sejak 2007) dan rating 4.9 di Google Maps,
                 kami berkomitmen untuk terus memberikan yang terbaik bagi setiap siswa.
               </p>
               <Link to="/program" className="btn btn-primary about-story__cta">

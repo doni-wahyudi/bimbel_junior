@@ -11,6 +11,8 @@ export default function HeroSection() {
     `${import.meta.env.BASE_URL}images/hero/15.webp`
   ];
 
+  const yearsOfOperation = new Date().getFullYear() - 2007;
+
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
@@ -109,8 +111,8 @@ export default function HeroSection() {
                 <Award />
               </div>
               <div className="hero-stat-info">
-                <strong>5+ Tahun</strong>
-                <span>Pengalaman</span>
+                <strong>{yearsOfOperation} Tahun</strong>
+                <span>Sejak 2007</span>
               </div>
             </div>
             <div className="hero-stat">
@@ -122,13 +124,13 @@ export default function HeroSection() {
                 <span>Siswa/Kelas</span>
               </div>
             </div>
-            <div className="hero-stat">
+             <div className="hero-stat">
               <div className="hero-stat-icon">
-                <GraduationCap />
+                <Users />
               </div>
               <div className="hero-stat-info">
-                <strong>100%</strong>
-                <span>Tutor M.Pd.</span>
+                <strong>1000+</strong>
+                <span>Alumni</span>
               </div>
             </div>
           </div>

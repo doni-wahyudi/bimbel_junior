@@ -4,6 +4,15 @@ import { testimonials } from '../../data/testimonials';
 import AnimateOnScroll from '../../components/AnimateOnScroll';
 import './TestimonialsSection.css';
 
+const getAvatarColorClass = (name) => {
+  const char = name.charAt(0).toUpperCase();
+  if ('AEIOU'.includes(char)) return 'avatar-blue';
+  if ('BCDFG'.includes(char)) return 'avatar-purple';
+  if ('HJKLM'.includes(char)) return 'avatar-green';
+  if ('NPRST'.includes(char)) return 'avatar-orange';
+  return 'avatar-pink';
+};
+
 export default function TestimonialsSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [slidesPerView, setSlidesPerView] = useState(3);
@@ -13,7 +22,7 @@ export default function TestimonialsSection() {
     const updateSlidesPerView = () => {
       if (window.innerWidth <= 640) {
         setSlidesPerView(1);
-      } else if (window.innerWidth <= 1024) {
+      } else if (window.innerWidth <= 1100) {
         setSlidesPerView(2);
       } else {
         setSlidesPerView(3);
@@ -88,7 +97,7 @@ export default function TestimonialsSection() {
 
                       {/* Author */}
                       <div className="testimonial-author">
-                        <div className="testimonial-avatar">
+                        <div className={`testimonial-avatar ${getAvatarColorClass(testimonial.name)}`}>
                           {testimonial.name.charAt(0)}
                         </div>
                         <div>
