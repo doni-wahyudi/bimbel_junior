@@ -23,7 +23,7 @@ The routing table uses lazy-loaded code-splitting for performance. Active top-le
 * `/tentang-kami/sop-tata-tertib` (SOP & Rule Guidelines Page)
 * `/program` (Program Page)
 * `/galeri` (Gallery Page)
-* `/alumni` (Alumni Testimonials Page)
+* `/alumni` (Prestasi & Alumni Page)
 * `/blog` (Blog listing Page)
 * `/blog/:slug` (Individual Blog Article view)
 * `/hubungi-kami` (Contact Page)
@@ -46,7 +46,9 @@ The following modules and pages have been completely deleted from the active cod
 ### A. Team Database & Divisions (`src/data/team.js`, `src/pages/About/AboutPage.jsx`)
 * **Simplified Two-Section Structure**: The teacher profiles overview page is structured into exactly two main visual blocks, displaying sequentially without complex filter tabs:
   1. **Manajemen & Administrasi**: Houses Ona Rahmawati (id: 1), Zahratul Jannah (id: 3), and Admin Syakira (id: 10).
-  2. **Tutor & Staf Pengajar**: Groups all 10 tutors together seamlessly in a single unified grid.
+  2. **Tutor & Staf Pengajar**: Groups all 12 tutors together seamlessly in a single unified grid.
+* **Joko Sarjono, S.Pd., M.Pd.**: Title updated to include M.Pd.
+* **New Tutors Added**: Added Sisca Septiyani, S.Pd. (id: 14, Physics SMA) and Ofchan Damanik, S.Pd. (id: 15, Indonesian SMA) from their CVs with their original JPEG photos.
 * **Ona Rahmawati, M.Pd. (Pimpinan)**: Restored as `id: 1` at the beginning of the `teamMembers` array. Her details are integrated back into the about narrative and SEO descriptions.
   - **No Founder Reference**: Removed all references to "pendiri" (founder) and "mendirikan" (founded) in her card profile bio, longBio description, and achievements list. She is referred to purely as **Pimpinan Bimbel Junior** to preserve standard, clean title profiles.
 * **Zahratul Jannah, S.Pd. (Bendahara & Tutor)**: She resides in both the *Manajemen & Administrasi* group and the *Tutor & Staf Pengajar* group seamlessly since she is both the treasurer and active in SMP/SD science tutoring.
@@ -160,6 +162,17 @@ The following modules and pages have been completely deleted from the active cod
   - Re-bound the `Sitemap` link inside `public/robots.txt` to point to `https://bimbeljunior.com/sitemap.xml`.
   - Updated all 31 static, teacher profile, and blog article locations in `public/sitemap.xml` to point directly to `https://bimbeljunior.com/` instead of the old GitHub Pages path, preserving pixel-perfect indexing health and SEO rankings.
 * **Apache cPanel SPA Routing**: Introduced a `public/.htaccess` rewrite rule to direct all nested routes to `index.html` allowing React Router to handle HTML5 History API paths client-side on Apache hosting.
+
+### S. Alumni Page Featured Achievement Board (`src/pages/Alumni/AlumniPage.jsx`, `src/pages/Alumni/AlumniPage.css`)
+* **Papan Prestasi Gemilang (SMPN 129 Jakarta)**: Replaced the featured banner on the Alumni page with a dedicated Board of Achievements section highlighting outstanding academic rankings of Bimbel Junior students at SMPN 129 Jakarta:
+  - **Nizam Abdurrahman**: Peringkat 2 Nilai Ijazah Tertinggi (Kelas IX-H | Nilai: 93.77) and Ketua OSIS.
+  - **Yanuar Ahmad Al-Azmi**: Peringkat 4 Nilai Ijazah Tertinggi (Kelas IX-E | Nilai: 93.55) & Peringkat 4 Nilai Sidanira Terbaik (Kelas 9E | Nilai Akademik: 60.55).
+  - **Double Top 5 Highlight Box**: Special award block highlighting Yanuar Ahmad Al-Azmi's dual top-5 achievement.
+* Cards incorporate direct JPEG photo links (`images/student/nizam.jpeg` and `images/student/yanuar.jpeg`) and are styled with custom gold/bronze ranking indicators, badges, and layout structures.
+
+### T. Gallery Video & Layout Update (`src/data/gallery.js`, `src/pages/Gallery/GalleryPage.jsx`)
+* **Outing Video Insertion**: Appended a new featured video item (id: 80) referencing the recent outing from June 13, 2026 (`images/gallery/outing/WhatsApp Video 2026-06-14 at 9.25.43 AM.mp4`) with its title in Indonesian: `"Keluarga & Keakraban Bimbel Junior di Erifframe Citeko Bogor 13 Juni 2026"`.
+* **Outing & Rekreasi Section separation**: Split the gallery page layout to separate the Outing items into their own dedicated section (`gallery-outing-section`) with a unique header, background styling, descriptive labels, and a clean responsive grid (`.gallery-grid`) displaying all items.
 
 ---
 

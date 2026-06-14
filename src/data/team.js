@@ -65,7 +65,7 @@ export const teamMembers = [
   },
   {
     id: 4,
-    name: 'Joko Sarjono, S.Pd.',
+    name: 'Joko Sarjono, M.Pd.',
     role: 'Guru Bahasa Inggris',
     subjects: 'Bahasa Inggris',
     bio: 'Guru Bahasa Inggris bersertifikat pendidik. Berpengalaman mengajar sejak 1992, menguasai berbagai metode pengajaran bahasa Inggris modern.',
@@ -224,7 +224,7 @@ export const teamMembers = [
   {
     id: 13,
     name: 'Muhammad Fathur Rahman, S.Pd.',
-    role: 'Guru Kelas / Tutor Matematika & Sains',
+    role: 'Guru Matematika & Sains',
     subjects: 'Matematika & IPA',
     bio: 'Tutor Matematika dan IPA berpengalaman lulusan S1 Pendidikan Matematika UHAMKA. Mengajar dengan metode interaktif untuk jenjang SD, SMP, dan SMA.',
     longBio: 'Pak Muhammad Fathur Rahman adalah tutor Matematika dan IPA untuk jenjang SD dan SMP di Bimbel Junior. Lulusan S1 Pendidikan Matematika dari UHAMKA, beliau memiliki pengalaman mengajar yang luas di berbagai institusi seperti SMA Nurul Falah, SMK Dharma Putra 1, SMP Tunas, SMAN 18 Jakarta, dan Primagama. Dengan keahliannya di bidang matematika dan sains, beliau mampu menyederhanakan materi agar mudah dipahami, menyenangkan, dan relevan dengan kebutuhan siswa.',
@@ -243,5 +243,44 @@ export const teamMembers = [
     birthPlaceDate: 'Jakarta, 21 April 1997',
     address: 'Jalan Swasembada Barat III No. 14, RT 008 / RW 09, Kebon Bawang, Tanjung Priok, Jakarta Utara',
     religion: 'Islam'
+  },
+  {
+    id: 14,
+    name: 'Sisca Septiyani, S.Pd.',
+    role: 'Guru Fisika SMA',
+    subjects: 'Fisika (SMA)',
+    bio: 'Guru Fisika lulusan S1 Pendidikan Fisika UNINDRA. Berpengalaman lebih dari 8 tahun dalam mengajar dan membimbing siswa berprestasi di tingkat OSN/OSTN.',
+    longBio: 'Ibu Sisca Septiyani adalah pengajar Fisika untuk jenjang SMA di Bimbel Junior. Beliau merupakan lulusan S1 Pendidikan Fisika dari Universitas Indraprasta PGRI (UNINDRA) dan dinobatkan sebagai Mahasiswa Terbaik FTMIPA UNINDRA pada tahun 2010. Dengan pengalaman mengajar lebih dari 8 tahun di berbagai sekolah menengah (SMA Perguruan Rakyat 3, SMA Universal School Kelapa Gading, SMK Kesehatan Global Cendekia) serta bimbingan belajar bertaraf internasional (Sinotif), beliau sangat terampil merancang modul pembelajaran interaktif dan melatih siswa hingga menjuarai kompetisi sains seperti OSTN/OSN.',
+    education: [
+      'S1 Pendidikan Fisika – Universitas Indraprasta PGRI (UNINDRA) (2006–2010)'
+    ],
+    achievements: [
+      'Mahasiswa Terbaik Fakultas MIPA UNINDRA (2010)',
+      'Beasiswa Prestasi Akademik UNINDRA (Semester 2 s/d Lulus)',
+      'Membimbing Siswa SMK Kesehatan Global Cendekia Juara 1 OSTN Fisika Se-Jakarta Utara (2015)',
+      'Membimbing Siswa SMK Kesehatan Global Cendekia Juara 3 OSN Fisika Se-Jakarta Utara (2020)'
+    ],
+    color: '#DC2626',
+    image: cleanBaseUrl + 'images/teacher/sisca.jpeg',
+    certified: false
+  },
+  {
+    id: 15,
+    name: 'Ofchan Damanik, S.Pd.',
+    role: 'Guru Bahasa Indonesia SMA',
+    subjects: 'Bahasa Indonesia (SMA)',
+    bio: 'Guru Bahasa Indonesia lulusan S1 Pendidikan Bahasa Indonesia Universitas HKBP Nommensen. Berpengalaman dalam mengembangkan modul interaktif dan penguatan literasi siswa.',
+    longBio: 'Pak Ofchan Damanik adalah pengajar Bahasa Indonesia untuk jenjang SMA di Bimbel Junior. Beliau lulusan S1 Pendidikan Bahasa Indonesia dari Universitas HKBP Nommensen Pematangsiantar (2021–2025). Pengalaman beliau mencakup mengajar di Yayasan Pendidikan Intan Cemerlang Jakarta Utara dan SMPN 04 Pematangsiantar. Sebagai mantan Ketua Himpunan Mahasiswa Program Studi Pendidikan Bahasa Indonesia (2023–2024), beliau memiliki kecakapan luar biasa dalam public speaking, komunikasi interaktif, serta perancangan media pembelajaran Kurikulum Merdeka.',
+    education: [
+      'S1 Pendidikan Bahasa Indonesia – Universitas HKBP Nommensen (2021–2025)'
+    ],
+    achievements: [
+      'Ketua Himpunan Mahasiswa Program Studi Pendidikan Bahasa Indonesia (2023–2024)',
+      'Ketua Pelaksana Workshop Pengembangan Kurikulum Merdeka (2023)',
+      'Koordinator Multimedia Webinar Nasional Kesusastraan Puisi (2023)'
+    ],
+    color: '#059669',
+    image: cleanBaseUrl + 'images/teacher/ofchan.jpeg',
+    certified: false
   }
 ];

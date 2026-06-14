@@ -23,8 +23,7 @@ import { galleryItems } from '../../data/gallery';
 import './GalleryPage.css';
 
 const gridCategories = [
-  { key: 'semua', label: 'Semua Aktivitas' },
-  { key: 'outing', label: 'Outing & Rekreasi' },
+  { key: 'semua', label: 'Semua Kelas' },
   { key: 'SD', label: 'Tingkat SD' },
   { key: 'SMP', label: 'Tingkat SMP' },
   { key: 'highlight', label: 'Sorotan Utama' }
@@ -44,9 +43,7 @@ export default function GalleryPage() {
   const [visibleCount, setVisibleCount] = useState(12);
 
   const scrollRef1 = useRef(null);
-  const scrollRef2 = useRef(null);
   const [isHovered1, setIsHovered1] = useState(false);
-  const [isHovered2, setIsHovered2] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -63,32 +60,24 @@ export default function GalleryPage() {
     return galleryItems.filter((item) => item.isFeatured);
   }, []);
 
-  // Outing items for the bottom scrolling filmstrip
+  // Outing items for the bottom section
   const outingItems = useMemo(() => {
     return galleryItems.filter((item) => item.category === 'outing');
   }, []);
 
-  // Unique featured & outing items for mobile grid (no duplicates)
+  // Unique featured items for mobile grid (no duplicates)
   const displayFeaturedItems = useMemo(() => {
     return isMobile ? featuredItems.slice(0, 3) : [...featuredItems, ...featuredItems, ...featuredItems, ...featuredItems];
   }, [isMobile, featuredItems]);
 
-  const displayOutingItems = useMemo(() => {
-    return isMobile ? outingItems.slice(0, 3) : [...outingItems].reverse().concat(
-      [...outingItems].reverse(),
-      [...outingItems].reverse(),
-      [...outingItems].reverse()
-    );
-  }, [isMobile, outingItems]);
-
-  // Filtered items for the main grid
+  // Filtered items for the main grid (class harian only, excluding outing)
   const filteredGridItems = useMemo(() => {
-    if (activeFilter === 'semua') return galleryItems;
-    if (activeFilter === 'outing') return galleryItems.filter((item) => item.category === 'outing');
-    if (activeFilter === 'SD') return galleryItems.filter((item) => item.jenjang === 'SD');
-    if (activeFilter === 'SMP') return galleryItems.filter((item) => item.jenjang === 'SMP');
-    if (activeFilter === 'highlight') return galleryItems.filter((item) => item.isFeatured);
-    return galleryItems;
+    const classItems = galleryItems.filter((item) => item.category !== 'outing');
+    if (activeFilter === 'semua') return classItems;
+    if (activeFilter === 'SD') return classItems.filter((item) => item.jenjang === 'SD');
+    if (activeFilter === 'SMP') return classItems.filter((item) => item.jenjang === 'SMP');
+    if (activeFilter === 'highlight') return classItems.filter((item) => item.isFeatured);
+    return classItems;
   }, [activeFilter]);
 
   // Reset page limit on filter change
@@ -101,11 +90,9 @@ export default function GalleryPage() {
     if (isMobile) return;
     let animationFrameId;
     const scrollContainer1 = scrollRef1.current;
-    const scrollContainer2 = scrollRef2.current;
 
     // Use floating-point trackers to avoid integer truncation in browser scrollLeft
     let scrollPos1 = scrollContainer1 ? scrollContainer1.scrollLeft : 0;
-    let scrollPos2 = scrollContainer2 ? scrollContainer2.scrollLeft : 0;
 
     const scroll = () => {
       // Forward scroll
@@ -120,29 +107,15 @@ export default function GalleryPage() {
         scrollContainer1.scrollLeft = Math.round(scrollPos1);
       }
 
-      // Reverse scroll
-      if (scrollContainer2 && !isHovered2) {
-        scrollPos2 -= 0.45;
-        if (scrollPos2 <= 1) {
-          scrollPos2 =
-            scrollContainer2.scrollWidth - scrollContainer2.clientWidth;
-        }
-        scrollContainer2.scrollLeft = Math.round(scrollPos2);
-      }
-
       animationFrameId = requestAnimationFrame(scroll);
     };
 
-    if (featuredItems.length > 0 || outingItems.length > 0) {
-      if (scrollContainer2 && scrollContainer2.scrollLeft === 0) {
-        scrollContainer2.scrollLeft = scrollContainer2.scrollWidth;
-        scrollPos2 = scrollContainer2.scrollWidth;
-      }
+    if (featuredItems.length > 0) {
       animationFrameId = requestAnimationFrame(scroll);
     }
 
     return () => cancelAnimationFrame(animationFrameId);
-  }, [isHovered1, isHovered2, featuredItems, outingItems, isMobile]);
+  }, [isHovered1, featuredItems, isMobile]);
 
   const openLightboxFromFeatured = (index) => {
     setLightboxSource('featured');
@@ -310,77 +283,85 @@ export default function GalleryPage() {
               }
             )}
           </div>
+        </div>
+      </section>
 
-          {/* Row 2: Reverse Scroll */}
-          {outingItems.length > 0 && (
-            <div
-              className="gallery-filmstrip gallery-filmstrip--bottom"
-              ref={scrollRef2}
-              onMouseEnter={() => setIsHovered2(true)}
-              onMouseLeave={() => setIsHovered2(false)}
-              onTouchStart={() => setIsHovered2(true)}
-              onTouchEnd={() => setIsHovered2(false)}
-            >
-              {displayOutingItems.map((item, index) => {
-                const originalIndex = outingItems.findIndex((orig) => orig.id === item.id);
+      {/* ===== Outing & Rekreasi Section ===== */}
+      {outingItems.length > 0 && (
+        <section className="section gallery-outing-section" style={{ paddingBottom: 'var(--space-md)', paddingTop: 'var(--space-2xl)', backgroundColor: '#FFFFFF' }}>
+          <div className="container">
+            <div className="section-header text-center" style={{ marginBottom: 'var(--space-xl)' }}>
+              <span className="section-tag" style={{ background: 'var(--color-secondary-light)', color: 'var(--color-secondary-dark)' }}>Kegiatan Luar Kelas</span>
+              <h2 className="section-title">Outing &amp; Kebersamaan Keluarga</h2>
+              <p className="section-description">
+                Momen rekreasi tahunan, outing, dan kebersamaan keluarga besar Bimbel Junior untuk membangun motivasi dan solidaritas sosial.
+              </p>
+            </div>
+          </div>
+
+          <div className="container" style={{ marginTop: 'var(--space-md)' }}>
+            <div className="gallery-grid">
+              {outingItems.map((item, index) => {
                 const Icon = item.icon || BookOpen;
                 return (
-                  <div key={`row2-${item.id}-${index}`} className="gallery-item">
-                    <button
-                      className="gallery-item__card"
-                      onClick={() => openLightboxFromOuting(originalIndex)}
-                      aria-label={`Lihat foto: ${item.title}`}
-                    >
-                      {item.photo ? (
-                        item.isVideo ? (
-                          <div className="gallery-item__video-wrapper">
-                            <video
-                              src={item.photo.startsWith('http') ? `${item.photo}#t=0.1` : `${import.meta.env.BASE_URL || '/'}${item.photo}#t=0.1`}
-                              className="gallery-item__card-img"
-                              preload="metadata"
-                              muted
-                              playsInline
-                            />
-                            <div className="gallery-item__play-btn">
-                              <Play size={24} fill="currentColor" />
+                  <AnimateOnScroll key={`outing-${item.id}`} delay={(index % 4) * 0.05}>
+                    <div className="gallery-item" style={{ width: '100%' }}>
+                      <button
+                        className="gallery-item__card"
+                        onClick={() => openLightboxFromOuting(index)}
+                        aria-label={`Lihat foto: ${item.title}`}
+                      >
+                        {item.photo ? (
+                          item.isVideo ? (
+                            <div className="gallery-item__video-wrapper">
+                              <video
+                                src={item.photo.startsWith('http') ? `${item.photo}#t=0.1` : `${import.meta.env.BASE_URL || '/'}${item.photo}#t=0.1`}
+                                className="gallery-item__card-img"
+                                preload="metadata"
+                                muted
+                                playsInline
+                              />
+                              <div className="gallery-item__play-btn">
+                                <Play size={24} fill="currentColor" />
+                              </div>
                             </div>
-                          </div>
+                          ) : (
+                            <img
+                              src={item.photo.startsWith('http') ? item.photo : `${import.meta.env.BASE_URL || '/'}${item.photo}`}
+                              alt={item.title}
+                              className="gallery-item__card-img"
+                              loading="lazy"
+                            />
+                          )
                         ) : (
-                          <img
-                            src={item.photo.startsWith('http') ? item.photo : `${import.meta.env.BASE_URL || '/'}${item.photo}`}
-                            alt={item.title}
-                            className="gallery-item__card-img"
-                            loading="lazy"
-                          />
-                        )
-                      ) : (
-                        <div
-                          className="gallery-item__card-fallback"
-                          style={{ background: item.gradient }}
-                        >
-                          <Icon size={48} className="gallery-item__card-icon" />
+                          <div
+                            className="gallery-item__card-fallback"
+                            style={{ background: item.gradient }}
+                          >
+                            <Icon size={48} className="gallery-item__card-icon" />
+                          </div>
+                        )}
+                        <div className="gallery-item__card-overlay" />
+                        <div className="gallery-item__card-info">
+                          <span
+                            className={`gallery-item__card-category gallery-item__card-category--${item.category}`}
+                          >
+                            {categoryLabels[item.category] || 'Kegiatan'}
+                          </span>
+                          <h3 className="gallery-item__card-title">{item.title}</h3>
                         </div>
-                      )}
-                      <div className="gallery-item__card-overlay" />
-                      <div className="gallery-item__card-info">
-                        <span
-                          className={`gallery-item__card-category gallery-item__card-category--${item.category}`}
-                        >
-                          {categoryLabels[item.category] || 'Kegiatan'}
-                        </span>
-                        <h3 className="gallery-item__card-title">{item.title}</h3>
-                      </div>
-                      <div className="gallery-item__card-zoom">
-                        <Camera size={20} />
-                      </div>
-                    </button>
-                  </div>
+                        <div className="gallery-item__card-zoom">
+                          <Camera size={20} />
+                        </div>
+                      </button>
+                    </div>
+                  </AnimateOnScroll>
                 );
               })}
             </div>
-          )}
-        </div>
-      </section>
+          </div>
+        </section>
+      )}
 
       {/* ===== Main Grid & Filter Section ===== */}
       <section className="section gallery-grid-section" style={{ paddingTop: 'var(--space-2xl)' }}>

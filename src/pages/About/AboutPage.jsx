@@ -88,7 +88,7 @@ export default function AboutPage() {
       id: 'tutor',
       title: 'Tutor & Staf Pengajar',
       desc: 'Tenaga pendidik profesional dan berpengalaman yang berdedikasi tinggi membimbing siswa meraih prestasi.',
-      members: teamMembers.filter(m => m.id === 2 || m.id === 3 || m.id === 4 || m.id === 5 || m.id === 6 || m.id === 7 || m.id === 9 || m.id === 11 || m.id === 12 || m.id === 13)
+      members: teamMembers.filter(m => m.id === 2 || m.id === 3 || m.id === 4 || m.id === 5 || m.id === 6 || m.id === 7 || m.id === 9 || m.id === 11 || m.id === 12 || m.id === 13 || m.id === 14 || m.id === 15)
     }
   ];
 

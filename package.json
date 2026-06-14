@@ -8,7 +8,8 @@
     "build": "tsc && vite build && node -e \"require('fs').copyFileSync('dist/index.html', 'dist/404.html')\"",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "convert": "python -c \"from PIL import Image; Image.open('public/images/teacher/sisca.jpeg').save('public/images/teacher/sisca.webp', 'webp'); Image.open('public/images/teacher/ofchan.jpeg').save('public/images/teacher/ofchan.webp', 'webp')\""
   },
   "devDependencies": {
     "gh-pages": "^6.3.0",

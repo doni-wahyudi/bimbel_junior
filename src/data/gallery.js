@@ -947,5 +947,17 @@ export const galleryItems = [
     "jenjang": "Semua Jenjang",
     "isVideo": false,
     "isFeatured": false
+  },
+  {
+    "id": 80,
+    "category": "outing",
+    "title": "Keluarga & Keakraban Bimbel Junior di Erifframe Citeko Bogor 13 Juni 2026",
+    "photo": "images/gallery/outing/WhatsApp Video 2026-06-14 at 9.25.43 AM.mp4",
+    "description": "Momen kebersamaan, outing rekreasi, dan penguatan hubungan keluarga besar Bimbel Junior di Erifframe Citeko, Bogor.",
+    "date": "13 Juni 2026",
+    "location": "Erifframe Citeko Bogor",
+    "jenjang": "Semua Jenjang",
+    "isVideo": true,
+    "isFeatured": true
   }
 ];

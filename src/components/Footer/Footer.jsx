@@ -63,7 +63,7 @@ export default function Footer() {
             <div className="footer__col">
               <h4 className="footer__col-title">Informasi &amp; Legal</h4>
               <ul className="footer__col-links">
-                <li><Link to="/alumni">Alumni &amp; Testimoni</Link></li>
+                <li><Link to="/alumni">Prestasi &amp; Alumni</Link></li>
                 <li><Link to="/blog">Blog &amp; Jurnal</Link></li>
                 <li><Link to="/tentang-kami/legalitas">Legalitas &amp; Izin</Link></li>
                 <li><Link to="/tentang-kami/sop-tata-tertib">SOP &amp; Tata Tertib</Link></li>

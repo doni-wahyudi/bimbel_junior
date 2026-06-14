@@ -45,7 +45,7 @@ export default function Navbar() {
         { path: '/tentang-kami/sop-tata-tertib', label: 'SOP & Tata Tertib' },
       ]
     },
-    { path: '/alumni', label: 'Alumni' },
+    { path: '/alumni', label: 'Prestasi & Alumni' },
     { path: '/blog', label: 'Blog' },
     { path: '/galeri', label: 'Galeri' },
     { path: '/hubungi-kami', label: 'Kontak' },

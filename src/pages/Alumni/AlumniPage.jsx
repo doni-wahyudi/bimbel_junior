@@ -61,14 +61,14 @@ export default function AlumniPage() {
   return (
     <div className="alumni-page">
       <SEO 
-        title="Kisah Sukses Alumni"
+        title="Prestasi &amp; Alumni"
         description="Ratusan siswa telah berhasil meraih sekolah impian bersama Bimbel Junior. Temukan kisah inspiratif mereka di sini."
       />
 
       <section className="alumni-hero gradient-hero">
         <div className="container">
           <AnimateOnScroll className="alumni-hero__content">
-            <h1 className="alumni-hero__title">Jejak Prestasi Alumni</h1>
+            <h1 className="alumni-hero__title">Jejak Prestasi &amp; Alumni</h1>
             <p className="alumni-hero__subtitle">
               Setiap anak memiliki potensi. Kami bangga telah menjadi bagian dari perjalanan mereka menuju sekolah dan kampus impian.
             </p>
@@ -78,6 +78,122 @@ export default function AlumniPage() {
 
       <section className="section alumni-list-section">
         <div className="container">
+          {/* ===== Prestasi Unggulan Siswa (SMPN 129 Jakarta) ===== */}
+          <AnimateOnScroll>
+            <div className="prestige-section-header">
+              <span className="prestige-badge">
+                <Trophy size={14} /> Papan Prestasi Utama
+              </span>
+              <h2 className="prestige-title">Prestasi Gemilang Siswa Bimbel Junior</h2>
+              <p className="prestige-subtitle">
+                Apresiasi tinggi kepada siswa bimbingan kami di SMPN 129 Jakarta yang sukses meraih peringkat 10 besar paralel akademik tahun ini!
+              </p>
+            </div>
+          </AnimateOnScroll>
+
+          <div className="prestige-grid">
+            {/* Card 1: Nizam Abdurrahman */}
+            <AnimateOnScroll direction="left" className="prestige-card">
+              <div className="prestige-card__image-container">
+                <img 
+                  src={`${import.meta.env.BASE_URL || '/'}images/student/nizam.jpeg`} 
+                  alt="Nizam Abdurrahman" 
+                  className="prestige-card__img" 
+                />
+                <div className="prestige-card__rank-badge rank-2">Peringkat 2</div>
+              </div>
+              <div className="prestige-card__content">
+                <h3 className="prestige-card__name">Nizam Abdurrahman</h3>
+                <div className="prestige-card__badges-row">
+                  <span className="prestige-card__badge-tag badge-osis">Ketua OSIS</span>
+                  <span className="prestige-card__badge-tag badge-category">Nilai Ijazah</span>
+                </div>
+                <div className="prestige-card__divider" />
+                <ul className="prestige-card__details">
+                  <li>
+                    <span className="detail-label">Kategori:</span>
+                    <span className="detail-val">Nilai Ijazah Tertinggi (10 Besar)</span>
+                  </li>
+                  <li>
+                    <span className="detail-label">Sekolah:</span>
+                    <span className="detail-val">SMPN 129 Jakarta</span>
+                  </li>
+                  <li>
+                    <span className="detail-label">Hasil:</span>
+                    <span className="detail-val font-highlight">Peringkat 2 (Kelas IX-H | Nilai: 93.77)</span>
+                  </li>
+                  <li>
+                    <span className="detail-label">Organisasi:</span>
+                    <span className="detail-val">Ketua OSIS SMPN 129 Jakarta</span>
+                  </li>
+                </ul>
+              </div>
+            </AnimateOnScroll>
+
+            {/* Card 2: Yanuar Ahmad Al-Azmi */}
+            <AnimateOnScroll direction="right" className="prestige-card">
+              <div className="prestige-card__image-container">
+                <img 
+                  src={`${import.meta.env.BASE_URL || '/'}images/student/yanuar.jpeg`} 
+                  alt="Yanuar Ahmad Al-Azmi" 
+                  className="prestige-card__img" 
+                />
+                <div className="prestige-card__rank-badge rank-4">Peringkat 4</div>
+              </div>
+              <div className="prestige-card__content">
+                <h3 className="prestige-card__name">Yanuar Ahmad Al-Azmi</h3>
+                <div className="prestige-card__badges-row">
+                  <span className="prestige-card__badge-tag badge-double">Double Top 5</span>
+                  <span className="prestige-card__badge-tag badge-category">Ijazah &amp; Sidanira</span>
+                </div>
+                <div className="prestige-card__divider" />
+                <ul className="prestige-card__details">
+                  <li>
+                    <span className="detail-label">Kategori 1:</span>
+                    <span className="detail-val">Nilai Ijazah Tertinggi (10 Besar)</span>
+                  </li>
+                  <li>
+                    <span className="detail-label">Hasil 1:</span>
+                    <span className="detail-val font-highlight">Peringkat 4 (Kelas IX-E | Nilai: 93.55)</span>
+                  </li>
+                  <li>
+                    <span className="detail-label">Kategori 2:</span>
+                    <span className="detail-val">Nilai Sidanira / Akademik Terbaik (10 Besar)</span>
+                  </li>
+                  <li>
+                    <span className="detail-label">Hasil 2:</span>
+                    <span className="detail-val font-highlight">Peringkat 4 (Kelas 9E | Nilai Akademik: 60,55)</span>
+                  </li>
+                </ul>
+              </div>
+            </AnimateOnScroll>
+          </div>
+
+          {/* Highlight Box: Yanuar Double Top 5 */}
+          <AnimateOnScroll>
+            <div className="prestige-highlight-box">
+              <div className="prestige-highlight-box__icon-wrapper">
+                <Sparkles size={28} className="prestige-highlight-box__icon" />
+              </div>
+              <div className="prestige-highlight-box__content">
+                <span className="prestige-highlight-box__badge">Catatan Prestasi Khusus (High Achievement)</span>
+                <h4 className="prestige-highlight-box__title">Double Top 5 — Yanuar Ahmad Al-Azmi</h4>
+                <p className="prestige-highlight-box__desc">
+                  Selamat kepada <strong>Yanuar Ahmad Al-Azmi</strong> yang berhasil mencatatkan prestasi ganda yang luar biasa (Double Top 5) dengan mengamankan posisi <strong>Peringkat 4 di kedua kategori sekaligus</strong>, baik pada Nilai Ijazah maupun Nilai Sidanira di SMPN 129 Jakarta!
+                </p>
+              </div>
+              <div className="prestige-highlight-box__glow" />
+            </div>
+          </AnimateOnScroll>
+
+          {/* Carousel Section Divider Title */}
+          <AnimateOnScroll>
+            <div className="prestige-section-divider">
+              <h3 className="prestige-divider-title">Kisah Sukses &amp; Testimoni Alumni</h3>
+              <p className="prestige-divider-subtitle">Mendengar langsung pengalaman mereka belajar dan meraih impian bersama Bimbel Junior</p>
+            </div>
+          </AnimateOnScroll>
+
           <div className="alumni-carousel-wrapper">
             <div className="alumni-carousel">
               <div
